@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitive Exam Prep | PrepMe.Pro</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #E8862A, #f0a84a);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #0A1A3F 0%, #1a2a5f 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin: 1.5rem 0;
+            font-weight: 700;
+        }
+
+        .page-hero h1 em {
+            color: #E8862A;
+            font-style: italic;
+        }
+
+        .page-hero .lead {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .bg-light {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-bordered {
+            border: 2px solid #e0e0e0;
+        }
+
+        .card-accent-top {
+            border-top: 4px solid #E8862A;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #E8862A;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            color: #0A1A3F;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0A1A3F;
+        }
+
+        .card h3 {
+            color: #0A1A3F;
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+            margin: 0.5rem 0 0 0;
+        }
+
+        .bg-cream {
+            background: #fef9f3;
+            padding: 4rem 2rem;
+        }
+
+        .how-teach-item {
+            text-align: center;
+        }
+
+        .how-teach-item h4 {
+            color: #0A1A3F;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .how-teach-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .callout-accent {
+            background: linear-gradient(135deg, #E8862A 0%, #f0a84a 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 4rem auto;
+        }
+
+        .callout-accent h3 {
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .callout-accent p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .callout-accent a {
+            color: #0A1A3F;
+            text-decoration: none;
+            font-weight: 700;
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .callout-accent a:hover {
+            transform: scale(1.05);
+        }
+
+        .pricing-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #0A1A3F, #1a2a5f) !important;
+            color: white;
+        }
+
+        .pricing-card.featured h3 {
+            color: white;
+        }
+
+        .pricing-card.featured .price {
+            color: #E8862A;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #E8862A;
+            margin: 1rem 0;
+        }
+
+        .save-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #E8862A;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .pricing-includes {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .pricing-includes li {
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            border-left: 4px solid #E8862A;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #0A1A3F;
+            font-style: normal;
+        }
+
+        .testimonial-role {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item details {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+
+        .faq-item summary {
+            font-weight: 700;
+            color: #0A1A3F;
+            cursor: pointer;
+        }
+
+        .faq-item summary:hover {
+            color: #E8862A;
+        }
+
+        .faq-item p {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #0A1A3F, #1a2a5f);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .cta-banner a {
+            color: white;
+            text-decoration: none;
+            background: #E8862A;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .cta-banner a:hover {
+            background: #d87319;
+        }
+
+        .section-padding {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .page-hero .lead {
+                font-size: 1rem;
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+        /* ===== PAGE HERO — UPGRADED ===== */
+.page-hero {
+  background: var(--navy);
+  padding: 5.5rem 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ph-orb1 {
+  position: absolute;
+  top: -120px; right: -80px;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: rgba(232,134,42,0.07);
+  pointer-events: none;
+}
+
+.ph-orb2 {
+  position: absolute;
+  bottom: 60px; left: -100px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: rgba(232,134,42,0.05);
+  pointer-events: none;
+}
+
+.ph-top {
+  text-align: center;
+  padding-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Breadcrumb */
+.ph-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #64748B;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+.ph-sep { color: #334155; }
+.ph-bc-active { color: #94A3B8; }
+
+/* Pills */
+.ph-pill-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.ph-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.ph-pill-saffron {
+  background: rgba(232,134,42,0.12);
+  color: var(--saffron-light);
+  border-color: rgba(232,134,42,0.3);
+}
+
+.ph-pill-ghost {
+  background: rgba(255,255,255,0.06);
+  color: #94A3B8;
+  border-color: rgba(255,255,255,0.1);
+}
+
+.ph-pill-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+/* Heading overrides on navy bg */
+.page-hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero h1 em {
+  color: var(--saffron);
+  font-style: normal;
+}
+
+.page-hero .lead {
+  font-size: 1.05rem;
+  color: #94A3B8;
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 2.25rem;
+}
+
+.page-hero .lead strong {
+  color: #CBD5E1;
+  font-weight: 600;
+}
+
+/* CTA row */
+.ph-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.ph-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.06);
+  color: #CBD5E1;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.82rem 1.6rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.2s, color 0.2s;
+}
+
+.ph-btn-ghost:hover {
+  background: rgba(255,255,255,0.11);
+  color: var(--white);
+}
+
+/* Trust strip */
+.ph-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.ph-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+.ph-trust-check {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: rgba(22,163,74,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ph-trust-check svg { width: 8px; height: 8px; }
+
+.ph-trust-sep {
+  width: 1px; height: 12px;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Exam tiles */
+.ph-exams {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-bottom: none;
+  position: relative;
+  z-index: 1;
+}
+
+.ph-exam-tile {
+  background: #0D1F4A;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.ph-exam-tile:hover { background: #122258; }
+
+.ph-exam-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ph-exam-icon svg { width: 20px; height: 20px; }
+
+.ph-icon-saffron { background: rgba(232,134,42,0.12); }
+.ph-icon-green   { background: rgba(99,153,34,0.12); }
+.ph-icon-blue    { background: rgba(55,138,221,0.12); }
+.ph-icon-pink    { background: rgba(212,83,126,0.12); }
+
+.ph-exam-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.3px;
+  margin-bottom: 0.2rem;
+}
+
+.ph-exam-tag {
+  font-size: 0.7rem;
+  color: #64748B;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.75rem;
+}
+
+.ph-exam-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.ph-epill {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid;
+}
+
+.ph-epill-open {
+  background: rgba(232,134,42,0.15);
+  color: var(--saffron);
+  border-color: rgba(232,134,42,0.25);
+}
+
+.ph-epill-mode {
+  background: rgba(255,255,255,0.06);
+  color: #94A3B8;
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-hero { padding: 4rem 1rem 0; }
+  .ph-exams { grid-template-columns: repeat(2, 1fr); }
+  .ph-exams .ph-exam-tile:first-child { border-radius: 15px 0 0 0; }
+  .ph-exams .ph-exam-tile:nth-child(2) { border-radius: 0 15px 0 0; }
+  .ph-trust { gap: 0.85rem; }
+  .ph-trust-sep { display: none; }
+}
+
+@media (max-width: 480px) {
+  .ph-cta-row { flex-direction: column; align-items: stretch; }
+  .page-hero h1 { letter-spacing: -0.5px; }
+}
+
+/* ===== THE REALITY ===== */
+
+.reality-section {
+  padding: 6rem 1.5rem;
+}
+
+/* ── Head ── */
+.rl-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.rl-head-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rl-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--saffron);
+}
+
+.rl-head h2 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.rl-head h2 em {
+  font-style: normal;
+  color: var(--saffron);
+}
+
+.rl-head p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin: 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Grid ── */
+.rl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Base card ── */
+.rl-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.rl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(10,26,63,0.09);
+}
+
+/* Accent card */
+.rl-card-accent {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+/* ── Tag ── */
+.rl-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-light);
+}
+.rl-tag-light {
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── Number ── */
+.rl-num {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.rl-card-accent .rl-num {
+  color: var(--saffron);
+}
+
+/* ── Description ── */
+.rl-card p {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+.rl-card-accent p {
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── Callout strip ── */
+.rl-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--saffron);
+  border-radius: 12px;
+  padding: 1.25rem 1.75rem;
+}
+.rl-callout p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+.rl-callout strong {
+  color: var(--navy);
+}
+.rl-callout .btn-navy {
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .rl-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rl-head {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .rl-head p {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .rl-grid {
+    grid-template-columns: 1fr;
+  }
+  .rl-callout {
+    flex-direction: column;
+    text-align: center;
+    align-items: flex-start;
+  }
+  .rl-callout .btn-navy {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ===== EXAMS WE PREPARE FOR ===== */
+
+.exams-section {
+  padding: 6rem 1.5rem;
+}
+
+/* ── Categories row ── */
+.exams-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ── Category group ── */
+.exam-category {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.26s ease, box-shadow 0.26s ease;
+}
+.exam-category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(10,26,63,0.08);
+}
+
+/* ── Category header ── */
+.exam-category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light);
+}
+
+.exam-category-icon {
+  font-size: 1.6rem;
+  width: 48px;
+  height: 48px;
+  background: var(--light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exam-category h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  flex: 1;
+}
+
+.exam-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gray-light);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Exam list ── */
+.exam-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* ── Exam item ── */
+.exam-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-radius: 10px;
+  padding-left: 1rem;
+  transition: background 0.2s ease;
+}
+.exam-item:hover {
+  background: var(--light);
+}
+
+.exam-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+.exam-kpsc {
+  background: var(--navy);
+  color: var(--white);
+}
+.exam-central {
+  background: var(--saffron);
+  color: var(--white);
+}
+
+.exam-desc {
+  font-size: 0.82rem;
+  color: var(--gray);
+  flex: 1;
+  font-weight: 500;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .exams-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .exam-category {
+    padding: 1.5rem;
+  }
+}
+/* ===== HOW WE TEACH ===== */
+
+.how-teach-section {
+  padding: 6rem 1.5rem;
+  background: var(--cream);
+}
+
+/* ── Timeline ── */
+.how-teach-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  position: relative;
+}
+
+/* ── Each step ── */
+.how-teach-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── Circle ── */
+.how-teach-circle {
+  width: 70px;
+  height: 70px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.28s ease;
+}
+.how-teach-circle:hover {
+  transform: scale(1.08);
+}
+
+.how-teach-circle-saffron {
+  background: var(--saffron);
+  border-color: var(--saffron);
+}
+
+.how-teach-icon {
+  font-size: 1.4rem;
+}
+
+/* ── Connector ── */
+.how-teach-connector {
+  position: absolute;
+  top: 35px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 50%;
+  height: 2px;
+  background: var(--border);
+  z-index: 1;
+}
+.how-teach-connector-none {
+  display: none;
+}
+
+/* ── Content ── */
+.how-teach-content {
+  margin-top: 3rem;
+  text-align: center;
+  max-width: 180px;
+}
+.how-teach-content h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.2px;
+}
+.how-teach-content p {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+.how-teach-content strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .how-teach-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .how-teach-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-teach-timeline {
+    grid-template-columns: 1fr;
+  }
+  .how-teach-content {
+    max-width: 280px;
+  }
+}
+
+/* ===== HOW WE TEACH ===== */
+
+.how-teach-section {
+  padding: 6rem 1.5rem;
+}
+
+/* ── Wrapper ── */
+.how-teach-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Each step row ── */
+.how-teach-step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+/* ── Left: circle + line ── */
+.how-teach-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.how-teach-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  z-index: 1;
+  transition: transform 0.25s ease;
+}
+.how-teach-circle:hover {
+  transform: scale(1.1);
+}
+
+.how-teach-circle-saffron {
+  background: var(--saffron);
+  border-color: var(--saffron);
+  box-shadow: 0 4px 16px rgba(232,134,42,0.3);
+}
+
+/* Vertical connector line */
+.how-teach-line {
+  flex: 1;
+  width: 2px;
+  background: var(--border);
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
+/* ── Right: content card ── */
+.how-teach-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.how-teach-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 28px rgba(10,26,63,0.08);
+}
+
+/* Accent last card */
+.how-teach-card-accent {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.how-teach-card-accent h4 { color: var(--white); }
+.how-teach-card-accent p  { color: rgba(255,255,255,0.6); }
+
+/* Last step — no margin */
+.how-teach-step-last .how-teach-card {
+  margin-bottom: 0;
+}
+
+/* ── Meta row ── */
+.how-teach-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+
+.how-teach-num {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--gray-light);
+  text-transform: uppercase;
+}
+.how-teach-num-light { color: rgba(255,255,255,0.3); }
+
+.how-teach-freq {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--saffron);
+  background: var(--cream);
+  border: 1px solid rgba(232,134,42,0.2);
+  padding: 2px 10px;
+  border-radius: 50px;
+}
+.how-teach-freq-light {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* ── Text ── */
+.how-teach-card h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+.how-teach-card p {
+  font-size: 0.84rem;
+  color: var(--gray);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .how-teach-wrapper { max-width: 100%; }
+  .how-teach-card { padding: 1.1rem 1.25rem; }
+}
+
+/* ===== PRICING ===== */
+
+.pricing-section {
+  padding: 6rem 1.5rem;
+  background: var(--light);
+}
+
+/* ── Grid ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Base card ── */
+.pricing-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  transition: box-shadow 0.25s ease;
+}
+.pricing-card:hover {
+  box-shadow: 0 12px 36px rgba(10,26,63,0.08);
+}
+
+/* Featured card */
+.pricing-card-featured {
+  background: var(--navy);
+  border-color: var(--navy);
+  box-shadow: 0 20px 56px rgba(10,26,63,0.2);
+  transform: scale(1.02);
+}
+.pricing-card-featured:hover {
+  box-shadow: 0 24px 64px rgba(10,26,63,0.28);
+}
+
+/* Featured badge */
+.pricing-featured-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* Save badge (annual) */
+.pricing-save-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--cream);
+  color: var(--saffron-dark);
+  border: 1px solid rgba(232,134,42,0.2);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+/* ── Header ── */
+.pricing-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.pricing-plan {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+}
+.pricing-card-featured .pricing-plan {
+  color: rgba(255,255,255,0.5);
+}
+
+.pricing-tagline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+.pricing-card-featured .pricing-tagline {
+  color: var(--white);
+}
+
+/* ── Price ── */
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+.pricing-amount {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.pricing-period {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+.pricing-card-featured .pricing-amount { color: var(--white); }
+.pricing-card-featured .pricing-period { color: rgba(255,255,255,0.4); }
+
+/* ── Buttons ── */
+.btn-pricing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 0.22s ease;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+}
+
+.btn-pricing-outline {
+  border-color: var(--border);
+  color: var(--navy);
+  background: transparent;
+}
+.btn-pricing-outline:hover {
+  border-color: var(--navy);
+  background: rgba(10,26,63,0.04);
+}
+
+.btn-pricing-solid {
+  background: var(--saffron);
+  color: var(--white);
+  border-color: var(--saffron);
+  box-shadow: 0 4px 16px rgba(232,134,42,0.35);
+}
+.btn-pricing-solid:hover {
+  background: var(--saffron-dark);
+  box-shadow: 0 8px 24px rgba(232,134,42,0.45);
+  transform: translateY(-1px);
+}
+
+/* ── Features list ── */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+.pricing-card-featured .pricing-features {
+  border-color: rgba(255,255,255,0.1);
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+.pricing-card-featured .pricing-features li {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Muted (not included) */
+.pf-muted {
+  opacity: 0.35;
+}
+.pricing-card-featured .pf-muted {
+  opacity: 0.3;
+}
+
+/* Icon */
+.pf-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--saffron);
+}
+.pf-muted .pf-icon {
+  color: var(--gray-light);
+}
+.pricing-card-featured .pf-icon {
+  color: #22d3ee;
+}
+.pricing-card-featured .pf-muted .pf-icon {
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── Bottom note ── */
+.pricing-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--gray-light);
+  text-align: center;
+}
+.pricing-note svg {
+  flex-shrink: 0;
+  color: var(--saffron);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-card-featured {
+    transform: none;
+  }
+}
+/* ===== TESTIMONIALS ===== */
+
+.testimonials-section {
+  padding: 6rem 1.5rem;
+}
+
+/* ── Grid ── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Card ── */
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(10,26,63,0.08);
+}
+
+/* ── Top row ── */
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Stars */
+.testimonial-stars {
+  font-size: 0.8rem;
+  color: var(--saffron);
+  letter-spacing: 1px;
+}
+
+/* Exam badge */
+.testimonial-exam-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+/* ── Quote ── */
+.testimonial-card blockquote {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+  font-style: italic;
+  quotes: "\201C" "\201D";
+}
+.testimonial-card blockquote::before {
+  content: open-quote;
+  color: var(--saffron);
+  font-size: 1.4rem;
+  font-style: normal;
+  line-height: 0;
+  vertical-align: -0.4rem;
+  margin-right: 2px;
+}
+
+/* ── Footer ── */
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.1rem;
+}
+
+/* Avatar */
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.testimonial-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.testimonial-role {
+  font-size: 0.74rem;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+
+/* ── Social proof strip ── */
+.testimonial-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.testimonial-strip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 1.25rem 2.5rem;
+  flex: 1;
+  text-align: center;
+}
+
+.testimonial-strip-num {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.testimonial-strip-label {
+  font-size: 0.75rem;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+
+.testimonial-strip-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+  .testimonial-strip {
+    flex-direction: column;
+  }
+  .testimonial-strip-divider {
+    width: 60%;
+    height: 1px;
+  }
+  .testimonial-strip-item {
+    padding: 1.25rem;
+  }
+}
+    </style>
+</head>
+<body>
+<div id="app-header"></div>
+
+    <section class="page-hero">
+  <div class="ph-orb1"></div>
+  <div class="ph-orb2"></div>
+  <div class="container">
+    <div class="ph-top">
+
+      <div class="ph-breadcrumb">
+        <span>PrepMe.Pro</span>
+        <span class="ph-sep">/</span>
+        <span>Exam Coaching</span>
+        <span class="ph-sep">/</span>
+        <span class="ph-bc-active">UG Students</span>
+      </div>
+
+      <div class="ph-pill-row">
+        <div class="ph-pill ph-pill-saffron">
+          <span class="ph-pill-dot"></span>
+          Admissions Open 2025
+        </div>
+        <div class="ph-pill ph-pill-ghost">Tier 2 &amp; 3 Karnataka</div>
+        <div class="ph-pill ph-pill-ghost">Competitive Exams</div>
+      </div>
+
+      <h1>Crack Your Dream Exam.<br><em>Change Your Life.</em></h1>
+      <p class="lead">Structured coaching for <strong>KPSC, UPSC, Banking &amp; SSC</strong> — built specifically for students from Tier 2 &amp; 3 Karnataka. Affordable, focused, and results-driven.</p>
+
+      <div class="ph-cta-row">
+        <a href="enroll.html" class="btn btn-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Enroll Now — It's Free
+        </a>
+        <a href="programs.html" class="ph-btn-ghost">
+          View All Programs
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="ph-trust">
+        <div class="ph-trust-item">
+          <span class="ph-trust-check">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          No hidden fees
+        </div>
+        <span class="ph-trust-sep"></span>
+        <div class="ph-trust-item">
+          <span class="ph-trust-check">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Expert faculty
+        </div>
+        <span class="ph-trust-sep"></span>
+        <div class="ph-trust-item">
+          <span class="ph-trust-check">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Kannada &amp; English medium
+        </div>
+        <span class="ph-trust-sep"></span>
+        <div class="ph-trust-item">
+          <span class="ph-trust-check">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          1,000+ students coached
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+
+   <section class="reality-section bg-light">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="rl-eyebrow">Hard Facts</span>
+      <h2>The Reality of <em>Competitive Exams</em></h2>
+      <p>The numbers don't lie — cracking a government exam without proper coaching is nearly impossible. Here's what most aspirants face in Karnataka.</p>
+    </div>
+
+    <div class="rl-grid">
+
+      <div class="rl-card">
+        <span class="rl-tag">KPSC SDA</span>
+        <div class="rl-num">200:1</div>
+        <p>Applicants competing for every single KPSC SDA seat</p>
+      </div>
+
+      <div class="rl-card rl-card-accent">
+        <span class="rl-tag rl-tag-light">Pass Rate</span>
+        <div class="rl-num">&lt;0.5%</div>
+        <p>Pass rate without any structured coaching program</p>
+      </div>
+
+      <div class="rl-card">
+        <span class="rl-tag">Per Year</span>
+        <div class="rl-num">5L+</div>
+        <p>Karnataka aspirants sitting for competitive exams annually</p>
+      </div>
+
+      <div class="rl-card">
+        <span class="rl-tag">Tier 2/3 Cities</span>
+        <div class="rl-num">Zero</div>
+        <p>Quality coaching centres available in most smaller cities</p>
+      </div>
+
+    </div>
+
+    <div class="rl-callout">
+      <p><strong>PrepMe.Pro exists to fix this gap.</strong> Structured, affordable, expert-led coaching — built for every student in Karnataka.</p>
+      <a href="competitive-exams.html" class="btn btn-navy btn-sm">See Our Programs →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="exams-section">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Exams We Prepare For</h2>
+      <p>Complete coverage across Karnataka's most competitive exams.</p>
+    </div>
+
+    <div class="exams-categories">
+
+      <!-- KPSC Category -->
+      <div class="exam-category">
+        <div class="exam-category-header">
+          <span class="exam-category-icon">🏛️</span>
+          <h4>KPSC & State Exams</h4>
+          <span class="exam-count">3 exams</span>
+        </div>
+        <div class="exam-list">
+          <div class="exam-item">
+            <span class="exam-badge exam-kpsc">KPSC SDA/FDA</span>
+            <span class="exam-desc">Monthly test series</span>
+          </div>
+          <div class="exam-item">
+            <span class="exam-badge exam-kpsc">KPSC Group C</span>
+            <span class="exam-desc">Full syllabus coverage</span>
+          </div>
+          <div class="exam-item">
+            <span class="exam-badge exam-kpsc">KPSC Assistant</span>
+            <span class="exam-desc">Preliminary + mains</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Central Category -->
+      <div class="exam-category">
+        <div class="exam-category-header">
+          <span class="exam-category-icon">🏛️</span>
+          <h4>Central & National</h4>
+          <span class="exam-count">4 exams</span>
+        </div>
+        <div class="exam-list">
+          <div class="exam-item">
+            <span class="exam-badge exam-central">UPSC Foundation</span>
+            <span class="exam-desc">IAS/IPS Prelims + Mains</span>
+          </div>
+          <div class="exam-item">
+            <span class="exam-badge exam-central">SSC CGL/CHSL</span>
+            <span class="exam-desc">Tier 1-4 complete</span>
+          </div>
+          <div class="exam-item">
+            <span class="exam-badge exam-central">Banking IBPS/SBI</span>
+            <span class="exam-desc">Clerk · PO · SO</span>
+          </div>
+          <div class="exam-item">
+            <span class="exam-badge exam-central">Railways RRB</span>
+            <span class="exam-desc">NTPC · Group D · ALP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="how-teach-section bg-cream">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>How We Teach</h2>
+      <p>Structured, proven learning system designed for exam success.</p>
+    </div>
+
+    <div class="how-teach-wrapper">
+
+      <div class="how-teach-step">
+        <div class="how-teach-left">
+          <div class="how-teach-circle">
+            <span>📺</span>
+          </div>
+          <div class="how-teach-line"></div>
+        </div>
+        <div class="how-teach-card">
+          <div class="how-teach-meta">
+            <span class="how-teach-num">01</span>
+            <span class="how-teach-freq">Sat & Sun · 2hrs</span>
+          </div>
+          <h4>Live Classes</h4>
+          <p>Expert-led sessions with real-time doubt clearing and interactive learning.</p>
+        </div>
+      </div>
+
+      <div class="how-teach-step">
+        <div class="how-teach-left">
+          <div class="how-teach-circle">
+            <span>📱</span>
+          </div>
+          <div class="how-teach-line"></div>
+        </div>
+        <div class="how-teach-card">
+          <div class="how-teach-meta">
+            <span class="how-teach-num">02</span>
+            <span class="how-teach-freq">Every Day</span>
+          </div>
+          <h4>Daily Practice</h4>
+          <p>30 curated questions daily via WhatsApp with detailed solutions and explanations.</p>
+        </div>
+      </div>
+
+      <div class="how-teach-step">
+        <div class="how-teach-left">
+          <div class="how-teach-circle">
+            <span>📊</span>
+          </div>
+          <div class="how-teach-line"></div>
+        </div>
+        <div class="how-teach-card">
+          <div class="how-teach-meta">
+            <span class="how-teach-num">03</span>
+            <span class="how-teach-freq">Every Week</span>
+          </div>
+          <h4>Weekly Mock Tests</h4>
+          <p>Full-length auto-graded tests on LMS with performance analytics and rank tracking.</p>
+        </div>
+      </div>
+
+      <div class="how-teach-step how-teach-step-last">
+        <div class="how-teach-left">
+          <div class="how-teach-circle how-teach-circle-saffron">
+            <span>👨‍🏫</span>
+          </div>
+        </div>
+        <div class="how-teach-card how-teach-card-accent">
+          <div class="how-teach-meta">
+            <span class="how-teach-num how-teach-num-light">04</span>
+            <span class="how-teach-freq how-teach-freq-light">Every Month</span>
+          </div>
+          <h4>1-on-1 Mentorship</h4>
+          <p>Personalized monthly calls with exam toppers. Strategy, motivation, and progress review.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Simple, Transparent Pricing</h2>
+      <p>Choose a plan that fits your study timeline. All plans include Student Success Core free.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Monthly -->
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <span class="pricing-plan">Monthly</span>
+          <p class="pricing-tagline">Try it out, no commitment</p>
+        </div>
+        <div class="pricing-price">
+          <span class="pricing-amount">₹1,499</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <a href="#" class="btn-pricing btn-pricing-outline">Get Started</a>
+        <ul class="pricing-features">
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            LMS Access
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Recorded Lectures
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Mock Tests
+          </li>
+          <li class="pf-muted">
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 10.5l5-5M10.5 10.5l-5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Daily Drills
+          </li>
+          <li class="pf-muted">
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 10.5l5-5M10.5 10.5l-5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Mentorship Calls
+          </li>
+        </ul>
+      </div>
+
+      <!-- 6-Month — Featured -->
+      <div class="pricing-card pricing-card-featured">
+        <div class="pricing-featured-badge">Most Popular · Save 11%</div>
+        <div class="pricing-header">
+          <span class="pricing-plan">6-Month Pack</span>
+          <p class="pricing-tagline">Best for serious aspirants</p>
+        </div>
+        <div class="pricing-price">
+          <span class="pricing-amount">₹7,999</span>
+          <span class="pricing-period">/6 months</span>
+        </div>
+        <a href="#" class="btn-pricing btn-pricing-solid">Get Started</a>
+        <ul class="pricing-features">
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            LMS Access
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Recorded Lectures
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Mock Tests
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Daily Drills
+          </li>
+          <li class="pf-muted">
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 10.5l5-5M10.5 10.5l-5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Mentorship Calls
+          </li>
+        </ul>
+      </div>
+
+      <!-- Annual -->
+      <div class="pricing-card">
+        <div class="pricing-save-badge">Save 22%</div>
+        <div class="pricing-header">
+          <span class="pricing-plan">Annual</span>
+          <p class="pricing-tagline">Full-year exam preparation</p>
+        </div>
+        <div class="pricing-price">
+          <span class="pricing-amount">₹13,999</span>
+          <span class="pricing-period">/year</span>
+        </div>
+        <a href="#" class="btn-pricing btn-pricing-outline">Get Started</a>
+        <ul class="pricing-features">
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Complete LMS
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            All Lectures
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Unlimited Mocks
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Daily Drills
+          </li>
+          <li>
+            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Mentorship Calls
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom note -->
+    <div class="pricing-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      All plans include LMS · Recorded lectures · Mock tests · WhatsApp group · Student Success Core free
+    </div>
+
+  </div>
+</section>
+
+
+    <section class="testimonials-section bg-light">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Student Success</h2>
+      <p>Real results from real students across Karnataka.</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <span class="testimonial-exam-badge">KPSC SDA</span>
+        </div>
+        <blockquote>
+          "I cleared KPSC SDA in my first attempt. The structured approach and weekly tests made all the difference."
+        </blockquote>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">PM</div>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">Priya M.</span>
+            <span class="testimonial-role">KPSC SDA · Cleared 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <span class="testimonial-exam-badge">IBPS PO</span>
+        </div>
+        <blockquote>
+          "Banking exam seemed impossible until I joined PrepMe.Pro. The daily practice and mentorship helped me score 96%."
+        </blockquote>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">RK</div>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">Rajesh K.</span>
+            <span class="testimonial-role">IBPS PO · Cleared 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-top">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <span class="testimonial-exam-badge">SSC CGL</span>
+        </div>
+        <blockquote>
+          "The mock tests were exactly like the real exam. I felt prepared and confident on exam day."
+        </blockquote>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">AS</div>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">Ananya S.</span>
+            <span class="testimonial-role">SSC CGL · Cleared 2025</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Social proof strip -->
+    <div class="testimonial-strip">
+      <div class="testimonial-strip-item">
+        <span class="testimonial-strip-num">94%</span>
+        <span class="testimonial-strip-label">Student satisfaction rate</span>
+      </div>
+      <div class="testimonial-strip-divider"></div>
+      <div class="testimonial-strip-item">
+        <span class="testimonial-strip-num">1200+</span>
+        <span class="testimonial-strip-label">Exams cleared in 2025</span>
+      </div>
+      <div class="testimonial-strip-divider"></div>
+      <div class="testimonial-strip-item">
+        <span class="testimonial-strip-num">4.9 / 5</span>
+        <span class="testimonial-strip-label">Average student rating</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- FAQ SECTION -->
+    <section class="section-padding">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <details>
+                    <summary>Which exam should I start with?</summary>
+                    <p>KPSC SDA/FDA is ideal if you're new to competitive exams — it has monthly notifications and shorter syllabus. UPSC requires more preparation time. Banking exams are great for speed-focused students. We'll recommend based on your background and goals.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Can I prepare for multiple exams?</summary>
+                    <p>Yes! Many students prepare for KPSC while building UPSC foundation. Banking + SSC overlap in aptitude. We can create a personalized roadmap combining exams based on your schedule.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>What if I'm a complete beginner?</summary>
+                    <p>Our curriculum starts from basics. Live classes, recorded content, and daily drills are designed for zero background. Monthly 1-on-1 mentorship helps you settle in. Most of our successful students were beginners.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Do you provide Kannada medium?</summary>
+                    <p>Our live classes and materials are in English with Kannada explanations where needed. We provide Kannada translations for key concepts. Contact us for specific exam Kannada medium availability.</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>What's the refund policy?</summary>
+                    <p>Full refund within 7 days if unsatisfied. 50% refund up to 14 days. After 14 days, no refund but you keep lifetime access to purchased content.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+ <!-- STUDENT SUCCESS CORE SECTION -->
+    <div class="container">
+        <div class="callout-accent">
+            <h3>Student Success Core Included</h3>
+            <p>Every competitive exam student also gets our 8-course Student Success Core — communication, aptitude, digital literacy, interview prep. Because clearing the exam is just the beginning.</p>
+            <a href="student-success-core.html">Explore Student Success Core</a>
+        </div>
+    </div>
+
+   <div id="app-footer"></div>
+
+       <script src="./js/layout.js" defer></script>
+
+</body>
+</html>

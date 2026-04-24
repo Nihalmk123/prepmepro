@@ -1,0 +1,2526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Success Core | PrepMe.Pro</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        .curriculum-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .curriculum-week {
+            background: white;
+            border-left: 4px solid #E8862A;
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .curriculum-week .week-num {
+            font-size: 0.85rem;
+            color: #E8862A;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .curriculum-week h4 {
+            margin: 0.5rem 0 0 0;
+            color: #0A1A3F;
+            font-size: 1rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .course-number {
+            color: #E8862A;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-card h3 {
+            margin: 0.5rem 0;
+            color: #0A1A3F;
+            font-size: 1.1rem;
+        }
+
+        .course-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        .hours-badge {
+            display: inline-block;
+            background: #f5f5f5;
+            color: #0A1A3F;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #E8862A;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #0A1A3F;
+            font-weight: 600;
+        }
+
+        .callout-accent {
+            background: #0A1A3F;
+            color: white;
+            padding: 2rem;
+            border-radius: 6px;
+            margin: 2rem 0;
+            border-left: 4px solid #E8862A;
+        }
+
+        .callout-accent h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .callout-accent p {
+            font-size: 1rem;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #0A1A3F;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #0A1A3F;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .nav-active {
+            color: #E8862A;
+            font-weight: bold;
+        }
+
+        .badge-foundation {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #0A1A3F;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== PAGE HERO ===== */
+
+.page-hero-section {
+  padding: 5rem 1.5rem 4rem;
+  background: var(--light);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Inner layout ── */
+.page-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ── Content ── */
+.page-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 580px;
+}
+
+.page-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.page-hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  margin: 0;
+}
+
+.page-hero-content h1 em {
+  font-style: normal;
+  color: var(--saffron);
+}
+
+.page-hero-lead {
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Buttons ── */
+.page-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+/* ── Right card ── */
+.page-hero-right {
+  flex-shrink: 0;
+}
+
+.page-hero-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  width: 240px;
+  box-shadow: 0 8px 32px rgba(10,26,63,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.phc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.phc-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.phc-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.phc-row strong {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.phc-row small {
+  font-size: 0.72rem;
+  color: var(--gray-light);
+}
+
+.phc-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.phc-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.phc-stat span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.phc-stat small {
+  font-size: 0.68rem;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .page-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .page-hero-card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .page-hero-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-section {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .page-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .page-hero-actions .btn-primary,
+  .page-hero-actions .btn-outline {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ===== WHY EMPLOYABILITY MATTERS ===== */
+
+.why-emp-section {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+}
+
+/* ── Header ── */
+.why-emp-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.why-emp-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.why-emp-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.why-emp-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Grid ── */
+.why-emp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* ── Stat Card ── */
+.why-emp-stat-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.why-emp-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(10,26,63,0.07);
+}
+
+/* Top row */
+.wesc-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.wesc-num {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.wesc-icon {
+  font-size: 1.3rem;
+  opacity: 0.6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Label */
+.wesc-label {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.65;
+  flex: 1;
+  margin: 0;
+}
+
+/* Progress bar */
+.wesc-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.wesc-bar-fill {
+  height: 100%;
+  width: var(--fill, 50%);
+  background: var(--navy);
+  border-radius: 999px;
+  opacity: 0.35;
+}
+
+/* ── Highlight card (price) ── */
+.why-emp-highlight {
+  background: var(--navy);
+  border-color: transparent;
+}
+
+.why-emp-highlight .wesc-num {
+  color: var(--white);
+}
+
+.why-emp-highlight .wesc-label {
+  color: rgba(255,255,255,0.65);
+}
+
+.wesc-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--saffron);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 3px 8px;
+  border-radius: 50px;
+  margin-top: 6px;
+  flex-shrink: 0;
+  height: fit-content;
+}
+
+.wesc-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  margin-top: auto;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+.wesc-cta:hover {
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .why-emp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .why-emp-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .why-emp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== THE 8 COURSES CAROUSEL ===== */
+
+.courses-section {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+}
+
+/* ── Header ── */
+.courses-header {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.courses-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.courses-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.courses-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Carousel wrapper ── */
+.courses-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.courses-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.5rem 0.5rem 1rem 0.25rem;
+  scroll-padding-left: 0.25rem;
+  cursor: grab;
+  user-select: none;
+}
+.courses-carousel::-webkit-scrollbar { display: none; }
+.courses-carousel.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+/* ── Fade edge — right only ── */
+.carousel-fade-left {
+  display: none; /* removed — was hiding card 01 */
+}
+
+.carousel-fade-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(to left, var(--white), transparent);
+}
+
+/* ── Course card ── */
+.course-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--saffron);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  min-width: 260px;
+  max-width: 260px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(10, 26, 63, 0.08);
+  background: var(--white);
+  border-top-color: var(--saffron);
+}
+
+/* ── Card top row ── */
+.course-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Course number */
+.course-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--navy);
+  opacity: 0.18;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* Hours badge — saffron tint */
+.course-hours-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--saffron);
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+/* ── Card title ── */
+.course-card h3 {
+  font-size: 0.97rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* ── Card body ── */
+.course-card p {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.7;
+  flex: 1;
+  margin: 0;
+}
+
+/* ── Card footer ── */
+.course-card-footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.course-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gray-light);
+}
+
+.invite-tag {
+  color: var(--saffron);
+}
+
+/* ── Controls row ── */
+.courses-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+/* Dots */
+.courses-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.courses-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.courses-dot.active {
+  background: var(--saffron);
+  width: 20px;
+  border-radius: 999px;
+}
+
+/* Arrow buttons */
+.courses-arrows {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.courses-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.courses-arrow:hover {
+  background: var(--saffron);
+  color: var(--white);
+  border-color: var(--saffron);
+}
+
+.courses-arrow:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .courses-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .course-card {
+    min-width: 240px;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .course-card {
+    min-width: 220px;
+    max-width: 220px;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .courses-controls {
+    gap: 1rem;
+  }
+}
+/* ===== CURRICULUM ===== */
+.curriculum {
+  padding: 5rem 1.5rem;
+}
+
+.curriculum .section-title em {
+  color: var(--saffron);
+  font-style: normal;
+}
+
+/* Meta bar */
+.cv-meta {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cv-meta-item {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.cv-meta-item:last-child { border-right: none; }
+
+.cv-meta-val {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.cv-meta-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--gray-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-top: 2px;
+}
+
+/* Phases */
+.cv-phases {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Phase header row */
+.cv-phase-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.cv-phase-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid;
+}
+
+.ph1 .cv-phase-badge { background: #EEF1F8;        color: var(--navy);        border-color: rgba(10,26,63,0.15); }
+.ph2 .cv-phase-badge { background: var(--cream);   color: var(--saffron-dark); border-color: rgba(232,134,42,0.25); }
+.ph3 .cv-phase-badge { background: var(--navy);    color: var(--white);       border-color: var(--navy); }
+
+.cv-phase-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.cv-phase-label {
+  font-size: 0.78rem;
+  color: var(--gray-light);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Week grids */
+.cv-weeks {
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.cv-weeks-4 { grid-template-columns: repeat(4, 1fr); }
+.cv-weeks-5 { grid-template-columns: repeat(5, 1fr); }
+.cv-weeks-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* Individual week card */
+.cv-week {
+  background: var(--white);
+  padding: 1.25rem 1.1rem;
+  transition: background 0.18s;
+}
+
+.cv-week:hover { background: var(--light); }
+.ph3 .cv-week:hover { background: var(--cream); }
+
+.cv-wnum {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.5rem;
+}
+
+.cv-wdot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ph1 .cv-wdot { background: var(--navy); }
+.ph2 .cv-wdot { background: var(--saffron); }
+.ph3 .cv-wdot { background: var(--saffron); }
+
+.cv-week h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+}
+
+.cv-week h4 small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-light);
+  margin-top: 1px;
+}
+
+/* Final week (dark) */
+.cv-week-final {
+  background: var(--navy) !important;
+}
+
+.cv-week-final .cv-wnum { color: #4B5563; }
+.cv-week-final .cv-wdot { background: var(--saffron); }
+.cv-week-final h4       { color: var(--white); }
+.cv-week-final:hover    { background: var(--navy-light) !important; }
+
+/* Milestone pills */
+.cv-milestone {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.ms-test { background: #EEF1F8;       color: var(--navy); }
+.ms-mock { background: var(--cream);  color: var(--saffron-dark); }
+.ms-cap  { background: var(--saffron); color: var(--white); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cv-weeks-4,
+  .cv-weeks-5,
+  .cv-weeks-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .curriculum { padding: 3rem 1rem; }
+  .cv-weeks-4,
+  .cv-weeks-5,
+  .cv-weeks-3 { grid-template-columns: 1fr; }
+  .cv-meta    { flex-direction: column; }
+  .cv-meta-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .cv-meta-item:last-child { border-bottom: none; }
+}
+/* ===== OUTCOMES SECTION ===== */
+.outcomes-section {
+  background: var(--white);
+  padding: 5rem 1.5rem;
+}
+
+.oc-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.oc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--cream);
+  color: var(--saffron-dark);
+  border: 1px solid rgba(232,134,42,0.25);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.oc-eyebrow-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--saffron);
+  flex-shrink: 0;
+}
+
+.oc-head h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.oc-head h2 em {
+  color: var(--saffron);
+  font-style: normal;
+}
+
+.oc-head p {
+  color: var(--gray);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+/* Grid */
+.oc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Card */
+.oc-card {
+  background: var(--light);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.oc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(10,26,63,0.08);
+}
+
+.oc-card-top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.oc-card--navy   .oc-card-top-bar { background: var(--navy); }
+.oc-card--saffron .oc-card-top-bar { background: var(--saffron); }
+
+/* Icon */
+.oc-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+.oc-icon svg { width: 20px; height: 20px; }
+
+.oc-card--navy   .oc-icon { background: #EEF1F8; }
+.oc-card--saffron .oc-icon { background: var(--cream); }
+
+/* Number */
+.oc-num {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.oc-card--navy   .oc-num { color: var(--navy); }
+.oc-card--saffron .oc-num { color: var(--saffron); }
+
+.oc-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+  font-weight: 500;
+  flex: 1;
+}
+
+/* Progress bar */
+.oc-bar-wrap { margin-top: 1.25rem; }
+
+.oc-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.oc-bar-from {
+  font-size: 0.7rem;
+  color: var(--gray-light);
+  font-weight: 600;
+}
+
+.oc-bar-to {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.oc-card--navy   .oc-bar-to { color: var(--navy); }
+.oc-card--saffron .oc-bar-to { color: var(--saffron); }
+
+.oc-bar {
+  height: 5px;
+  background: var(--border);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.oc-fill {
+  height: 100%;
+  border-radius: 50px;
+}
+
+.oc-card--navy   .oc-fill { background: var(--navy); }
+.oc-card--saffron .oc-fill { background: var(--saffron); }
+
+/* Footer tag */
+.oc-foot {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.oc-foot-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.oc-card--navy   .oc-foot-dot { background: var(--navy); }
+.oc-card--saffron .oc-foot-dot { background: var(--saffron); }
+
+.oc-foot-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Bottom bar */
+.oc-bottom {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 1.6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.oc-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.oc-bottom-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: rgba(232,134,42,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.oc-bottom-icon svg { width: 18px; height: 18px; }
+
+.oc-bottom p {
+  font-size: 0.88rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+}
+
+.oc-bottom p strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .oc-grid { grid-template-columns: repeat(2, 1fr); }
+  .oc-head  { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .outcomes-section { padding: 3rem 1rem; }
+  .oc-grid   { grid-template-columns: 1fr; }
+  .oc-bottom { flex-direction: column; align-items: flex-start; }
+  .oc-bottom .btn { width: 100%; text-align: center; }
+}
+/* ===== NEP ALIGNMENT ===== */
+.nep-alignment {
+  background: var(--light);
+  padding: 5rem 1.5rem;
+}
+
+.nep-wrap {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Left panel */
+.nep-left {
+  padding: 3rem;
+  border-right: 1px solid var(--border);
+}
+
+.nep-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--cream);
+  color: var(--saffron-dark);
+  border: 1px solid rgba(232,134,42,0.25);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.nep-eyebrow-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--saffron);
+  flex-shrink: 0;
+}
+
+.nep-left h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.nep-left h2 em {
+  color: var(--saffron);
+  font-style: normal;
+}
+
+.nep-left > p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.nep-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.nep-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--light);
+  color: var(--navy);
+  border: 1px solid var(--border);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.nep-tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--saffron);
+  flex-shrink: 0;
+}
+
+/* Link */
+.nep-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--saffron);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+
+.nep-link:hover { gap: 9px; }
+.nep-link svg   { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* Right panel */
+.nep-right {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nep-right-head {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+}
+
+/* Criteria rows */
+.nep-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light);
+}
+
+.nep-row:first-of-type { padding-top: 0; }
+.nep-row:last-of-type  { border-bottom: none; padding-bottom: 0; }
+
+.nep-code {
+  flex-shrink: 0;
+  background: #EEF1F8;
+  color: var(--navy);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 4px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+  margin-top: 1px;
+  white-space: nowrap;
+  border: 1px solid rgba(10,26,63,0.08);
+}
+
+.nep-row-text {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.nep-row-text strong {
+  color: var(--navy);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1px;
+  font-size: 0.82rem;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .nep-wrap          { grid-template-columns: 1fr; }
+  .nep-left          { border-right: none; border-bottom: 1px solid var(--border); padding: 2.5rem 2rem; }
+  .nep-right         { padding: 2.5rem 2rem; }
+}
+
+@media (max-width: 480px) {
+  .nep-alignment     { padding: 3rem 1rem; }
+  .nep-left,
+  .nep-right         { padding: 2rem 1.5rem; }
+}
+/* ===== TESTIMONIALS ===== */
+.testimonials-section {
+  background: var(--light);
+  padding: 5rem 1.5rem;
+}
+
+.ts-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ts-head h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-bottom: 0.6rem;
+}
+
+.ts-head p {
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+/* Grid */
+.ts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Card */
+.ts-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top: stars + badge */
+.ts-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.ts-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.ts-star {
+  width: 16px;
+  height: 16px;
+}
+
+.ts-badge {
+  background: var(--light);
+  color: var(--navy);
+  border: 1px solid var(--border);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+/* Quote */
+.ts-quote-mark {
+  color: var(--saffron);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: Georgia, serif;
+}
+
+.ts-text {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.ts-divider {
+  height: 1px;
+  background: var(--light);
+  margin-bottom: 1.5rem;
+}
+
+/* Author */
+.ts-author-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.ts-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--white);
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.ts-author-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.ts-author-role {
+  font-size: 0.78rem;
+  color: var(--gray-light);
+  margin-top: 1px;
+}
+
+/* Stats bar */
+.ts-stats {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ts-stat {
+  padding: 1.4rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.ts-stat:last-child { border-right: none; }
+
+.ts-stat-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.ts-stat-label {
+  font-size: 0.75rem;
+  color: var(--gray-light);
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .ts-grid  { grid-template-columns: 1fr; }
+  .ts-stats { grid-template-columns: 1fr; }
+  .ts-stat  { border-right: none; border-bottom: 1px solid var(--border); }
+  .ts-stat:last-child { border-bottom: none; }
+}
+
+@media (max-width: 480px) {
+  .testimonials-section { padding: 3rem 1rem; }
+}
+/* ===== CTA CARD SECTION ===== */
+.cta-section {
+  background: var(--light);
+  padding: 5rem 1.5rem;
+}
+
+.cta-card {
+  background: var(--navy);
+  border-radius: 24px;
+  padding: 4rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.cta-orb1 {
+  position: absolute;
+  top: -80px; right: 200px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: rgba(232,134,42,0.07);
+  pointer-events: none;
+}
+
+.cta-orb2 {
+  position: absolute;
+  bottom: -60px; right: -40px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(232,134,42,0.05);
+  pointer-events: none;
+}
+
+/* Left */
+.cta-left { position: relative; z-index: 1; }
+
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232,134,42,0.12);
+  border: 1px solid rgba(232,134,42,0.3);
+  color: var(--saffron-light);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.cta-pill-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--saffron-light);
+  animation: ctaBlink 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ctaBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.cta-card h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.cta-card h2 em {
+  color: var(--saffron);
+  font-style: normal;
+}
+
+.cta-card p {
+  font-size: 0.95rem;
+  color: #94A3B8;
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.cta-card p strong {
+  color: #CBD5E1;
+  font-weight: 600;
+}
+
+/* Right */
+.cta-right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 0.93rem;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta-btn-primary:hover {
+  background: var(--saffron-dark);
+  transform: translateY(-2px);
+}
+
+.cta-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.06);
+  color: #CBD5E1;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem 1.6rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cta-btn-ghost:hover {
+  background: rgba(255,255,255,0.11);
+  color: var(--white);
+}
+
+/* Trust strip */
+.cta-trust {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+.cta-trust-check {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: rgba(22,163,74,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cta-trust-check svg { width: 8px; height: 8px; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .cta-card {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 2rem;
+  }
+  .cta-right  { align-items: flex-start; }
+  .cta-trust  { justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .cta-section        { padding: 3rem 1rem; }
+  .cta-card           { padding: 2.5rem 1.5rem; }
+  .cta-btn-primary,
+  .cta-btn-ghost      { width: 100%; justify-content: center; }
+}
+    </style>
+</head>
+<body>
+    <div id="app-header"></div>
+
+
+    <!-- PAGE HERO -->
+<section class="page-hero-section">
+  <div class="container">
+    <div class="page-hero-inner">
+
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">Foundation · For Everyone</span>
+        <h1>8 Courses. 1 <em>Employable Graduate.</em></h1>
+        <p class="page-hero-lead">The Student Success Core is the foundation layer of PrepMe.Pro — 8 universal courses that build the skills every graduate needs, regardless of career track.</p>
+        <div class="page-hero-actions">
+          <a href="#courses" class="btn btn-primary">Explore Courses</a>
+          <a href="contact.html" class="btn btn-outline">Talk to a Counsellor</a>
+        </div>
+      </div>
+
+      <div class="page-hero-right">
+        <div class="page-hero-card">
+          <div class="phc-row">
+            <span class="phc-icon">📚</span>
+            <div>
+              <strong>8 Core Courses</strong>
+              <small>Included with every plan</small>
+            </div>
+          </div>
+          <div class="phc-divider"></div>
+          <div class="phc-stats">
+            <div class="phc-stat">
+              <span>100%</span>
+              <small>Online</small>
+            </div>
+            <div class="phc-stat">
+              <span>Free</span>
+              <small>Included</small>
+            </div>
+            <div class="phc-stat">
+              <span>8</span>
+              <small>Courses</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- WHY EMPLOYABILITY MATTERS -->
+<section class="why-emp-section">
+  <div class="container">
+
+    <div class="why-emp-header">
+      <span class="why-emp-eyebrow">The Problem We're Solving</span>
+      <h2>Why Employability Matters</h2>
+      <p>India produces millions of graduates every year. Very few are actually job-ready. Here's the data that drives everything we build.</p>
+    </div>
+
+    <div class="why-emp-grid">
+
+      <div class="why-emp-stat-card">
+        <div class="wesc-top">
+          <span class="wesc-num">&lt;10%</span>
+          <span class="wesc-icon">📉</span>
+        </div>
+        <p class="wesc-label">of Tier 2 &amp; 3 graduates possess basic employability skills needed by recruiters</p>
+        <div class="wesc-bar">
+          <div class="wesc-bar-fill" style="--fill: 10%"></div>
+        </div>
+      </div>
+
+      <div class="why-emp-stat-card">
+        <div class="wesc-top">
+          <span class="wesc-num">8 / 10</span>
+          <span class="wesc-icon">🎤</span>
+        </div>
+        <p class="wesc-label">recruiters reject candidates solely due to poor communication and soft skills</p>
+        <div class="wesc-bar">
+          <div class="wesc-bar-fill" style="--fill: 80%"></div>
+        </div>
+      </div>
+
+      <div class="why-emp-stat-card">
+        <div class="wesc-top">
+          <span class="wesc-num">0</span>
+          <span class="wesc-icon">🏫</span>
+        </div>
+        <p class="wesc-label">colleges in Tier 2 &amp; 3 cities offer any structured employability skills program</p>
+        <div class="wesc-bar">
+          <div class="wesc-bar-fill" style="--fill: 2%"></div>
+        </div>
+      </div>
+
+      <!-- Highlight card — CTA style -->
+      <div class="why-emp-stat-card why-emp-highlight">
+        <div class="wesc-top">
+          <span class="wesc-num">₹9,999</span>
+          <span class="wesc-badge">/ year</span>
+        </div>
+        <p class="wesc-label">all-inclusive foundation program — 8 courses, lifetime-use skills, zero hidden fees</p>
+        <a href="pricing.html" class="wesc-cta">See What's Included →</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- THE 8 COURSES -->
+<section class="courses-section">
+  <div class="container">
+
+    <div class="courses-header">
+      <span class="courses-eyebrow">Student Success Core</span>
+      <h2>The 8 Courses</h2>
+      <p>Every skill you need to go from graduate to job-ready — structured, sequenced, and practical.</p>
+    </div>
+
+    <!-- Carousel Wrapper -->
+    <div class="courses-carousel-wrapper">
+      <div class="courses-carousel" id="coursesCarousel">
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">01</span>
+            <span class="course-hours-badge">8 hrs</span>
+          </div>
+          <h3>Career Guidance &amp; Goal Setting</h3>
+          <p>RIASEC assessment, personal goals, and 5-year planning framework to align your education with career aspirations.</p>
+          <div class="course-card-footer">
+            <span class="course-tag">Foundation</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">02</span>
+            <span class="course-hours-badge">16 hrs</span>
+          </div>
+          <h3>Communication &amp; Spoken English</h3>
+          <p>Master grammar, group discussions, presentations, and professional email writing for workplace readiness.</p>
+          <div class="course-card-footer">
+            <span class="course-tag">Core Skill</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">03</span>
+            <span class="course-hours-badge">8 hrs</span>
+          </div>
+          <h3>Time Management &amp; Productivity</h3>
+          <p>Eisenhower matrix, Pomodoro technique, and digital tools to maximize focus and achieve goals efficiently.</p>
+          <div class="course-card-footer">
+            <span class="course-tag">Productivity</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">04</span>
+            <span class="course-hours-badge">12 hrs</span>
+          </div>
+          <h3>Leadership &amp; Teamwork</h3>
+          <p>Team dynamics, conflict resolution, and public speaking to lead projects and influence peers effectively.</p>
+          <div class="course-card-footer">
+            <span class="course-tag invite-tag">Invite Only</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">05</span>
+            <span class="course-hours-badge">16 hrs</span>
+          </div>
+          <h3>Digital Literacy + AI Tools</h3>
+          <p>Excel mastery, ChatGPT, Canva, and Notion for modern workplace efficiency and creative problem-solving.</p>
+          <div class="course-card-footer">
+            <span class="course-tag">Tech Skills</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">06</span>
+            <span class="course-hours-badge">16 hrs</span>
+          </div>
+          <h3>Aptitude &amp; Reasoning</h3>
+          <p>Quantitative reasoning, logic puzzles, verbal ability, and data interpretation for placement and competitive exams.</p>
+          <div class="course-card-footer">
+            <span class="course-tag">Exam Prep</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">07</span>
+            <span class="course-hours-badge">12 hrs</span>
+          </div>
+          <h3>Resume, LinkedIn &amp; Interview</h3>
+          <p>ATS-optimized resumes, LinkedIn profiles, mock interviews, and salary negotiation tactics for job success.</p>
+          <div class="course-card-footer">
+            <span class="course-tag">Career Prep</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card-top">
+            <span class="course-num">08</span>
+            <span class="course-hours-badge">8 hrs</span>
+          </div>
+          <h3>Financial Literacy</h3>
+          <p>Banking essentials, income tax, SIPs, EMI calculations, and budgeting for financial independence.</p>
+          <div class="course-card-footer">
+            <span class="course-tag">Life Skills</span>
+          </div>
+        </div>
+
+      </div><!-- end carousel -->
+
+      <!-- Fade edges -->
+      <div class="carousel-fade-left"></div>
+      <div class="carousel-fade-right"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="courses-controls">
+      <div class="courses-dots" id="coursesDots"></div>
+      <div class="courses-arrows">
+        <button class="courses-arrow" id="coursesPrev" aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="courses-arrow" id="coursesNext" aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- 12-WEEK CURRICULUM -->
+    <section class="curriculum bg-cream">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>12-Week <em>Curriculum</em></h2>
+    </div>
+
+    <!-- Meta bar -->
+    <div class="cv-meta">
+      <div class="cv-meta-item">
+        <span class="cv-meta-val">96 hrs</span>
+        <span class="cv-meta-label">Total Learning</span>
+      </div>
+      <div class="cv-meta-item">
+        <span class="cv-meta-val">8 hrs/wk</span>
+        <span class="cv-meta-label">Sat + Sun · 4 hrs each</span>
+      </div>
+      <div class="cv-meta-item">
+        <span class="cv-meta-val">30–60</span>
+        <span class="cv-meta-label">Cohort Size</span>
+      </div>
+    </div>
+
+    <div class="cv-phases">
+
+      <!-- Phase 1 -->
+      <div class="cv-phase ph1">
+        <div class="cv-phase-header">
+          <div class="cv-phase-badge">Phase 1 — Foundation</div>
+          <div class="cv-phase-line"></div>
+          <span class="cv-phase-label">Weeks 1–4</span>
+        </div>
+        <div class="cv-weeks cv-weeks-4">
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 1</div>
+            <h4>Career Discovery</h4>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 2</div>
+            <h4>Goal Setting &amp; Time Management</h4>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 3</div>
+            <h4>Digital Literacy I <small>Word &amp; Docs</small></h4>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 4</div>
+            <h4>Digital Literacy II <small>Excel &amp; PPT</small></h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="cv-phase ph2">
+        <div class="cv-phase-header">
+          <div class="cv-phase-badge">Phase 2 — Skills</div>
+          <div class="cv-phase-line"></div>
+          <span class="cv-phase-label">Weeks 5–9</span>
+        </div>
+        <div class="cv-weeks cv-weeks-5">
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 5</div>
+            <h4>AI Tools &amp; Productivity</h4>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 6</div>
+            <h4>Communication I <small>Spoken &amp; Written</small></h4>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 7</div>
+            <h4>Communication II <small>GD &amp; Presentations</small></h4>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 8</div>
+            <h4>Aptitude I</h4>
+            <span class="cv-milestone ms-test">Practice Test</span>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 9</div>
+            <h4>Aptitude II</h4>
+            <span class="cv-milestone ms-mock">Mock Tests</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="cv-phase ph3">
+        <div class="cv-phase-header">
+          <div class="cv-phase-badge">Phase 3 — Career Ready</div>
+          <div class="cv-phase-line"></div>
+          <span class="cv-phase-label">Weeks 10–12</span>
+        </div>
+        <div class="cv-weeks cv-weeks-3">
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 10</div>
+            <h4>Financial Literacy</h4>
+          </div>
+          <div class="cv-week">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 11</div>
+            <h4>Resume &amp; LinkedIn</h4>
+          </div>
+          <div class="cv-week cv-week-final">
+            <div class="cv-wnum"><span class="cv-wdot"></span>Week 12</div>
+            <h4>Interview Mastery &amp; Capstone</h4>
+            <span class="cv-milestone ms-cap">Capstone</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <section class="outcomes-section">
+  <div class="container">
+
+    <div class="oc-head">
+      <div>
+        <div class="oc-eyebrow"><span class="oc-eyebrow-dot"></span>Guaranteed Outcomes</div>
+        <h2>What You'll <em>Achieve</em></h2>
+      </div>
+      <p>Every student who completes the program walks away with measurable, verifiable results — not just a certificate.</p>
+    </div>
+
+    <div class="oc-grid">
+
+      <div class="oc-card oc-card--navy">
+        <div class="oc-card-top-bar"></div>
+        <div class="oc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0A1A3F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="oc-num">100%</div>
+        <div class="oc-label">ATS-ready resume + optimised LinkedIn profile</div>
+        <div class="oc-bar-wrap">
+          <div class="oc-bar-meta">
+            <span class="oc-bar-from">Completion rate</span>
+            <span class="oc-bar-to">100%</span>
+          </div>
+          <div class="oc-bar"><div class="oc-fill" style="width:100%"></div></div>
+        </div>
+        <div class="oc-foot"><span class="oc-foot-dot"></span><span class="oc-foot-tag">Resume &amp; LinkedIn</span></div>
+      </div>
+
+      <div class="oc-card oc-card--saffron">
+        <div class="oc-card-top-bar"></div>
+        <div class="oc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8862A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="oc-num">100%</div>
+        <div class="oc-label">Excel + AI tools proficiency assessment pass</div>
+        <div class="oc-bar-wrap">
+          <div class="oc-bar-meta">
+            <span class="oc-bar-from">Pass rate</span>
+            <span class="oc-bar-to">100%</span>
+          </div>
+          <div class="oc-bar"><div class="oc-fill" style="width:100%"></div></div>
+        </div>
+        <div class="oc-foot"><span class="oc-foot-dot"></span><span class="oc-foot-tag">Digital Skills</span></div>
+      </div>
+
+      <div class="oc-card oc-card--navy">
+        <div class="oc-card-top-bar"></div>
+        <div class="oc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0A1A3F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="oc-num">40%+</div>
+        <div class="oc-label">Average improvement in aptitude test scores</div>
+        <div class="oc-bar-wrap">
+          <div class="oc-bar-meta">
+            <span class="oc-bar-from">Before</span>
+            <span class="oc-bar-to">After: +40%</span>
+          </div>
+          <div class="oc-bar"><div class="oc-fill" style="width:40%"></div></div>
+        </div>
+        <div class="oc-foot"><span class="oc-foot-dot"></span><span class="oc-foot-tag">Aptitude Score</span></div>
+      </div>
+
+      <div class="oc-card oc-card--saffron">
+        <div class="oc-card-top-bar"></div>
+        <div class="oc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8862A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="oc-num">6 → 9</div>
+        <div class="oc-label">Communication confidence score out of 10</div>
+        <div class="oc-bar-wrap">
+          <div class="oc-bar-meta">
+            <span class="oc-bar-from">Before: 6/10</span>
+            <span class="oc-bar-to">After: 9/10</span>
+          </div>
+          <div class="oc-bar"><div class="oc-fill" style="width:60%"></div></div>
+        </div>
+        <div class="oc-foot"><span class="oc-foot-dot"></span><span class="oc-foot-tag">Communication</span></div>
+      </div>
+
+    </div>
+
+    <div class="oc-bottom">
+      <div class="oc-bottom-left">
+        <div class="oc-bottom-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8862A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <p><strong>All outcomes are measurable and verified.</strong> We track every student's progress with assessments at Week 1 and Week 12.</p>
+      </div>
+      <a href="enroll.html" class="btn btn-lg">Enroll &amp; Get Results →</a>
+    </div>
+
+  </div>
+</section>
+
+    <!-- INCLUDED FREE -->
+    <section class="included-free">
+        <div class="container">
+            <div class="callout-accent">
+                <h3>Included FREE with Competitive Exam or Study Abroad Prep</h3>
+                <p>The Student Success Core is automatically included when you enroll in <strong>Competitive Exam Prep</strong> or <strong>Study Abroad Prep</strong>. Prefer standalone training? Take the full 12-week course for just <strong>₹9,999/year</strong>.</p>
+                <div class="btn-group">
+                    <a href="competitive-exams.html" class="btn btn-primary">Explore Competitive Exams</a>
+                    <a href="study-abroad.html" class="btn btn-secondary">Explore Study Abroad</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section class="nep-alignment">
+  <div class="container">
+    <div class="nep-wrap">
+
+      <!-- Left -->
+      <div class="nep-left">
+        <div class="nep-eyebrow"><span class="nep-eyebrow-dot"></span>Policy Aligned</div>
+        <h2>Aligned with<br><em>NEP 2020</em> &amp; NAAC</h2>
+        <p>The Student Success Core is designed to help colleges meet NEP 2020 requirements and strengthen their NAAC accreditation across key criteria.</p>
+        <div class="nep-tags">
+          <span class="nep-tag"><span class="nep-tag-dot"></span>NEP 2020 Compliant</span>
+          <span class="nep-tag"><span class="nep-tag-dot"></span>NAAC Ready</span>
+          <span class="nep-tag"><span class="nep-tag-dot"></span>Add-on Curriculum</span>
+          <span class="nep-tag"><span class="nep-tag-dot"></span>Employability Focused</span>
+        </div>
+        <a href="colleges.html" class="nep-link">
+          Explore institutional partnerships
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Right -->
+      <div class="nep-right">
+        <div class="nep-right-head">NAAC Criteria Covered</div>
+
+        <div class="nep-row">
+          <span class="nep-code">1.3.2</span>
+          <div class="nep-row-text">
+            <strong>Curricular Flexibility</strong>
+            Skill development and value-added courses
+          </div>
+        </div>
+        <div class="nep-row">
+          <span class="nep-code">5.1.3</span>
+          <div class="nep-row-text">
+            <strong>Skill Enhancement</strong>
+            Employee and student skill development programs
+          </div>
+        </div>
+        <div class="nep-row">
+          <span class="nep-code">5.2.1 – 5.2.2</span>
+          <div class="nep-row-text">
+            <strong>Mentoring &amp; Placement</strong>
+            Student mentoring systems and placement outcomes
+          </div>
+        </div>
+        <div class="nep-row">
+          <span class="nep-code">5.3</span>
+          <div class="nep-row-text">
+            <strong>Career Guidance</strong>
+            Career counselling and guidance services
+          </div>
+        </div>
+        <div class="nep-row">
+          <span class="nep-code">7.1</span>
+          <div class="nep-row-text">
+            <strong>Best Practices</strong>
+            Institutional functioning and innovation
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <section class="testimonials-section">
+  <div class="container">
+
+    <div class="ts-head">
+      <h2>Success Stories</h2>
+      <p>Real students. Real results. Real transformations.</p>
+    </div>
+
+    <div class="ts-grid">
+
+      <div class="ts-card">
+        <div class="ts-card-top">
+          <div class="ts-stars">
+            <svg class="ts-star" viewBox="0 0 16 16" fill="#E8862A"><path d="M8 1l1.85 3.75 4.15.6-3 2.93.7 4.1L8 10.25l-3.7 1.93.7-4.1-3-2.93 4.15-.6z"/></svg>
+            <svg class="ts-star" viewBox="0 0 16 16" fill="#E8862A"><path d="M8 1l1.85 3.75 4.15.6-3 2.93.7 4.1L8 10.25l-3.7 1.93.7-4.1-3-2.93 4.15-.6z"/></svg>
+            <svg class="ts-star" viewBox="0 0 16 16" fill="#E8862A"><path d="M8 1l1.85 3.75 4.15.6-3 2.93.7 4.1L8 10.25l-3.7 1.93.7-4.1-3-2.93 4.15-.6z"/></svg>
+            <svg class="ts-star" viewBox="0 0 16 16" fill="#E8862A"><path d="M8 1l1.85 3.75 4.15.6-3 2.93.7 4.1L8 10.25l-3.7 1.93.7-4.1-3-2.93 4.15-.6z"/></svg>
+            <svg class="ts-star" viewBox="0 0 16 16" fill="#E8862A"><path d="M8 1l1.85 3.75 4.15.6-3 2.93.7 4.1L8 10.25l-3.7 1.93.7-4.1-3-2.93 4.15-.6z"/></svg>
+          </div>
+          <span class="ts-badge">B.Tech Graduate</span>
+        </div>
+        <div class="ts-quote-mark">"</div>
+        <p class="ts-text">The 8-course program transformed how I think about my career. The goal-setting framework gave me clarity, and the interview prep got me offers from three companies. Worth every rupee.</p>
+        <div class="ts-divider"></div>
+        <div class="ts-author-row">
+          <div class="ts-avatar">PS</div>
+          <div>
+            <div class="ts-author-name">Priya Sharma</div>
+            <div class="ts-author-role">B.Tech Graduate · Tier 3 College</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ts-card">
+        <div class="ts-card-top">
+          <div class="ts-stars">
+            <!-- repeat 5 stars same as above -->
+          </div>
+          <span class="ts-badge">BBA Graduate</span>
+        </div>
+        <div class="ts-quote-mark">"</div>
+        <p class="ts-text">I never realized how important digital tools and AI would be for my job. This course made me confident with Excel, ChatGPT, and Notion in just 12 weeks. My recruiter was impressed.</p>
+        <div class="ts-divider"></div>
+        <div class="ts-author-row">
+          <div class="ts-avatar">RP</div>
+          <div>
+            <div class="ts-author-name">Rohit Patel</div>
+            <div class="ts-author-role">BBA Graduate · Mid-Career Transition</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats bar -->
+    <div class="ts-stats">
+      <div class="ts-stat">
+        <span class="ts-stat-num">98%</span>
+        <div class="ts-stat-label">Placement success rate</div>
+      </div>
+      <div class="ts-stat">
+        <span class="ts-stat-num">1,000+</span>
+        <div class="ts-stat-label">Students trained</div>
+      </div>
+      <div class="ts-stat">
+        <span class="ts-stat-num">4.9 / 5</span>
+        <div class="ts-stat-label">Average student rating</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- FAQ -->
+    <section class="bg-light padding-lg">
+        <div class="container-sm">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq">
+                <details>
+                    <summary>Which countries do you cover?</summary>
+                    <p>We have direct partnerships with universities in UK, and India.</p>
+                </details>
+                <details>
+                    <summary>How much does this cost compared to traditional consultants?</summary>
+                    <p>Traditional consultants charge ₹2L-5L with hidden fees. Our complete package is ₹39,999 with transparent pricing, no hidden charges, and direct university partnerships ensuring higher admission chances.</p>
+                </details>
+                <details>
+                    <summary>Do I need to visit your office?</summary>
+                    <p>No, everything is conducted online. You can attend classes, consultations, and support sessions from anywhere. Our platform is designed for maximum flexibility.</p>
+                </details>
+                <details>
+                    <summary>What if I don't get admitted to my first choice university?</summary>
+                    <p>We help with multiple university applications to maximize your chances. Our counsellors also help you understand feedback and improve your profile for future applications.</p>
+                </details>
+                <details>
+                    <summary>Can I start test prep before choosing a university?</summary>
+                    <p>Absolutely! Most students start IELTS/TOEFL or GRE/GMAT prep while exploring universities. Your free counselling session will help you plan the best timeline.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-orb1"></div>
+      <div class="cta-orb2"></div>
+
+      <div class="cta-left">
+        <div class="cta-pill">
+          <span class="cta-pill-dot"></span>
+          Free Workshop · Limited Seats
+        </div>
+        <h2>Build Your <em>Employability</em><br>Foundation Today</h2>
+        <p>Join <strong>1,000+ graduates</strong> who've transformed their careers with the Student Success Core. Start your free workshop now — no fees, no commitments.</p>
+      </div>
+
+      <div class="cta-right">
+        <a href="free-webinars.html" class="cta-btn-primary">
+          Attend Free Workshop
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="programs.html" class="cta-btn-ghost">View All Programs</a>
+        <div class="cta-trust">
+          <div class="cta-trust-item">
+            <span class="cta-trust-check">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            No fees
+          </div>
+          <div class="cta-trust-item">
+            <span class="cta-trust-check">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Live Q&amp;A
+          </div>
+          <div class="cta-trust-item">
+            <span class="cta-trust-check">
+              <svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#16A34A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Instant access
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+   <div id="app-footer"></div>
+
+<script src="./js/layout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrepMe.Pro - Learn Like A Pro | Complete Student Success Platform</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    /* Page-specific styles */
+    .page-hero {
+      background-color: #0A1A3F;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .page-hero .badge {
+      display: inline-block;
+      background-color: rgba(232, 134, 42, 0.15);
+      color: #E8862A;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      border: 1px solid #E8862A;
+    }
+
+    .page-hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .page-hero h1 em {
+      font-style: italic;
+      color: #E8862A;
+    }
+
+    .page-hero .lead {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      opacity: 0.95;
+    }
+
+    .page-hero .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .page-hero .cta-buttons .btn {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .page-hero .btn-primary {
+      background-color: #E8862A;
+      color: white;
+      border: 2px solid #E8862A;
+    }
+
+    .page-hero .btn-primary:hover {
+      background-color: #d17220;
+      border-color: #d17220;
+    }
+
+    .page-hero .btn-outline {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .page-hero .btn-outline:hover {
+      background-color: white;
+      color: #0A1A3F;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: #E8862A;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 4px;
+    }
+
+    #tracks {
+      padding: 80px 20px;
+      background-color: #F5F7FA;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #0A1A3F;
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .card-accent-navy {
+      border-top: 4px solid #0A1A3F;
+    }
+
+    .card-accent-top {
+      border-top: 4px solid #E8862A;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background-color: #F0F3F7;
+      color: #0A1A3F;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .card .tag.badge-int {
+      background-color: rgba(232, 134, 42, 0.1);
+      color: #E8862A;
+    }
+
+    .card .icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #0A1A3F;
+      margin-bottom: 12px;
+    }
+
+    .card > p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .feature-list li {
+      padding-left: 24px;
+      margin-bottom: 10px;
+      position: relative;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .feature-list li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #E8862A;
+      font-weight: 600;
+    }
+
+    .card-price {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0A1A3F;
+      margin: 20px 0;
+    }
+
+    .btn-full {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      background-color: #E8862A;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid #E8862A;
+      margin-top: 20px;
+    }
+
+    .btn-full:hover {
+      background-color: #d17220;
+      border-color: #d17220;
+    }
+
+    .btn-white {
+      background-color: white;
+      color: #0A1A3F;
+      border: 2px solid white;
+    }
+
+    .btn-white:hover {
+      background-color: #F5F7FA;
+    }
+
+    .bg-cream {
+      background-color: #FBF9F6;
+    }
+
+    .bg-navy {
+      background-color: #0A1A3F;
+      color: white;
+    }
+
+    .bg-light {
+      background-color: #F5F7FA;
+    }
+
+    .section-with-padding {
+      padding: 80px 20px;
+    }
+
+    .university-partners {
+      padding: 80px 20px;
+      background-color: #FBF9F6;
+    }
+
+    .why-us {
+      padding: 80px 20px;
+      background-color: white;
+    }
+
+    .card-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card-icon-text h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0A1A3F;
+      margin-bottom: 12px;
+    }
+
+    .card-icon-text p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .how-it-works {
+      padding: 80px 20px;
+      background-color: #FBF9F6;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      width: 60px;
+      height: 2px;
+      background-color: #E8862A;
+      transform: translateY(-50%);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: #E8862A;
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #0A1A3F;
+    }
+
+    .testimonials {
+      padding: 80px 20px;
+      background-color: white;
+    }
+
+    .testimonial-card {
+      background-color: #F5F7FA;
+      padding: 32px;
+      border-radius: 8px;
+      border-left: 4px solid #E8862A;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #0A1A3F;
+      font-size: 14px;
+    }
+
+    .testimonial-role {
+      font-size: 13px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .for-colleges {
+      padding: 80px 20px;
+      background-color: #0A1A3F;
+      color: white;
+    }
+
+    .for-colleges-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .for-colleges-left h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .for-colleges-left p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      opacity: 0.95;
+    }
+
+    .for-colleges-right {
+      background-color: rgba(232, 134, 42, 0.1);
+      padding: 40px;
+      border-radius: 8px;
+      border: 2px solid #E8862A;
+    }
+
+    .colleges-stat {
+      margin-bottom: 24px;
+    }
+
+    .colleges-stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #E8862A;
+    }
+
+    .colleges-stat-label {
+      font-size: 15px;
+      margin-top: 4px;
+      opacity: 0.9;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #0A1A3F 0%, #1a3a5f 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner p {
+      font-size: 16px;
+      margin-bottom: 32px;
+      opacity: 0.95;
+    }
+
+    
+   
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 32px;
+      }
+
+      .page-hero .lead {
+        font-size: 16px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .stats-bar {
+        gap: 24px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .for-colleges-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .for-colleges-left h2 {
+        font-size: 28px;
+      }
+
+      .steps {
+        flex-direction: column;
+      }
+
+      .step:not(:last-child)::after {
+        display: none;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+    
+/* ===== PAGE HERO ENHANCEMENTS ===== */
+
+/* Second orb — left side */
+.page-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  left: -8%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(232,134,42,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Badge dot animation ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--saffron);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: hero-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hero-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(1.5); }
+}
+
+/* ── Heading spacing ── */
+.page-hero h1 {
+  margin-bottom: 1.25rem;
+}
+
+/* ── CTA button icon alignment ── */
+.hero-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Outline button on dark bg fix ── */
+.page-hero .btn-outline {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(4px);
+}
+.page-hero .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
+}
+
+/* ── Stats bar card ── */
+.stats-bar {
+  margin-top: 3.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.stat {
+  padding: 0 2.5rem;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.stat-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--saffron);
+  display: block;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+/* ── Responsive tweaks ── */
+@media (max-width: 768px) {
+  .stats-bar {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
+
+  .stat {
+    padding: 0.25rem 1rem;
+    min-width: 100px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat {
+    padding: 0;
+  }
+}
+/* ===== CHOOSE YOUR PATH — TRACKS SECTION ===== */
+
+#tracks {
+  padding: 5rem 1.5rem;
+}
+
+/* ── Grid ── */
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+/* ── Base Card ── */
+.track-card {
+  position: relative;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.track-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(10, 26, 63, 0.13);
+}
+
+/* ── Navy variant (cards 1 & 3) ── */
+.track-navy {
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--navy);
+}
+
+/* ── Featured card (card 2) ── */
+.track-featured {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%);
+  border: none;
+  box-shadow: 0 12px 40px rgba(10, 26, 63, 0.25);
+  transform: translateY(-8px); /* elevated by default */
+}
+.track-featured:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 24px 56px rgba(10, 26, 63, 0.3);
+}
+
+/* ── Popular badge ── */
+.track-popular-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 0 16px 0 10px;
+}
+
+/* ── Card header ── */
+.track-header {
+  padding: 1.75rem 1.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--cream);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.track-featured .track-icon {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Tags ── */
+.track-tag {
+  display: inline-block;
+  background: var(--cream);
+  color: var(--saffron-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(232, 134, 42, 0.2);
+}
+.track-tag-light {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Card body ── */
+.track-body {
+  padding: 1.25rem 1.75rem;
+  flex: 1;
+}
+.track-body h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.3px;
+}
+.track-featured .track-body h3 {
+  color: var(--white);
+}
+.track-body p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
+}
+.track-featured .track-body p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ── Feature list override for featured card ── */
+.feature-list-light li {
+  color: rgba(255, 255, 255, 0.88);
+}
+.feature-list-light li::before {
+  color: var(--saffron-light);
+}
+
+/* ── Divider ── */
+.track-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 1.75rem;
+}
+.track-featured .track-divider {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Card footer ── */
+.track-footer {
+  padding: 1.25rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.track-featured .track-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Price ── */
+.track-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.price-amount {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+.track-featured .price-amount {
+  color: var(--saffron-light);
+}
+.price-period {
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+.track-featured .price-period {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .tracks-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .track-featured {
+    transform: none;
+  }
+  .track-featured:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 480px) {
+  .tracks-grid {
+    max-width: 100%;
+  }
+  .track-header,
+  .track-body,
+  .track-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+/* ===== UNIVERSITY PARTNERS ===== */
+
+.university-partners {
+  padding: 5rem 1.5rem;
+}
+
+/* ── Grid ── */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Base card ── */
+.partner-card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(10, 26, 63, 0.11);
+}
+
+/* ── Top accent border per variant ── */
+.partner-international {
+  border-top: 4px solid var(--saffron);
+}
+.partner-india {
+  border-top: 4px solid var(--navy);
+}
+
+/* ── Header ── */
+.partner-header {
+  padding: 1.75rem 1.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partner-flag {
+  width: 52px;
+  height: 52px;
+  background: var(--cream);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  flex-shrink: 0;
+}
+
+/* ── Tags ── */
+.partner-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+.partner-tag-int {
+  background: var(--cream);
+  color: var(--saffron-dark);
+  border: 1px solid rgba(232, 134, 42, 0.2);
+}
+.partner-tag-india {
+  background: rgba(10, 26, 63, 0.06);
+  color: var(--navy);
+  border: 1px solid rgba(10, 26, 63, 0.12);
+}
+
+/* ── Body ── */
+.partner-body {
+  padding: 1.25rem 1.75rem;
+  flex: 1;
+}
+.partner-body h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+.partner-short {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem !important;
+}
+.partner-body p:not(.partner-short) {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* ── Footer ── */
+.partner-footer {
+  padding: 1.1rem 1.75rem 1.75rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.partner-footer .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-grid {
+    max-width: 100%;
+  }
+  .partner-header,
+  .partner-body,
+  .partner-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+/* ===== WHY PREPME.PRO — SPLIT LAYOUT ===== */
+
+.why-us {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+}
+
+/* ── Two-column split ── */
+.why-us-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════
+   LEFT — Heading Block
+══════════════════════════════ */
+
+.why-us-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.why-us-heading .badge {
+  align-self: flex-start;
+}
+
+.why-us-heading h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.why-us-heading h2 em {
+  font-style: normal;
+  color: var(--saffron);
+}
+
+.why-us-heading p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.75;
+  max-width: 380px;
+  margin: 0;
+}
+
+/* Mini stats row */
+.why-us-stat-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--light);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  width: fit-content;
+}
+
+.why-mini-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.why-mini-stat span {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.why-mini-stat small {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════
+   RIGHT — Feature Cards Stack
+══════════════════════════════ */
+
+.why-us-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(10, 26, 63, 0.07);
+}
+
+/* ── Each feature row card ── */
+.why-feature-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.22s ease;
+  cursor: default;
+}
+.why-feature-card:last-child {
+  border-bottom: none;
+}
+.why-feature-card:hover {
+  background: var(--light);
+}
+
+/* Navy accent card */
+.why-fc-accent {
+  background: var(--navy);
+}
+.why-fc-accent:hover {
+  background: var(--navy-light);
+}
+
+/* ── Left icon column ── */
+.why-fc-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  border-right: 1px solid var(--border);
+}
+.why-fc-accent .why-fc-left {
+  border-right-color: rgba(255, 255, 255, 0.1);
+}
+
+.why-fc-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--cream);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  border: 1px solid rgba(232, 134, 42, 0.15);
+}
+
+.why-fc-icon-light {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Right content column ── */
+.why-fc-right {
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.why-fc-number {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--gray-light);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.1rem;
+}
+.why-fc-number-light {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.why-fc-right h4 {
+  font-size: 0.97rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.2px;
+  margin: 0;
+  line-height: 1.3;
+}
+.why-fc-accent .why-fc-right h4 {
+  color: var(--white);
+}
+
+.why-fc-right p {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+.why-fc-accent .why-fc-right p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Top card — saffron left border accent */
+.why-fc-top {
+  border-left: 3px solid var(--saffron);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .why-us-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .why-us-heading {
+    align-items: center;
+    text-align: center;
+  }
+  .why-us-heading p {
+    max-width: 100%;
+  }
+  .why-us-heading .badge {
+    align-self: center;
+  }
+  .why-us-stat-row {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-feature-card {
+    grid-template-columns: 60px 1fr;
+  }
+  .why-fc-right {
+    padding: 1.1rem 1.1rem;
+  }
+}
+/* ===== HOW IT WORKS — FLOW ===== */
+
+.how-it-works {
+  padding: 6rem 1.5rem;
+}
+
+/* ── Flow row ── */
+.hiw-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  margin-bottom: 3.5rem;
+}
+
+/* ── Each step ── */
+.hiw-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ── Circle ── */
+.hiw-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 20px rgba(10, 26, 63, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  flex-shrink: 0;
+}
+.hiw-circle:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 32px rgba(10, 26, 63, 0.14);
+}
+
+.hiw-circle-navy {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.hiw-circle-saffron {
+  background: var(--saffron);
+  border-color: var(--saffron);
+  box-shadow: 0 6px 24px rgba(232, 134, 42, 0.3);
+}
+
+/* ── Emoji ── */
+.hiw-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+/* ── Step number ── */
+.hiw-step-num {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--gray-light);
+  text-transform: uppercase;
+}
+.hiw-num-light {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Connector line ── */
+.hiw-line {
+  width: 100%;
+  height: 2px;
+  border-top: 2px dashed var(--border);
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  z-index: 1;
+}
+.hiw-line-none {
+  display: none;
+}
+
+/* ── Label below circle ── */
+.hiw-label {
+  text-align: center;
+  padding: 1.25rem 0.75rem 0;
+}
+.hiw-label h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.2px;
+}
+.hiw-label p {
+  font-size: 0.8rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── CTA strip ── */
+.hiw-cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+}
+.hiw-cta-strip p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .hiw-flow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 0;
+  }
+  .hiw-line {
+    display: none;
+  }
+  /* vertical connector between rows */
+  .hiw-step:nth-child(1)::after,
+  .hiw-step:nth-child(2)::after,
+  .hiw-step:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 2.5rem;
+    border-left: 2px dashed var(--border);
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw-flow {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hiw-cta-strip {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hiw-cta-strip .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* ===== TESTIMONIALS — MASONRY STYLE ===== */
+
+.testimonials {
+  padding: 6rem 1.5rem;
+}
+
+/* ── Masonry grid ── */
+.testi-grid {
+  columns: 3;
+  column-gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Base card ── */
+.testi-card {
+  break-inside: avoid;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.26s ease, box-shadow 0.26s ease;
+  position: relative;
+  overflow: hidden;
+}
+.testi-card::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.5rem;
+  right: 1.25rem;
+  font-size: 6rem;
+  font-family: Georgia, serif;
+  color: var(--saffron);
+  opacity: 0.08;
+  line-height: 1;
+  pointer-events: none;
+}
+.testi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(10, 26, 63, 0.1);
+}
+
+/* Featured card — navy */
+.testi-featured {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.testi-featured::before {
+  color: var(--white);
+  opacity: 0.06;
+}
+.testi-featured p {
+  color: rgba(255,255,255,0.85) !important;
+}
+.testi-featured .testi-stars {
+  color: var(--saffron) !important;
+}
+
+/* ── Top row ── */
+.testi-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Avatar */
+.testi-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--saffron);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+.testi-avatar-navy { background: var(--navy); }
+.testi-avatar-saffron { background: var(--saffron); }
+.testi-featured .testi-avatar {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Meta */
+.testi-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.testi-meta strong {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+.testi-featured .testi-meta strong { color: var(--white); }
+.testi-meta span {
+  font-size: 0.74rem;
+  color: var(--gray-light);
+}
+.testi-featured .testi-meta span { color: rgba(255,255,255,0.45); }
+
+/* Outcome badge */
+.outcome-badge {
+  font-size: 0.67rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.outcome-green {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid rgba(22,163,74,0.2);
+}
+.outcome-saffron {
+  background: var(--cream);
+  color: var(--saffron-dark);
+  border: 1px solid rgba(232,134,42,0.2);
+}
+
+/* Quote text */
+.testi-card p {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Stars */
+.testi-stars {
+  font-size: 0.85rem;
+  color: var(--saffron);
+  letter-spacing: 2px;
+}
+
+/* ── Score bar ── */
+.testi-score-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 1.75rem 2.5rem;
+  flex-wrap: wrap;
+}
+
+.testi-score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 0 2.5rem;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+.testi-score-item strong {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.testi-score-item small {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
+.testi-score-stars {
+  font-size: 0.85rem;
+  color: var(--saffron);
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+}
+
+.testi-score-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .testi-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .testi-grid {
+    columns: 1;
+  }
+  .testi-score-bar {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  .testi-score-divider { display: none; }
+  .testi-score-item { padding: 0; }
+}
+/* ===== FOR COLLEGES SECTION ===== */
+.fc-section {
+  background: var(--light);
+  padding: 5rem 1.5rem;
+}
+
+.fc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Eyebrow */
+.fc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--cream);
+  color: var(--saffron-dark);
+  border: 1px solid rgba(232,134,42,0.3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.fc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--saffron);
+  flex-shrink: 0;
+}
+
+/* Left content */
+.fc-left h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.fc-left h2 em {
+  color: var(--saffron);
+  font-style: normal;
+}
+
+.fc-left p {
+  color: var(--gray);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+/* Perks list */
+.fc-perks {
+  list-style: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.fc-perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.fc-ck {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--saffron);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fc-ck svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* Button */
+.fc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.8rem 1.75rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.fc-btn:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+}
+
+/* Right card */
+.fc-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+}
+
+.fc-card-hd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--light);
+}
+
+.fc-card-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--navy);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fc-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fc-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.fc-card-sub {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-top: 2px;
+}
+
+/* Stats */
+.fc-stat {
+  margin-bottom: 0;
+}
+
+.fc-stat-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.fc-stat-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+}
+
+.fc-stat-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--saffron);
+}
+
+.fc-stat-lbl {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.fc-bar {
+  height: 6px;
+  background: var(--light);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.fc-fill {
+  height: 100%;
+  background: var(--navy);
+  border-radius: 50px;
+}
+
+.fc-sep {
+  height: 1px;
+  background: var(--light);
+  margin: 1.4rem 0;
+}
+
+/* Trust strip */
+.fc-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--light);
+}
+
+.fc-trust-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+.fc-trust p {
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .fc-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fc-section { padding: 3rem 1rem; }
+  .fc-card { padding: 1.5rem; }
+}
+/* ===== CTA BANNER ===== */
+.cta-section {
+  padding: 5rem 1.5rem;
+  background: var(--light);
+}
+
+.cta-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 4rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(232,134,42,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-glow2 {
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(232,134,42,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ── Pill badge ── */
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(232,134,42,0.15);
+  border: 1px solid rgba(232,134,42,0.35);
+  color: var(--saffron-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.cta-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--saffron-light);
+  animation: ctaPulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* ── Heading ── */
+.cta-wrap h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
+}
+
+.cta-wrap h2 em {
+  color: var(--saffron);
+  font-style: normal;
+}
+
+/* ── Subtext ── */
+.cta-wrap p {
+  font-size: 1rem;
+  color: #94A3B8;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Buttons ── */
+.cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-outline-light {
+  background: rgba(255,255,255,0.07);
+  color: #CBD5E1;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.13);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* ── Trust strip ── */
+.cta-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-trust span {
+  font-size: 0.8rem;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cta-trust span::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(22,163,74,0.18);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5.5L4 7.5L8 3' stroke='%2316A34A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cta-wrap {
+    padding: 2.75rem 1.5rem;
+    border-radius: 14px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-trust {
+    gap: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-trust {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+/* ===== PAGE HERO ===== */
+.page-hero {
+  background: linear-gradient(150deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: var(--white);
+  padding: 6rem 1.5rem 7rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dot-grid texture */
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.055) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  pointer-events: none;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 25%,
+    black 75%,
+    transparent 100%
+  );
+}
+
+/* Glow spots */
+.hero-glow-1 {
+  position: absolute;
+  top: -20%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(232, 134, 42, 0.1) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.hero-glow-2 {
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(232, 134, 42, 0.06) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* Content above all layers */
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ── Badge ── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(232, 134, 42, 0.12);
+  border: 1px solid rgba(232, 134, 42, 0.3);
+  color: var(--saffron);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--saffron);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: badgePulse 2.5s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(232, 134, 42, 0.7);
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* ── Headline ── */
+.page-hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--white);
+  margin: 0;
+}
+
+.page-hero h1 em {
+  font-style: normal;
+  color: var(--saffron);
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline accent on em */
+.page-hero h1 em::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--saffron),
+    rgba(232, 134, 42, 0.15)
+  );
+  border-radius: 2px;
+}
+
+/* ── Lead ── */
+.page-hero .lead {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: #CBD5E1;
+  line-height: 1.75;
+  max-width: 620px;
+  margin: 0;
+}
+
+.page-hero .lead strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* ── CTAs ── */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--saffron);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(232, 134, 42, 0.35);
+  transition: all 0.25s ease;
+}
+
+.hero-btn-primary:hover {
+  background: var(--saffron-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(232, 134, 42, 0.5);
+}
+
+.hero-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  padding: 0.9rem 1.75rem;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.hero-btn-ghost:hover {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 700px;
+}
+
+.stat {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.stat-num {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  color: var(--saffron);
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.35rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .stats-bar {
+    padding: 1.25rem;
+    gap: 0.5rem;
+  }
+
+  .stat {
+    padding: 0 0.75rem;
+    min-width: 80px;
+  }
+
+  .stat-divider {
+    height: 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-ghost {
+    width: 100%;
+    justify-content: center;
+    max-width: 320px;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    border-radius: 14px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat {
+    padding: 0.5rem;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+  <div id="app-header"></div>
+
+
+<!-- HERO SECTION -->
+<section class="page-hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="container">
+
+    <!-- Badge -->
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      The Complete Student Success Platform
+    </div>
+
+    <!-- Headline -->
+    <h1>Your Career. Your Track. <em>Your Pace.</em></h1>
+
+    <!-- Lead -->
+    <p class="lead">
+      Get expert guidance for competitive exams, study abroad applications,
+      and foundational career skills — <strong>all in one place.</strong>
+    </p>
+
+    <!-- CTAs -->
+    <div class="hero-cta">
+      <a href="free-webinars.html" class="btn btn-lg hero-btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        Join Free Webinar
+      </a>
+      <a href="#tracks" class="hero-btn-ghost">
+        Explore Programs
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Programs</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Foundation Courses</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Hybrid Learning</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">₹9,999</span>
+        <span class="stat-label">/ year starting</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHOOSE YOUR PATH SECTION -->
+<section id="tracks" class="bg-light">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Choose Your Path</h2>
+      <p>Three focused programs designed to take you from where you are to where you want to be.</p>
+    </div>
+
+    <div class="tracks-grid">
+
+      <!-- Card 1: Student Success Core -->
+      <div class="track-card track-navy">
+        <div class="track-header">
+          <div class="track-icon">🎯</div>
+          <span class="track-tag">For Everyone</span>
+        </div>
+        <div class="track-body">
+          <h3>Student Success Core</h3>
+          <p>Build a strong foundation with 8 essential courses designed to prepare you for any career path.</p>
+          <ul class="feature-list">
+            <li>Goal Setting & Career Planning</li>
+            <li>Communication Skills</li>
+            <li>Time Management</li>
+            <li>Digital Literacy</li>
+            <li>Professional Etiquette</li>
+          </ul>
+        </div>
+        <div class="track-footer">
+          <div class="track-price">
+            <span class="price-amount">₹9,999</span>
+            <span class="price-period">/ year</span>
+          </div>
+          <a href="student-success-core.html" class="btn btn-navy btn-full">Learn More →</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Competitive Exam Prep — Featured -->
+      <div class="track-card track-featured">
+        <div class="track-popular-badge">Most Popular</div>
+        <div class="track-header">
+          <div class="track-icon">📚</div>
+          <span class="track-tag track-tag-light">UG Students</span>
+        </div>
+        <div class="track-body">
+          <h3>Competitive Exam Prep</h3>
+          <p>Master KPSC, UPSC, Banking, and other competitive exams with expert-led courses and mock tests.</p>
+          <ul class="feature-list feature-list-light">
+            <li>Live Expert Classes</li>
+            <li>AI-Enabled LMS</li>
+            <li>Mock Tests & Analysis</li>
+            <li>Study Materials & Notes</li>
+            <li>Doubt Clearing Sessions</li>
+            <li>Progress Tracking</li>
+          </ul>
+        </div>
+        <div class="track-footer">
+          <div class="track-price">
+            <span class="price-amount">₹1,499</span>
+            <span class="price-period">/ month</span>
+          </div>
+          <a href="competitive-exams.html" class="btn btn-white btn-full">Explore Exams →</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Study Abroad -->
+      <div class="track-card track-navy">
+        <div class="track-header">
+          <div class="track-icon">✈️</div>
+          <span class="track-tag">PG Aspirants</span>
+        </div>
+        <div class="track-body">
+          <h3>Study Abroad Prep</h3>
+          <p>Ace GRE, IELTS, and university applications with our end-to-end study abroad programs.</p>
+          <ul class="feature-list">
+            <li>University Selection Guide</li>
+            <li>Application Strategy</li>
+            <li>Interview Preparation</li>
+            <li>Visa Guidance</li>
+            <li>SOP & LOR Support</li>
+          </ul>
+        </div>
+        <div class="track-footer">
+          <div class="track-price">
+            <span class="price-amount">Custom</span>
+            <span class="price-period">pricing</span>
+          </div>
+          <a href="study-abroad.html" class="btn btn-navy btn-full">Start Preparation →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- UNIVERSITY PARTNERS SECTION -->
+<section class="university-partners bg-light">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our University Partners</h2>
+      <p>Trusted partnerships with leading institutions across India and the world.</p>
+    </div>
+
+    <div class="partners-grid">
+
+      <!-- UWS Scotland -->
+      <div class="partner-card partner-international">
+        <div class="partner-header">
+          <div class="partner-flag">🇬🇧</div>
+          <span class="partner-tag partner-tag-int">International Partner</span>
+        </div>
+        <div class="partner-body">
+          <h3>University of the West of Scotland</h3>
+          <p class="partner-short">UWS, Scotland</p>
+          <p>World-class education with recognition across 150+ countries. Join thousands of students from India pursuing degrees in the UK.</p>
+          <ul class="feature-list">
+            <li>Affordable UK Degree Programs</li>
+            <li>Scholarship Opportunities</li>
+            <li>Global Alumni Network</li>
+            <li>Indian Student Support Cell</li>
+          </ul>
+        </div>
+        <div class="partner-footer">
+          <a href="https://uws.ac.uk" target="_blank" rel="noopener" class="btn btn-navy btn-full">
+            Visit UWS
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Presidency Bangalore -->
+      <div class="partner-card partner-india">
+        <div class="partner-header">
+          <div class="partner-flag">🇮🇳</div>
+          <span class="partner-tag partner-tag-india">Indian Partner</span>
+        </div>
+        <div class="partner-body">
+          <h3>Presidency University</h3>
+          <p class="partner-short">Bangalore, Karnataka</p>
+          <p>Premier institution offering world-class education and research opportunities for aspiring Indian scholars.</p>
+          <ul class="feature-list">
+            <li>Postgraduate & Research Programs</li>
+            <li>Industry Partnerships</li>
+            <li>Internship Opportunities</li>
+            <li>Student Development Programs</li>
+          </ul>
+        </div>
+        <div class="partner-footer">
+          <a href="https://presidencyuniversity.in" target="_blank" rel="noopener" class="btn btn-navy btn-full">
+            Visit Presidency
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US SECTION -->
+<section class="why-us">
+  <div class="container">
+
+    <div class="why-us-inner">
+
+      <!-- Left: Heading block -->
+      <div class="why-us-heading">
+        <span class="badge">Why PrepMe.Pro</span>
+        <h2>Built Different.<br>For Students<br><em>Who Mean It.</em></h2>
+        <p>We don't just teach — we build careers. Every feature, every course, every mentor is chosen with one goal: your success.</p>
+        <div class="why-us-stat-row">
+          <div class="why-mini-stat">
+            <span>3</span>
+            <small>Programs</small>
+          </div>
+          <div class="why-mini-stat">
+            <span>8</span>
+            <small>Core Courses</small>
+          </div>
+          <div class="why-mini-stat">
+            <span>100%</span>
+            <small>Hybrid</small>
+          </div>
+        </div>
+        <a href="#tracks" class="btn btn-lg">Explore Programs →</a>
+      </div>
+
+      <!-- Right: Feature cards -->
+      <div class="why-us-cards">
+
+        <div class="why-feature-card why-fc-top">
+          <div class="why-fc-left">
+            <div class="why-fc-icon">💡</div>
+          </div>
+          <div class="why-fc-right">
+            <div class="why-fc-number">01</div>
+            <h4>Expert Faculty</h4>
+            <p>Learn from industry veterans and educators who bring real-world insights — not just textbook theory.</p>
+          </div>
+        </div>
+
+        <div class="why-feature-card">
+          <div class="why-fc-left">
+            <div class="why-fc-icon">🌐</div>
+          </div>
+          <div class="why-fc-right">
+            <div class="why-fc-number">02</div>
+            <h4>Hybrid Learning</h4>
+            <p>Live classes, recorded sessions, and self-paced tracks — seamlessly blended to fit your lifestyle.</p>
+          </div>
+        </div>
+
+        <div class="why-feature-card why-fc-accent">
+          <div class="why-fc-left">
+            <div class="why-fc-icon why-fc-icon-light">📱</div>
+          </div>
+          <div class="why-fc-right">
+            <div class="why-fc-number why-fc-number-light">03</div>
+            <h4>AI-Enabled LMS</h4>
+            <p>Smart dashboards, progress tracking, and personalized recommendations powered by AI.</p>
+          </div>
+        </div>
+
+        <div class="why-feature-card">
+          <div class="why-fc-left">
+            <div class="why-fc-icon">💰</div>
+          </div>
+          <div class="why-fc-right">
+            <div class="why-fc-number">04</div>
+            <h4>Truly Affordable</h4>
+            <p>Starting at just ₹9,999/year — with EMI options, scholarships, and zero compromise on quality.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works bg-light">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>How It Works</h2>
+      <p>From zero to career-ready in four simple steps.</p>
+    </div>
+
+    <div class="hiw-flow">
+
+      <div class="hiw-step">
+        <div class="hiw-circle">
+          <span class="hiw-emoji">🎯</span>
+          <span class="hiw-step-num">01</span>
+        </div>
+        <div class="hiw-line"></div>
+        <div class="hiw-label">
+          <h4>Pick Your Track</h4>
+          <p>Choose Competitive Exams, Study Abroad, or Student Success Core.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-circle hiw-circle-navy">
+          <span class="hiw-emoji">🎙️</span>
+          <span class="hiw-step-num hiw-num-light">02</span>
+        </div>
+        <div class="hiw-line"></div>
+        <div class="hiw-label">
+          <h4>Attend Free Workshop</h4>
+          <p>Join a live orientation — zero commitment, 100% value.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-circle">
+          <span class="hiw-emoji">📚</span>
+          <span class="hiw-step-num">03</span>
+        </div>
+        <div class="hiw-line"></div>
+        <div class="hiw-label">
+          <h4>Enroll & Learn</h4>
+          <p>Access live classes, AI LMS, study materials and mentors.</p>
+        </div>
+      </div>
+
+      <div class="hiw-step">
+        <div class="hiw-circle hiw-circle-saffron">
+          <span class="hiw-emoji">🏆</span>
+          <span class="hiw-step-num hiw-num-light">04</span>
+        </div>
+        <div class="hiw-line hiw-line-none"></div>
+        <div class="hiw-label">
+          <h4>Achieve Your Goal</h4>
+          <p>Crack your exam, land your university, launch your career.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hiw-cta-strip">
+      <p>Ready to take the first step?</p>
+      <a href="free-webinars.html" class="btn btn-lg">Join Free Workshop →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="testimonials bg-light">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Success Stories</h2>
+      <p>Real results from real students across Karnataka and beyond.</p>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi-card testi-featured">
+        <div class="testi-top">
+          <div class="testi-avatar">PK</div>
+          <div class="testi-meta">
+            <strong>Pavithra K</strong>
+            <span>B.Com · Hassan</span>
+          </div>
+          <span class="outcome-badge outcome-green">✓ Certified</span>
+        </div>
+        <p>"PrepMe.Pro helped me structure my study schedule and crack my certification exam with flying colors. The support system is incredible!"</p>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar testi-avatar-navy">MS</div>
+          <div class="testi-meta">
+            <strong>Manjunath S</strong>
+            <span>KPSC Selection · Tumkur</span>
+          </div>
+          <span class="outcome-badge outcome-saffron">✓ KPSC Cleared</span>
+        </div>
+        <p>"The competitive exam prep program is comprehensive. I cleared the KPSC exam with a great rank — all credit goes to the structured learning here."</p>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar testi-avatar-saffron">AR</div>
+          <div class="testi-meta">
+            <strong>Anitha R</strong>
+            <span>MS Admit · Mysuru</span>
+          </div>
+          <span class="outcome-badge outcome-green">✓ MS in UK</span>
+        </div>
+        <p>"Got admitted to my dream MS program in the UK with PrepMe.Pro's study abroad guidance. The entire journey became completely stress-free!"</p>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+
+<section class="fc-section">
+  <div class="container">
+    <div class="fc-container">
+
+      <!-- Left -->
+      <div class="fc-left">
+        <div class="fc-eyebrow">
+          <span class="fc-dot"></span>
+          For Institutions
+        </div>
+        <h2>Partner With<br><em>PrepMe.Pro</em></h2>
+        <p>Give your students access to career development and exam preparation programs. We work with 1,700+ eligible colleges across India to enhance student outcomes and employability.</p>
+        <ul class="fc-perks">
+          <li><span class="fc-ck"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Plug-and-play student programs</li>
+          <li><span class="fc-ck"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Dedicated college success manager</li>
+          <li><span class="fc-ck"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Analytics &amp; progress dashboard</li>
+          <li><span class="fc-ck"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5.5L4 7.5L8 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Co-branded certification</li>
+        </ul>
+        <a href="colleges.html" class="fc-btn">Explore Partnership →</a>
+      </div>
+
+      <!-- Right card -->
+      <div class="fc-card">
+        <div class="fc-card-hd">
+          <div class="fc-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div>
+            <div class="fc-card-title">Partnership at a Glance</div>
+            <div class="fc-card-sub">Impact across India's institutions</div>
+          </div>
+        </div>
+
+        <div class="fc-stat">
+          <div class="fc-stat-top"><span class="fc-stat-num">1,700+</span><span class="fc-stat-tag">85% coverage</span></div>
+          <div class="fc-stat-lbl">Eligible colleges across India</div>
+          <div class="fc-bar"><div class="fc-fill" style="width:85%"></div></div>
+        </div>
+        <div class="fc-sep"></div>
+        <div class="fc-stat">
+          <div class="fc-stat-top"><span class="fc-stat-num">1,000s+</span><span class="fc-stat-tag">Growing fast</span></div>
+          <div class="fc-stat-lbl">Students already benefited</div>
+          <div class="fc-bar"><div class="fc-fill" style="width:65%"></div></div>
+        </div>
+        <div class="fc-sep"></div>
+        <div class="fc-stat">
+          <div class="fc-stat-top"><span class="fc-stat-num">3</span><span class="fc-stat-tag">Active programs</span></div>
+          <div class="fc-stat-lbl">Programs available for colleges</div>
+          <div class="fc-bar"><div class="fc-fill" style="width:40%"></div></div>
+        </div>
+
+        <div class="fc-trust">
+          <div class="fc-trust-dot"></div>
+          <p>Trusted by institutions across Karnataka &amp; beyond</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER SECTION -->
+<section class="cta-section">
+  <div class="cta-wrap">
+    <div class="cta-glow"></div>
+    <div class="cta-inner">
+      <div class="cta-pill">
+        <span class="cta-dot"></span>
+        Free &bull; No commitment required
+      </div>
+      <h2>Start with a <em>Free</em> Career Webinar</h2>
+      <p>Get personalized guidance from industry experts. Ask questions live, discover the right career path, and take the first step — for free.</p>
+      <div class="cta-actions">
+        <a href="free-webinars.html" class="btn btn-lg">Reserve My Seat →</a>
+        <a href="schedule.html" class="btn btn-lg btn-outline-light">View Schedule</a>
+      </div>
+      <div class="cta-trust">
+        <span>✓ No fees, ever</span>
+        <span>✓ Live Q&A with experts</span>
+        <span>✓ Instant confirmation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="./js/layout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Partnership Program | PrepMe.Pro</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    /* =========================================
+   COLLEGES PAGE — HERO + PROB/SOL + PROGRAMS
+   ========================================= */
+
+
+/* ── HERO ── */
+.colleges-hero {
+  padding: 5rem 1.5rem 4rem;
+  background: var(--light);
+  border-bottom: 1px solid var(--border);
+}
+
+.colleges-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: center;
+}
+
+.colleges-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 580px;
+}
+
+.colleges-hero-eyebrow {
+  display: inline-flex;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.colleges-hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  margin: 0;
+}
+
+.colleges-hero-content h1 em {
+  font-style: normal;
+  color: var(--saffron);
+}
+
+.colleges-hero-lead {
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.colleges-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+/* Right card */
+.colleges-hero-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  width: 240px;
+  box-shadow: 0 8px 32px rgba(10,26,63,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.chc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.chc-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.chc-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chc-row strong {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.chc-row small {
+  font-size: 0.72rem;
+  color: var(--gray-light);
+}
+
+.chc-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.chc-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.chc-stat span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.chc-stat small {
+  font-size: 0.68rem;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+
+/* ── PROBLEM & SOLUTION ── */
+.prob-sol-section {
+  padding: 5rem 1.5rem;
+  background: var(--white);
+}
+
+.prob-sol-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Card base */
+.prob-sol-card {
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.prob-card {
+  background: #fff8f5;
+  border: 1px solid rgba(239,68,68,0.15);
+}
+
+.sol-card {
+  background: #f5fbf8;
+  border: 1px solid rgba(22,163,74,0.15);
+}
+
+/* Card top */
+.ps-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ps-icon {
+  font-size: 1.3rem;
+}
+
+.ps-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.ps-label-problem {
+  color: #b91c1c;
+  background: rgba(239,68,68,0.1);
+}
+
+.ps-label-solution {
+  color: #15803d;
+  background: rgba(22,163,74,0.1);
+}
+
+/* Headings */
+.prob-sol-card h2 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.prob-sol-card p {
+  font-size: 0.87rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Tags */
+.ps-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.ps-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: rgba(239,68,68,0.08);
+  color: #b91c1c;
+  border: 1px solid rgba(239,68,68,0.15);
+}
+
+.ps-tag-sol {
+  background: rgba(22,163,74,0.08);
+  color: #15803d;
+  border-color: rgba(22,163,74,0.15);
+}
+
+/* Connector */
+.prob-sol-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.psc-line {
+  width: 1px;
+  flex: 1;
+  min-height: 40px;
+  background: var(--border);
+}
+
+.psc-arrow {
+  font-size: 1.4rem;
+  color: var(--saffron);
+  font-weight: 800;
+  line-height: 1;
+}
+
+
+/* ── THREE PROGRAMS ── */
+.programs-section {
+  padding: 6rem 1.5rem;
+  background: var(--light);
+}
+
+.programs-header {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.programs-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.programs-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.programs-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Programs grid */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Program card base */
+.program-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(10,26,63,0.08);
+}
+
+/* Featured card */
+.program-card-featured {
+  border-top: 3px solid var(--saffron);
+  background: var(--navy);
+  position: relative;
+  top: -12px;
+  box-shadow: 0 20px 50px rgba(10,26,63,0.15);
+}
+
+.program-card-featured h3 {
+  color: var(--white) !important;
+}
+
+.program-card-featured p {
+  color: rgba(255,255,255,0.65) !important;
+}
+
+.program-card-featured .program-price-num {
+  color: var(--saffron) !important;
+}
+
+.program-card-featured .program-price-unit {
+  color: rgba(255,255,255,0.45) !important;
+}
+
+.program-card-featured .program-features li {
+  color: rgba(255,255,255,0.75) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+}
+
+.program-card-featured .program-features li::before {
+  color: var(--saffron) !important;
+}
+
+/* Card top */
+.program-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.program-icon {
+  font-size: 1.75rem;
+}
+
+.program-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--navy);
+  background: var(--saffron);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+/* Card title */
+.program-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.25;
+}
+
+/* Card body */
+.program-card p {
+  font-size: 0.84rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Price */
+.program-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.program-price-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.program-price-unit {
+  font-size: 0.78rem;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+
+/* Feature list */
+.program-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.program-features li {
+  font-size: 0.82rem;
+  color: var(--gray);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.program-features li:last-child {
+  border-bottom: none;
+}
+
+.program-features li::before {
+  content: "✓";
+  font-weight: 800;
+  color: var(--saffron);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* CTA button */
+.program-cta {
+  margin-top: 0.5rem;
+  text-align: center;
+  justify-content: center;
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .colleges-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .colleges-hero-card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .prob-sol-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .prob-sol-connector {
+    flex-direction: row;
+    padding: 0.75rem 0;
+    height: auto;
+  }
+
+  .psc-line {
+    height: 1px;
+    width: auto;
+    flex: 1;
+    min-height: unset;
+  }
+
+  .psc-arrow {
+    transform: rotate(90deg);
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card-featured {
+    top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .colleges-hero,
+  .prob-sol-section,
+  .programs-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .colleges-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .colleges-hero-actions .btn-primary,
+  .colleges-hero-actions .btn-outline {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+/* ===== NEP 2020 + NAAC ALIGNMENT ===== */
+
+.naac-section {
+  padding: 6rem 1.5rem;
+  background: var(--light);
+}
+
+/* ── Header ── */
+.naac-header {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.naac-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.naac-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.naac-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Main card ── */
+.naac-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(10,26,63,0.06);
+  margin-bottom: 1.25rem;
+}
+
+/* ── Table wrapper ── */
+.naac-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.naac-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+/* Head */
+.naac-table thead tr {
+  background: var(--navy);
+}
+
+.naac-table thead th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.65);
+  padding: 1rem 1.5rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Rows */
+.naac-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.naac-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.naac-table tbody tr:hover {
+  background: var(--light);
+}
+
+.naac-table tbody td {
+  padding: 1rem 1.5rem;
+  font-size: 0.87rem;
+  color: var(--navy);
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+/* Course dot */
+.naac-course-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--saffron);
+  margin-right: 0.6rem;
+  flex-shrink: 0;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* Criterion badge */
+.naac-criterion {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 2px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+/* Benefit badges */
+.naac-benefit {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.naac-benefit-green {
+  color: #15803d;
+  background: rgba(22,163,74,0.1);
+  border: 1px solid rgba(22,163,74,0.18);
+}
+
+.naac-benefit-blue {
+  color: var(--navy);
+  background: rgba(10,26,63,0.07);
+  border: 1px solid rgba(10,26,63,0.12);
+}
+
+.naac-benefit-saffron {
+  color: var(--saffron);
+  background: rgba(249,115,22,0.08);
+  border: 1px solid rgba(249,115,22,0.2);
+}
+
+/* ── Criteria strip ── */
+.naac-criteria-strip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--light);
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.ncs-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-light);
+  flex-shrink: 0;
+}
+
+.ncs-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ncs-chip {
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-family: monospace;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.ncs-chip-highlight {
+  color: var(--white);
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+/* ── Bottom callout ── */
+.naac-callout {
+  background: var(--navy);
+  border-radius: 18px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.naac-callout-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  flex: 1;
+}
+
+.naac-callout-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.naac-callout-left strong {
+  display: block;
+  font-size: 0.97rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+
+.naac-callout-left p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.naac-callout-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .naac-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .naac-callout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .naac-callout-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .naac-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .naac-table thead th,
+  .naac-table tbody td {
+    padding: 0.85rem 1rem;
+  }
+
+  .naac-criteria-strip {
+    padding: 0.85rem 1rem;
+  }
+}
+/* ===== PARTNER BENEFITS + PRICING ===== */
+
+/* ── PARTNER SECTION ── */
+.partner-section {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+}
+
+.partner-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.partner-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.partner-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.partner-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Benefits grid */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Partner card */
+.partner-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.25s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(10,26,63,0.08);
+}
+
+.partner-card-featured {
+  border-top: 3px solid var(--saffron);
+  background: linear-gradient(135deg, var(--light), var(--white));
+}
+
+/* Card top */
+.partner-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partner-icon {
+  font-size: 1.8rem;
+}
+
+.partner-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.partner-badge-featured {
+  color: var(--white);
+  background: var(--saffron);
+  border-color: var(--saffron);
+}
+
+/* Card content */
+.partner-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.partner-card p {
+  font-size: 0.84rem;
+  color: var(--gray);
+  line-height: 1.75;
+  flex: 1;
+  margin: 0;
+}
+
+/* Stat */
+.partner-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat-num {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.partner-cta {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+
+/* ── PRICING SECTION ── */
+.pricing-section {
+  padding: 6rem 1.5rem;
+  background: var(--light);
+}
+
+.pricing-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.pricing-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.pricing-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.pricing-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Pricing grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.price-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transition: all 0.25s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(10,26,63,0.12);
+}
+
+.price-card-featured {
+  border-top: 4px solid var(--saffron);
+  background: var(--navy);
+  color: var(--white);
+  position: relative;
+  top: -16px;
+  box-shadow: 0 24px 60px rgba(10,26,63,0.2);
+}
+
+.price-card-featured .price-label {
+  color: var(--white);
+}
+
+.price-card-featured h3,
+.price-card-featured .price-main-num,
+.price-card-featured .price-total-num {
+  color: var(--white) !important;
+}
+
+.price-card-featured .price-main-unit,
+.price-card-featured .price-total-label,
+.price-card-featured .price-features li {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+/* Card top */
+.price-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.price-icon {
+  font-size: 1.8rem;
+}
+
+.price-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.price-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--white);
+  background: var(--saffron);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+/* Price main */
+.price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.price-main-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.price-main-unit {
+  font-size: 0.8rem;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+
+/* Price total */
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 0.5rem 0;
+}
+
+.price-total-label {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.price-total-num {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+/* Features */
+.price-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+
+.price-features li {
+  font-size: 0.84rem;
+  color: var(--gray);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-features li:last-child {
+  border-bottom: none;
+}
+
+.price-features li::before {
+  content: "✓";
+  font-weight: 800;
+  color: var(--saffron);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.price-cta {
+  margin-top: auto;
+}
+
+/* Fine print */
+.pricing-note {
+  text-align: center;
+  max-width: 720px;
+  margin: 2rem auto 0;
+  font-size: 0.84rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .partner-section,
+  .pricing-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .partner-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card-featured {
+    top: 0;
+  }
+
+  .partner-cta,
+  .price-cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-section,
+  .pricing-section {
+    padding: 4rem 1.25rem;
+  }
+}
+/* ===== PARTNER BENEFITS + PRICING ===== */
+
+/* ── PARTNER SECTION ── */
+.partner-section {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+}
+
+.partner-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.partner-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.partner-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.partner-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Benefits grid */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Partner card */
+.partner-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.25s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(10,26,63,0.08);
+}
+
+.partner-card-featured {
+  border-top: 3px solid var(--saffron);
+  background: linear-gradient(135deg, var(--light), var(--white));
+}
+
+/* Card top */
+.partner-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partner-icon {
+  font-size: 1.8rem;
+}
+
+.partner-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.partner-badge-featured {
+  color: var(--white);
+  background: var(--saffron);
+  border-color: var(--saffron);
+}
+
+/* Card content */
+.partner-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.partner-card p {
+  font-size: 0.84rem;
+  color: var(--gray);
+  line-height: 1.75;
+  flex: 1;
+  margin: 0;
+}
+
+/* Stat */
+.partner-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat-num {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.partner-cta {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+
+/* ── PRICING SECTION ── */
+.pricing-section {
+  padding: 6rem 1.5rem;
+  background: var(--light);
+}
+
+.pricing-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.pricing-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.pricing-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.pricing-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Pricing grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.price-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transition: all 0.25s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(10,26,63,0.12);
+}
+
+.price-card-featured {
+  border-top: 4px solid var(--saffron);
+  background: var(--navy);
+  color: var(--white);
+  position: relative;
+  top: -16px;
+  box-shadow: 0 24px 60px rgba(10,26,63,0.2);
+}
+
+.price-card-featured .price-label {
+  color: var(--white);
+}
+
+.price-card-featured h3,
+.price-card-featured .price-main-num,
+.price-card-featured .price-total-num {
+  color: var(--white) !important;
+}
+
+.price-card-featured .price-main-unit,
+.price-card-featured .price-total-label,
+.price-card-featured .price-features li {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+/* Card top */
+.price-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.price-icon {
+  font-size: 1.8rem;
+}
+
+.price-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.price-badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--white);
+  background: var(--saffron);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+/* Price main */
+.price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.price-main-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.price-main-unit {
+  font-size: 0.8rem;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+
+/* Price total */
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 0.5rem 0;
+}
+
+.price-total-label {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.price-total-num {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+/* Features */
+.price-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+
+.price-features li {
+  font-size: 0.84rem;
+  color: var(--gray);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-features li:last-child {
+  border-bottom: none;
+}
+
+.price-features li::before {
+  content: "✓";
+  font-weight: 800;
+  color: var(--saffron);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.price-cta {
+  margin-top: auto;
+}
+
+/* Fine print */
+.pricing-note {
+  text-align: center;
+  max-width: 720px;
+  margin: 2rem auto 0;
+  font-size: 0.84rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .partner-section,
+  .pricing-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .partner-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card-featured {
+    top: 0;
+  }
+
+  .partner-cta,
+  .price-cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-section,
+  .pricing-section {
+    padding: 4rem 1.25rem;
+  }
+}
+/* ===== HOW TO START / PARTNERSHIP STEPS ===== */
+
+.partnership-steps-section {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+}
+
+.partnership-steps-header {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.partnership-steps-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.partnership-steps-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.partnership-steps-header p {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Grid */
+.partnership-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* Cards */
+.partnership-step-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--navy);
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  min-height: 220px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
+}
+
+.partnership-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(10,26,63,0.08);
+  background: var(--white);
+}
+
+/* Highlight last card */
+.partnership-step-highlight {
+  background: var(--navy);
+  border-color: var(--navy);
+  border-top: 3px solid var(--saffron);
+}
+
+.partnership-step-highlight h3 {
+  color: var(--white);
+}
+
+.partnership-step-highlight p {
+  color: rgba(255,255,255,0.68);
+}
+
+.partnership-step-highlight .partnership-step-number {
+  color: var(--white);
+  opacity: 0.22;
+}
+
+/* Top row */
+.partnership-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.partnership-step-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--navy);
+  opacity: 0.16;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.partnership-step-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--saffron);
+  background: rgba(249,115,22,0.08);
+  border: 1px solid rgba(249,115,22,0.22);
+  padding: 4px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.partnership-step-highlight .partnership-step-badge {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  color: var(--saffron);
+}
+
+/* Text */
+.partnership-step-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.partnership-step-card p {
+  font-size: 0.84rem;
+  color: var(--gray);
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+}
+
+/* Arrows */
+.partnership-step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--saffron);
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .partnership-steps-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .partnership-step-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .partnership-steps-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .partnership-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partnership-step-card {
+    min-height: auto;
+  }
+}
+/* ===== COLLEGE CTA BANNER ===== */
+
+.college-cta-section {
+  padding: 6rem 1.5rem;
+  background: var(--white);
+}
+
+.college-cta-card {
+  background: var(--navy);
+  border-radius: 24px;
+  padding: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.college-cta-card::before {
+  content: "";
+  position: absolute;
+  top: -35%;
+  right: 18%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Content */
+.college-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.college-cta-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--saffron);
+}
+
+.college-cta-content h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.college-cta-content p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0;
+}
+
+/* Contact grid */
+.college-cta-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.college-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+}
+
+.college-contact-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.college-contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.college-contact-item small {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.38);
+  font-weight: 700;
+}
+
+.college-contact-item a,
+.college-contact-item span {
+  font-size: 0.88rem;
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Actions */
+.college-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.college-cta-actions .btn-primary {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.college-cta-secondary {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.college-cta-secondary:hover {
+  color: var(--white);
+}
+
+/* Side panel */
+.college-cta-side {
+  position: relative;
+  z-index: 2;
+}
+
+.college-cta-panel {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.college-panel-top {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.college-panel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.college-panel-top div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.college-panel-top strong {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.college-panel-top small {
+  font-size: 0.72rem;
+  color: var(--gray-light);
+}
+
+.college-panel-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.college-panel-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.college-panel-point {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.college-panel-point span {
+  color: var(--saffron);
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.college-panel-point small {
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.college-panel-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.college-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34,197,94,0.6);
+}
+
+.college-panel-status small {
+  font-size: 0.75rem;
+  color: var(--gray-light);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .college-cta-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.75rem 2rem;
+  }
+
+  .college-cta-panel {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .college-cta-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .college-cta-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .college-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .college-cta-actions .btn-primary,
+  .college-cta-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+  </style>
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="colleges-hero">
+  <div class="container">
+    <div class="colleges-hero-inner">
+
+      <div class="colleges-hero-content">
+        <span class="colleges-hero-eyebrow">For Principals · Placement Officers · Trustees</span>
+        <h1>Transform Your College Into a<br><em>Career Success Hub</em></h1>
+        <p class="colleges-hero-lead">NEP 2020 + NAAC-aligned student success platform — on your campus, zero faculty load.</p>
+        <div class="colleges-hero-actions">
+          <a href="contact.html" class="btn btn-primary">Book a Demo</a>
+          <a href="#programs" class="btn btn-outline">See Programs →</a>
+        </div>
+      </div>
+
+      <div class="colleges-hero-right">
+        <div class="colleges-hero-card">
+          <div class="chc-row">
+            <span class="chc-icon">🏛️</span>
+            <div>
+              <strong>NAAC Criterion 5</strong>
+              <small>Student Support & Progression</small>
+            </div>
+          </div>
+          <div class="chc-divider"></div>
+          <div class="chc-stats">
+            <div class="chc-stat">
+              <span>NEP</span>
+              <small>2020 Aligned</small>
+            </div>
+            <div class="chc-stat">
+              <span>0</span>
+              <small>Faculty Load</small>
+            </div>
+            <div class="chc-stat">
+              <span>3</span>
+              <small>Tracks</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== PROBLEM & SOLUTION ========== -->
+<section class="prob-sol-section">
+  <div class="container">
+    <div class="prob-sol-grid">
+
+      <!-- Problem -->
+      <div class="prob-sol-card prob-card">
+        <div class="ps-card-top">
+          <span class="ps-icon ps-icon-problem">⚠️</span>
+          <span class="ps-label ps-label-problem">The Problem</span>
+        </div>
+        <h2>Placement is stagnant.<br>NAAC scores depend on it.</h2>
+        <p>Students graduate with technical knowledge but lack soft skills, interview readiness, and career clarity that employers demand. NAAC evaluators scrutinize placement outcomes under Criterion 5 — yet most institutions lack the dedicated resources or faculty bandwidth to bridge this gap.</p>
+        <div class="ps-tags">
+          <span class="ps-tag">Low Placement %</span>
+          <span class="ps-tag">NAAC Pressure</span>
+          <span class="ps-tag">Faculty Overload</span>
+        </div>
+      </div>
+
+      <!-- Connector -->
+      <div class="prob-sol-connector">
+        <div class="psc-line"></div>
+        <div class="psc-arrow">→</div>
+        <div class="psc-line"></div>
+      </div>
+
+      <!-- Solution -->
+      <div class="prob-sol-card sol-card">
+        <div class="ps-card-top">
+          <span class="ps-icon ps-icon-solution">✅</span>
+          <span class="ps-label ps-label-solution">Our Solution</span>
+        </div>
+        <h2>One platform. Three tracks.<br>Zero faculty load.</h2>
+        <p>PrepMe.Pro delivers a complete student success ecosystem — hybrid online modules + weekend instructor-led workshops on your campus. Students earn a joint certificate. Measurable outcomes feed directly into your NAAC documentation.</p>
+        <div class="ps-tags">
+          <span class="ps-tag ps-tag-sol">Hybrid Delivery</span>
+          <span class="ps-tag ps-tag-sol">Joint Certificate</span>
+          <span class="ps-tag ps-tag-sol">NAAC Docs Ready</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== THREE PROGRAMS ========== -->
+<section class="programs-section" id="programs">
+  <div class="container">
+
+    <div class="programs-header">
+      <span class="programs-eyebrow">What We Offer</span>
+      <h2>Three Program Tracks</h2>
+      <p>Every program delivers structured learning, measurable outcomes, and direct NAAC documentation support.</p>
+    </div>
+
+    <div class="programs-grid">
+
+      <!-- Track 1 — Featured -->
+      <div class="program-card program-card-featured">
+        <div class="program-card-top">
+          <span class="program-icon">🎯</span>
+          <span class="program-badge">Most Popular</span>
+        </div>
+        <h3>Student Success Core</h3>
+        <p>Our flagship program — 8 foundational courses covering career guidance, communication, digital literacy, aptitude, resume-building, interview prep, leadership, and financial literacy.</p>
+        <div class="program-price">
+          <span class="program-price-num">₹9,999</span>
+          <span class="program-price-unit">/ student / year</span>
+        </div>
+        <ul class="program-features">
+          <li>8 structured courses</li>
+          <li>Weekend workshops on campus</li>
+          <li>Joint certificate</li>
+          <li>NAAC documentation included</li>
+        </ul>
+        <a href="student-success-core.html" class="btn btn-primary program-cta">Learn More</a>
+      </div>
+
+      <!-- Track 2 -->
+      <div class="program-card">
+        <div class="program-card-top">
+          <span class="program-icon">📝</span>
+        </div>
+        <h3>Competitive Exam Prep</h3>
+        <p>Intensive preparation for UPSC, SSC, Banking, and State exams — structured curriculum, live mentoring, and mock tests for civil service careers.</p>
+        <div class="program-price">
+          <span class="program-price-num">Tiered</span>
+          <span class="program-price-unit">/ pricing</span>
+        </div>
+        <ul class="program-features">
+          <li>UPSC, SSC, Banking, State PSC</li>
+          <li>Live mentoring sessions</li>
+          <li>Full-length mock tests</li>
+          <li>Performance analytics</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline program-cta">Get Pricing</a>
+      </div>
+
+      <!-- Track 3 -->
+      <div class="program-card">
+        <div class="program-card-top">
+          <span class="program-icon">✈️</span>
+        </div>
+        <h3>Study Abroad Prep</h3>
+        <p>End-to-end guidance for international education — IELTS/TOEFL prep, SOP writing, university selection, visa readiness, and cultural orientation.</p>
+        <div class="program-price">
+          <span class="program-price-num">Tiered</span>
+          <span class="program-price-unit">/ pricing</span>
+        </div>
+        <ul class="program-features">
+          <li>IELTS / TOEFL preparation</li>
+          <li>SOP + LOR guidance</li>
+          <li>University shortlisting</li>
+          <li>Visa readiness support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline program-cta">Get Pricing</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEP 2020 + NAAC ALIGNMENT -->
+<section class="naac-section">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="naac-header">
+      <span class="naac-eyebrow">Compliance Made Simple</span>
+      <h2>NEP 2020 + NAAC Alignment</h2>
+      <p>Every PrepMe.Pro course maps directly to NAAC criteria and NEP 2020 objectives — ready for your next evaluation cycle.</p>
+    </div>
+
+    <!-- Main card -->
+    <div class="naac-card">
+
+      <!-- Table -->
+      <div class="naac-table-wrap">
+        <table class="naac-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>NAAC Criterion</th>
+              <th>College Benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="naac-course-dot"></span>
+                Career Guidance
+              </td>
+              <td><span class="naac-criterion">5.1.3</span> Capacity Building</td>
+              <td><span class="naac-benefit naac-benefit-blue">NEP Mandated</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="naac-course-dot"></span>
+                Communication
+              </td>
+              <td><span class="naac-criterion">1.3.2</span> + <span class="naac-criterion">5.1.3</span></td>
+              <td><span class="naac-benefit naac-benefit-green">Placement Rate ↑</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="naac-course-dot"></span>
+                Digital + AI Tools
+              </td>
+              <td><span class="naac-criterion">4.3</span> + <span class="naac-criterion">1.3.2</span></td>
+              <td><span class="naac-benefit naac-benefit-blue">Digital Mandate</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="naac-course-dot"></span>
+                Aptitude & Reasoning
+              </td>
+              <td><span class="naac-criterion">5.1.3</span> + <span class="naac-criterion">5.2.1</span></td>
+              <td><span class="naac-benefit naac-benefit-saffron">Biggest Lever 🔥</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="naac-course-dot"></span>
+                Resume + Interview
+              </td>
+              <td><span class="naac-criterion">5.2.1</span> + <span class="naac-criterion">5.2.2</span></td>
+              <td><span class="naac-benefit naac-benefit-green">Direct Placement ↑</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="naac-course-dot"></span>
+                Leadership
+              </td>
+              <td><span class="naac-criterion">5.3</span> Student Activities</td>
+              <td><span class="naac-benefit naac-benefit-blue">Engagement Score</span></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="naac-course-dot"></span>
+                Financial Literacy
+              </td>
+              <td><span class="naac-criterion">5.1.3</span> + <span class="naac-criterion">7.1</span></td>
+              <td><span class="naac-benefit naac-benefit-saffron">Differentiator ⭐</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Criteria coverage strip -->
+      <div class="naac-criteria-strip">
+        <span class="ncs-label">Criteria covered:</span>
+        <div class="ncs-chips">
+          <span class="ncs-chip">1.3.2</span>
+          <span class="ncs-chip">4.3</span>
+          <span class="ncs-chip">5.1.3</span>
+          <span class="ncs-chip ncs-chip-highlight">5.2.1</span>
+          <span class="ncs-chip ncs-chip-highlight">5.2.2</span>
+          <span class="ncs-chip">5.3</span>
+          <span class="ncs-chip">7.1</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom callout -->
+    <div class="naac-callout">
+      <div class="naac-callout-left">
+        <span class="naac-callout-icon">🏆</span>
+        <div>
+          <strong>Complete NAAC + NEP 2020 compliance through one structured program.</strong>
+          <p>Zero faculty load. Joint certificate. Better placement %. Better NAAC grade next cycle.</p>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-primary naac-callout-btn">Book a Demo</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== WHY PARTNER ========== -->
+<section class="partner-section">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="partner-header">
+      <span class="partner-eyebrow">Institutional Partnership</span>
+      <h2>Why Partner With PrepMe.Pro</h2>
+      <p>Everything colleges need to boost placements, meet NAAC compliance, and deliver NEP 2020 outcomes — without adding faculty workload.</p>
+    </div>
+
+    <!-- Benefits grid -->
+    <div class="partner-grid">
+
+      <!-- Benefit 1 -->
+      <div class="partner-card">
+        <div class="partner-card-top">
+          <span class="partner-icon">👨‍🏫</span>
+          <span class="partner-badge">Zero Load</span>
+        </div>
+        <h3>Zero Faculty Load</h3>
+        <p>PrepMe.Pro instructors deliver 100% of content. Your faculty stay focused on core academics, research, and PhD guidance.</p>
+        <div class="partner-stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Faculty Free</span>
+        </div>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div class="partner-card">
+        <div class="partner-card-top">
+          <span class="partner-icon">🏆</span>
+          <span class="partner-badge">Certified</span>
+        </div>
+        <h3>Joint Certification</h3>
+        <p>Co-branded certificates recognized by employers and UGC-recognized institutions. Students list both your college + PrepMe.Pro.</p>
+        <div class="partner-stat">
+          <span class="stat-num">Dual</span>
+          <span class="stat-label">Branded Cert</span>
+        </div>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div class="partner-card">
+        <div class="partner-card-top">
+          <span class="partner-icon">📊</span>
+          <span class="partner-badge">Compliant</span>
+        </div>
+        <h3>NAAC + NEP Ready</h3>
+        <p>Every course maps to Criteria 1.3.2, 5.1.3, 5.2.1. Structured documentation + dashboards for your next evaluation cycle.</p>
+        <div class="partner-stat">
+          <span class="stat-num">7</span>
+          <span class="stat-label">Criteria Covered</span>
+        </div>
+      </div>
+
+      <!-- Benefit 4 -->
+      <div class="partner-card">
+        <div class="partner-card-top">
+          <span class="partner-icon">📈</span>
+          <span class="partner-badge">Trackable</span>
+        </div>
+        <h3>Real-Time Dashboards</h3>
+        <p>Live metrics on placement readiness, skill scores, course completion. Export-ready reports for NAAC + placement committees.</p>
+        <div class="partner-stat">
+          <span class="stat-num">Live</span>
+          <span class="stat-label">Analytics</span>
+        </div>
+      </div>
+
+      <!-- Benefit 5 -->
+      <div class="partner-card">
+        <div class="partner-card-top">
+          <span class="partner-icon">🔄</span>
+          <span class="partner-badge">Flexible</span>
+        </div>
+        <h3>Hybrid Delivery</h3>
+        <p>Self-paced online modules + weekend campus workshops. Perfect fit for your academic calendar and student schedules.</p>
+        <div class="partner-stat">
+          <span class="stat-num">2x</span>
+          <span class="stat-label">Engagement</span>
+        </div>
+      </div>
+
+      <!-- Benefit 6 -->
+      <div class="partner-card partner-card-featured">
+        <div class="partner-card-top">
+          <span class="partner-icon">🚀</span>
+          <span class="partner-badge partner-badge-featured">Try Free</span>
+        </div>
+        <h3>Free Pilot Workshop</h3>
+        <p>Experience our delivery model risk-free. Complimentary 4-hour workshop on your campus for 30 students before any commitment.</p>
+        <div class="partner-stat">
+          <span class="stat-num">Free</span>
+          <span class="stat-label">Pilot</span>
+        </div>
+        <a href="contact.html" class="btn btn-primary partner-cta">Book Pilot</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ========== PARTNERSHIP PRICING ========== -->
+<section class="pricing-section">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="pricing-header">
+      <span class="pricing-eyebrow">Simple · Scalable</span>
+      <h2>Partnership Pricing Models</h2>
+      <p>Choose the model that fits your college size and engagement needs. All include LMS, materials, assessments, and joint certification.</p>
+    </div>
+
+    <!-- Pricing cards -->
+    <div class="pricing-grid">
+
+      <!-- Online Only -->
+      <div class="price-card">
+        <div class="price-card-top">
+          <span class="price-icon">💻</span>
+          <span class="price-label">Online Only</span>
+        </div>
+        <h3>Best for cost-conscious institutions</h3>
+        <div class="price-main">
+          <span class="price-main-num">₹6,598</span>
+          <span class="price-main-unit">/ student / year</span>
+        </div>
+        <div class="price-total">
+          <span class="price-total-label">For 500 students:</span>
+          <span class="price-total-num">₹32.99L</span>
+        </div>
+        <ul class="price-features">
+          <li>Full LMS access</li>
+          <li>8 courses + assessments</li>
+          <li>Joint certification</li>
+          <li>Progress dashboards</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline price-cta">Get Quote</a>
+      </div>
+
+      <!-- Hybrid (Featured) -->
+      <div class="price-card price-card-featured">
+        <div class="price-card-top">
+          <span class="price-icon">🏛️</span>
+          <span class="price-label price-label-featured">Most Popular</span>
+          <span class="price-badge">Recommended</span>
+        </div>
+        <h3>Best for high-engagement colleges</h3>
+        <div class="price-main">
+          <span class="price-main-num">₹11,200</span>
+          <span class="price-main-unit">/ student / year</span>
+        </div>
+        <div class="price-total">
+          <span class="price-total-label">For 500 students:</span>
+          <span class="price-total-num">₹56L</span>
+        </div>
+        <ul class="price-features">
+          <li>Everything in Online +</li>
+          <li>Weekend campus workshops</li>
+          <li>Live instructor sessions</li>
+          <li>NAAC documentation support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary price-cta">Start Hybrid</a>
+      </div>
+
+      <!-- Bulk -->
+      <div class="price-card">
+        <div class="price-card-top">
+          <span class="price-icon">🏢</span>
+          <span class="price-label">Bulk Discount</span>
+        </div>
+        <h3>Best for multi-campus networks</h3>
+        <div class="price-main">
+          <span class="price-main-num">₹9,900</span>
+          <span class="price-main-unit">/ student / year</span>
+        </div>
+        <div class="price-total">
+          <span class="price-total-label">For 1000 students:</span>
+          <span class="price-total-num">₹99L</span>
+        </div>
+        <ul class="price-features">
+          <li>Everything in Hybrid +</li>
+          <li>Custom LMS branding</li>
+          <li>Dedicated account manager</li>
+          <li>Volume discounts</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline price-cta">Contact Sales</a>
+      </div>
+
+    </div>
+
+    <!-- Fine print -->
+    <div class="pricing-note">
+      <em>Hybrid includes Saturday & Sunday 2-hour workshops on campus. All models include full LMS access, learning materials, mock assessments, joint certification, and NAAC-ready documentation.</em>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW TO START -->
+<section class="partnership-steps-section">
+  <div class="container">
+
+    <div class="partnership-steps-header">
+      <span class="partnership-steps-eyebrow">Simple Process</span>
+      <h2>How to Start Your Partnership</h2>
+      <p>From first conversation to first student cohort — a clear, guided rollout for your institution.</p>
+    </div>
+
+    <div class="partnership-steps-grid">
+
+      <div class="partnership-step-card">
+        <div class="partnership-step-top">
+          <span class="partnership-step-number">01</span>
+          <span class="partnership-step-badge">30 mins</span>
+        </div>
+        <h3>Briefing Call</h3>
+        <p>Understand how PrepMe.Pro aligns with your NAAC roadmap, placement goals, and institutional priorities.</p>
+      </div>
+
+      <div class="partnership-step-arrow">→</div>
+
+      <div class="partnership-step-card">
+        <div class="partnership-step-top">
+          <span class="partnership-step-number">02</span>
+          <span class="partnership-step-badge">Free</span>
+        </div>
+        <h3>Pilot Workshop</h3>
+        <p>Experience our delivery model firsthand with a complimentary student workshop on your campus.</p>
+      </div>
+
+      <div class="partnership-step-arrow">→</div>
+
+      <div class="partnership-step-card">
+        <div class="partnership-step-top">
+          <span class="partnership-step-number">03</span>
+          <span class="partnership-step-badge">MOU</span>
+        </div>
+        <h3>Sign Partnership</h3>
+        <p>Finalize commercial terms, enrollment plan, program format, and launch timeline with your team.</p>
+      </div>
+
+      <div class="partnership-step-arrow">→</div>
+
+      <div class="partnership-step-card partnership-step-highlight">
+        <div class="partnership-step-top">
+          <span class="partnership-step-number">04</span>
+          <span class="partnership-step-badge">Go Live</span>
+        </div>
+        <h3>Launch Cohort</h3>
+        <p>Students begin their journey while dashboards, reporting, and documentation start immediately.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+ <!-- FINAL CTA BANNER -->
+<section class="college-cta-section">
+  <div class="container">
+    <div class="college-cta-card">
+
+      <div class="college-cta-content">
+        <span class="college-cta-eyebrow">Campus Partnership · Free Consultation</span>
+        <h2>Schedule Your Free Campus Visit</h2>
+        <p>Let us show you how PrepMe.Pro can improve placement outcomes, support NAAC goals, and deliver structured career development on your campus.</p>
+
+        <div class="college-cta-contact-grid">
+          <div class="college-contact-item">
+            <span class="college-contact-icon">📧</span>
+            <div>
+              <small>Email</small>
+              <a href="mailto:partnerships@prepme.pro">partnerships@prepme.pro</a>
+            </div>
+          </div>
+
+          <div class="college-contact-item">
+            <span class="college-contact-icon">📞</span>
+            <div>
+              <small>Phone</small>
+              <span>+91-XXXX-XXXX-XX</span>
+            </div>
+          </div>
+
+          <div class="college-contact-item">
+            <span class="college-contact-icon">🌐</span>
+            <div>
+              <small>Website</small>
+              <a href="index.html">www.prepme.pro</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="college-cta-actions">
+          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+          <a href="mailto:partnerships@prepme.pro" class="college-cta-secondary">Email Us Directly</a>
+        </div>
+      </div>
+
+      <div class="college-cta-side">
+        <div class="college-cta-panel">
+          <div class="college-panel-top">
+            <span class="college-panel-icon">🏛️</span>
+            <div>
+              <strong>Institutional Demo</strong>
+              <small>Available for principals & placement teams</small>
+            </div>
+          </div>
+
+          <div class="college-panel-divider"></div>
+
+          <div class="college-panel-points">
+            <div class="college-panel-point">
+              <span>✓</span>
+              <small>30-min consultation</small>
+            </div>
+            <div class="college-panel-point">
+              <span>✓</span>
+              <small>Free pilot discussion</small>
+            </div>
+            <div class="college-panel-point">
+              <span>✓</span>
+              <small>NAAC alignment walkthrough</small>
+            </div>
+          </div>
+
+          <div class="college-panel-status">
+            <span class="college-status-dot"></span>
+            <small>Bookings open this week</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="./js/layout.js" defer></script>
+
+</body>
+</html>
