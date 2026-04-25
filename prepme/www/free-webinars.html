@@ -4,573 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Webinars & Workshops - PrepMe.Pro</title>
-    <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="/assets/prepme/css/styles.css">
+
     <style>
-        /* Page-specific styles for free-webinars */
-
-        .page-badge {
-            display: inline-block;
-            background: rgba(10, 26, 63, 0.1);
-            color: #0A1A3F;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #0A1A3F 0%, #1a3a5f 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 20px 0;
-            line-height: 1.3;
-        }
-
-        .hero-section h1 em {
-            color: #E8862A;
-            font-style: normal;
-            font-weight: 800;
-        }
-
-        .hero-lead {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 700px;
-            margin: 24px auto 40px;
-            opacity: 0.95;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: #E8862A;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            background: #d16e1c;
-        }
-
-        .btn-white {
-            background: white;
-            color: #0A1A3F;
-        }
-
-        .btn-white:hover {
-            background: #f0f0f0;
-        }
-
-        .how-it-works {
-            background: #f8f9fa;
-            padding: 60px 20px;
-        }
-
-        .how-it-works .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .how-card {
-            background: white;
-            padding: 32px 24px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .how-card h3 {
-            color: #0A1A3F;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .how-card p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: #0A1A3F;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .schedule-section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .event-month {
-            background: #0A1A3F;
-            color: white;
-            padding: 14px 20px;
-            border-radius: 6px 6px 0 0;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .month-label {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .month-status-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .month-status-completed {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-
-        .month-status-this-month {
-            background: #E8862A;
-            color: white;
-        }
-
-        .month-status-upcoming {
-            background: #E8862A;
-            color: white;
-        }
-
-        .event-list {
-            border: 1px solid #e0e0e0;
-            border-top: none;
-            border-radius: 0 0 6px 6px;
-            overflow: hidden;
-        }
-
-        .event-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #f0f0f0;
-            transition: background 0.3s ease;
-        }
-
-        .event-item:last-child {
-            border-bottom: none;
-        }
-
-        .event-item:hover {
-            background: #f8f9fa;
-        }
-
-        .event-list.completed .event-item {
-            opacity: 0.65;
-        }
-
-        .event-info h4 {
-            color: #0A1A3F;
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin: 0 0 6px 0;
-        }
-
-        .event-info p {
-            color: #999;
-            font-size: 0.9rem;
-            font-style: italic;
-            margin: 0;
-        }
-
-        .event-badges {
-            display: flex;
-            gap: 8px;
-        }
-
-        .event-badge-free {
-            background: #28a745;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .event-badge-upcoming {
-            background: #E8862A;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .event-badge-this-month {
-            background: #E8862A;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .for-colleges {
-            background: #fef5eb;
-            padding: 60px 20px;
-            margin-top: 40px;
-            border-radius: 8px;
-        }
-
-        .for-colleges-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .for-colleges h2 {
-            color: #0A1A3F;
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-        }
-
-        .for-colleges p {
-            color: #555;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .testimonials {
-            padding: 60px 20px;
-            background: white;
-        }
-
-        .testimonials-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: #f8f9fa;
-            padding: 32px;
-            border-radius: 8px;
-            border-left: 4px solid #E8862A;
-        }
-
-        .testimonial-text {
-            color: #333;
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            color: #0A1A3F;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-
-        .cta-banner {
-            background: linear-gradient(135deg, #0A1A3F 0%, #1a3a5f 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .cta-banner h2 {
-            font-size: 2rem;
-            margin-bottom: 12px;
-        }
-
-        .cta-banner-subtitle {
-            font-size: 1rem;
-            margin-bottom: 32px;
-            opacity: 0.95;
-        }
-
-        .cta-banner a {
-            display: inline-block;
-            background: #E8862A;
-            color: white;
-            padding: 14px 32px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            margin-right: 16px;
-            transition: background 0.3s ease;
-        }
-
-        .cta-banner a:hover {
-            background: #d16e1c;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .event-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-
-            .event-badges {
-                align-self: flex-start;
-            }
-
-            .event-month {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-        }
-        /* ===== HERO - PERFECTLY CENTERED & ORGANIZED ===== */
-
-/* Keep your exact existing gradient */
-.hero-section {
-  background: var(--navy);
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
+      /* ══════════════════════════════════════════
+   WEBINAR HERO — Full-width centered
+   Navy #0A1A3F | Saffron #E8862A
+══════════════════════════════════════════ */
+.wb-hero {
+  background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 55%, var(--navy-light) 100%);
+  padding: 5.5rem 1.5rem 0;
   position: relative;
   overflow: hidden;
 }
-
-/* Subtle saffron glow */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 70% 20%, rgba(232,134,42,0.08) 0%, transparent 50%);
+.wb-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 28px 28px; pointer-events: none;
+}
+.wb-hero-glow {
+  position: absolute; top: -200px; right: -200px;
+  width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,134,42,.13) 0%, transparent 65%);
   pointer-events: none;
 }
-
-/* Keep your exact badge */
-.page-badge {
-  display: inline-block;
-  background: rgba(10, 26, 63, 0.1);
-  color: #f0f0f0;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 32px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
+.wb-hero .container {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
 }
 
-/* Content wrapper - perfect centering */
-.hero-content {
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+/* ── META ROW ── */
+.wb-meta-row {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; justify-content: center; margin-bottom: 2rem;
 }
-
-/* Enhanced h1 */
-.hero-section h1 {
-  font-size: clamp(2.5rem, 6vw, 3.8rem);
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+.wb-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(232,134,42,.12); border: 1px solid rgba(232,134,42,.28);
+  border-radius: 8px; padding: 6px 13px;
+  font-size: .68rem; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase; color: #f4a94e;
 }
+.wb-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--saffron);
+  animation: wbPing 2s ease-in-out infinite;
+}
+@keyframes wbPing {
+  0%,100%{ box-shadow: 0 0 0 0 rgba(232,134,42,.6) }
+  50%    { box-shadow: 0 0 0 5px rgba(232,134,42,0) }
+}
+.wb-meta-sep { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.15); }
+.wb-meta-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; padding: 6px 12px;
+  font-size: .68rem; font-weight: 700; color: rgba(255,255,255,.55);
+}
+.wb-meta-chip svg { width: 11px; height: 11px; color: rgba(255,255,255,.35); flex-shrink: 0; }
 
-/* Keep your exact em styling */
-.hero-section h1 em {
-  color: #E8862A;
+/* ── HEADING ── */
+.wb-h1 {
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 900; color: var(--white);
+  letter-spacing: -.055em; line-height: 1.08;
+  margin-bottom: 1.25rem; max-width: 18ch;
+}
+.wb-h1 em {
   font-style: normal;
-  font-weight: 800;
+  background: linear-gradient(90deg, var(--saffron), #f4a94e 60%, rgba(255,255,255,.9));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Enhanced lead text */
-.hero-lead {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  max-width: 600px;
-  margin: 0;
-  opacity: 0.95;
-  font-weight: 400;
-  padding: 0 1rem;
+/* ── SUB ── */
+.wb-sub {
+  font-size: .97rem; color: rgba(255,255,255,.52);
+  line-height: 1.85; max-width: 52ch; margin-bottom: 2rem;
 }
 
-/* Perfect CTA layout */
-.hero-cta {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
+/* ── PILLS ── */
+.wb-pills {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 8px; margin-bottom: 2.5rem;
 }
-
-/* Keep your exact button styles + enhancements */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 40px;
-  background: #E8862A;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 6px 20px rgba(232,134,42,0.4);
-  position: relative;
-  overflow: hidden;
-  min-height: 56px;
+.wb-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; padding: 7px 14px;
+  font-size: .75rem; font-weight: 600; color: rgba(255,255,255,.65);
+  transition: background .2s, border-color .2s;
 }
+.wb-pill:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.18); }
+.wb-pill svg { width: 12px; height: 12px; color: var(--saffron); flex-shrink: 0; }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
+/* ── CTA ── */
+.wb-cta {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 2.5rem;
+}
+.wb-btn-primary {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--saffron); color: var(--white);
+  font-size: .88rem; font-weight: 800;
+  padding: 14px 28px; border-radius: 12px; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(232,134,42,.4);
+  transition: background .22s, transform .22s, box-shadow .22s;
+}
+.wb-btn-primary:hover { background: #d6771f; transform: translateY(-2px); box-shadow: 0 10px 34px rgba(232,134,42,.45); }
+.wb-btn-ghost {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.8); font-size: .88rem; font-weight: 700;
+  padding: 14px 28px; border-radius: 12px; text-decoration: none;
+  transition: background .22s, border-color .22s, transform .22s;
+}
+.wb-btn-ghost:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.28); transform: translateY(-2px); }
+
+/* ── SOCIAL PROOF ── */
+.wb-proof {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 3.5rem;
+}
+.wb-avs { display: flex; align-items: center; }
+.wb-av {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2.5px solid var(--navy); background: var(--navy-light);
+  margin-left: -9px; display: flex; align-items: center; justify-content: center;
+  font-size: .65rem; font-weight: 800; color: #fff; flex-shrink: 0;
+}
+.wb-av:first-child { margin-left: 0; }
+.wb-av.s { background: var(--saffron); }
+.wb-av.g { background: #1d7a4a; }
+.wb-proof-text { font-size: .78rem; color: rgba(255,255,255,.4); font-weight: 600; line-height: 1.5; }
+.wb-proof-text strong { color: rgba(255,255,255,.72); font-weight: 800; }
+
+/* ── SESSIONS SHELF ── */
+.wb-shelf {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.6s;
+  background: rgba(255,255,255,.04);
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 2rem 0;
+}
+.wb-shelf-inner {
+  max-width: 960px; margin: 0 auto; padding: 0 1.5rem;
+}
+.wb-shelf-label {
+  font-size: .65rem; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.28);
+  text-align: left; margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.wb-shelf-label::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,.07); }
+
+.wb-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
 }
 
-.btn:hover::before {
-  left: 100%;
+/* session card */
+.wb-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+  border-radius: 14px; padding: 1.1rem 1.25rem;
+  display: flex; flex-direction: column; gap: .6rem;
+  text-align: left; position: relative; overflow: hidden;
+  transition: background .22s, border-color .22s, transform .22s; cursor: default;
+}
+.wb-card:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.15); transform: translateY(-3px); }
+.wb-card.next  { border-color: rgba(232,134,42,.35); background: rgba(232,134,42,.07); }
+.wb-card.next:hover { background: rgba(232,134,42,.1); }
+.wb-card.next::before {
+  content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+  background: var(--saffron); border-radius: 14px 0 0 14px;
 }
 
-.btn:hover {
-  background: #d16e1c;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(232,134,42,0.5);
+.wb-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.wb-card-date {
+  font-size: .68rem; font-weight: 700; color: rgba(255,255,255,.35);
+  display: flex; align-items: center; gap: 5px;
 }
-
-.btn:active {
-  transform: translateY(-1px);
+.wb-card-date svg { width: 10px; height: 10px; }
+.wb-card.next .wb-card-date { color: #f4a94e; }
+.wb-card-next-pill {
+  font-size: .58rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  background: rgba(232,134,42,.15); border: 1px solid rgba(232,134,42,.3);
+  color: var(--saffron); border-radius: 5px; padding: 2px 8px;
 }
-
-/* Keep your exact white button */
-.btn-white {
-  background: white;
-  color: #0A1A3F;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.wb-card-title { font-size: .87rem; font-weight: 800; color: var(--white); line-height: 1.35; }
+.wb-card-meta  { font-size: .72rem; color: rgba(255,255,255,.35); font-weight: 500; }
+.wb-card-tags  { display: flex; flex-wrap: wrap; gap: 5px; }
+.wb-card-tag {
+  font-size: .63rem; font-weight: 700;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.09);
+  color: rgba(255,255,255,.45); border-radius: 5px; padding: 2px 8px;
 }
-
-.btn-white:hover {
-  background: #f8f9fa;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+.wb-card-reg {
+  display: flex; align-items: center; gap: 5px;
+  font-size: .75rem; font-weight: 800; color: var(--saffron);
+  text-decoration: none; width: fit-content; transition: gap .18s ease;
 }
+.wb-card-reg:hover { gap: 9px; }
+.wb-card-reg svg { width: 11px; height: 11px; }
 
-/* Perfect responsive centering */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 80px 16px;
-  }
-  
-  .page-badge {
-    padding: 8px 18px;
-    font-size: 0.82rem;
-  }
-  
-  .hero-cta {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-  }
-  
-  .btn {
-    width: 100%;
-    max-width: 320px;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 70px 12px;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.2rem;
-  }
-  
-  .hero-lead {
-    font-size: 1.05rem;
-    padding: 0 0.5rem;
-  }
+/* responsive */
+@media (max-width: 860px) { .wb-cards { grid-template-columns: 1fr; } }
+@media (max-width: 520px) {
+  .wb-hero { padding: 4rem 1.25rem 0; }
+  .wb-h1   { font-size: 2.1rem; }
+  .wb-cta  { flex-direction: column; align-items: stretch; }
+  .wb-btn-primary,.wb-btn-ghost { justify-content: center; }
 }
 /* ===== WORKSHOP BENEFITS ===== */
 
@@ -973,32 +616,782 @@
     width: 100%;
   }
 }
+/* ══════════════════════════════════════════
+   WHY JOIN — Continuation from hero
+   Dark frosted row → 4 feature columns
+══════════════════════════════════════════ */
+.wb-why {
+  background: var(--navy);
+  padding: 5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle grid texture */
+.wb-why::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* saffron glow bottom left */
+.wb-why::after {
+  content: "";
+  position: absolute; bottom: -160px; left: -100px;
+  width: 480px; height: 480px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,134,42,.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.wb-why .container { position: relative; z-index: 2; }
+
+/* ── header ── */
+.wb-why-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; gap: 2rem;
+  margin-bottom: 3rem; flex-wrap: wrap;
+}
+.wb-why-header-left { max-width: 480px; }
+.wb-why-eyebrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .67rem; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--saffron);
+  margin-bottom: .75rem;
+}
+.wb-why-eyebrow::before {
+  content: ""; width: 16px; height: 2px;
+  background: var(--saffron); border-radius: 2px;
+}
+.wb-why-h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 900; color: var(--white);
+  letter-spacing: -.045em; line-height: 1.1;
+  margin-bottom: .75rem;
+}
+.wb-why-h2 em {
+  font-style: normal; color: var(--saffron);
+}
+.wb-why-sub {
+  font-size: .88rem; color: rgba(255,255,255,.42);
+  line-height: 1.8;
+}
+/* total count chip on right */
+.wb-why-count {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
+  flex-shrink: 0;
+}
+.wb-why-count-num {
+  font-size: 3rem; font-weight: 900; color: var(--white);
+  letter-spacing: -.07em; line-height: 1;
+}
+.wb-why-count-num span { color: var(--saffron); }
+.wb-why-count-lbl {
+  font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: rgba(255,255,255,.28);
+}
+
+/* ── CARD GRID ── */
+.wb-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* ── card ── */
+.wb-why-card {
+  background: rgba(255,255,255,.03);
+  padding: 2rem 1.75rem;
+  display: flex; flex-direction: column; gap: .85rem;
+  position: relative; overflow: hidden;
+  transition: background .25s ease;
+}
+.wb-why-card:hover { background: rgba(255,255,255,.07); }
+
+/* top accent line on hover */
+.wb-why-card::before {
+  content: ""; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: var(--saffron);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s ease;
+}
+.wb-why-card:hover::before { transform: scaleX(1); }
+
+/* number */
+.wb-why-num {
+  font-size: .65rem; font-weight: 900; letter-spacing: .1em;
+  color: rgba(255,255,255,.15); text-transform: uppercase;
+}
+
+/* icon box */
+.wb-why-icon {
+  width: 44px; height: 44px; border-radius: 13px;
+  background: rgba(232,134,42,.1);
+  border: 1px solid rgba(232,134,42,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+  transition: background .25s, border-color .25s;
+}
+.wb-why-card:hover .wb-why-icon {
+  background: rgba(232,134,42,.18);
+  border-color: rgba(232,134,42,.35);
+}
+
+/* badge */
+.wb-why-badge {
+  display: inline-flex; width: fit-content;
+  font-size: .6rem; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.09);
+  color: rgba(255,255,255,.35); border-radius: 5px; padding: 3px 9px;
+}
+
+/* title */
+.wb-why-title {
+  font-size: 1rem; font-weight: 900;
+  color: var(--white); letter-spacing: -.03em; line-height: 1.25;
+}
+
+/* desc */
+.wb-why-desc {
+  font-size: .82rem; color: rgba(255,255,255,.4);
+  line-height: 1.75; flex: 1;
+}
+
+/* ── BOTTOM TRUST STRIP ── */
+.wb-why-strip {
+  margin-top: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  gap: 2.5rem; flex-wrap: wrap;
+  padding: 1.25rem 2rem;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+}
+.wb-strip-item {
+  display: flex; align-items: center; gap: 9px;
+  font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.5);
+}
+.wb-strip-item svg { width: 15px; height: 15px; color: var(--saffron); flex-shrink: 0; }
+.wb-strip-sep {
+  width: 1px; height: 20px; background: rgba(255,255,255,.07);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .wb-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .wb-why-header { flex-direction: column; align-items: flex-start; }
+  .wb-why-count  { align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .wb-why { padding: 4rem 1.25rem; }
+  .wb-why-grid { grid-template-columns: 1fr; }
+  .wb-why-strip { gap: 1rem; }
+  .wb-strip-sep { display: none; }
+}
+/* SECTION */
+.wb-why {
+  background: #ffffff; /* changed */
+  padding: 5rem 1.5rem;
+  position: relative;
+}
+
+/* remove dark grid effect */
+.wb-why::before,
+.wb-why::after {
+  display: none;
+}
+
+.wb-why .container {
+  position: relative;
+}
+
+/* HEADER */
+.wb-why-h2 {
+  color: #1f2937; /* dark text */
+}
+
+.wb-why-sub {
+  color: #6b7280; /* softer gray */
+}
+
+/* COUNT */
+.wb-why-count-num {
+  color: #111827;
+}
+
+.wb-why-count-lbl {
+  color: #9ca3af;
+}
+
+/* GRID */
+.wb-why-grid {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+/* CARD */
+.wb-why-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.25s ease;
+}
+
+.wb-why-card:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* FIX YOUR HOVER BUG (IMPORTANT) */
+.wb-why-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* TEXT COLORS */
+.wb-why-num {
+  color: #9ca3af;
+}
+
+.wb-why-title {
+  color: #111827;
+}
+
+.wb-why-desc {
+  color: #6b7280;
+}
+
+/* BADGE */
+.wb-why-badge {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+}
+
+/* ICON */
+.wb-why-icon {
+  background: rgba(232,134,42,.1);
+}
+
+/* STRIP */
+.wb-why-strip {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.wb-strip-item {
+  color: #4b5563;
+}
+
+.wb-strip-sep {
+  background: #e5e7eb;
+}
+/* ══════════════════════════════════════════
+   SCHEDULE — continuation of wb-hero theme
+   Navy #0A1A3F | Saffron #E8862A
+══════════════════════════════════════════ */
+
+/* ── SHARED SECTION HEAD ── */
+.sch-sessions,
+.sch-annual {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+  padding: 5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.sch-sessions::before,
+.sch-annual::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 28px 28px; pointer-events: none;
+}
+.sch-annual {
+  background: linear-gradient(180deg, var(--navy-dark) 0%, #060f25 100%);
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.sch-section-head {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.sch-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .65rem; font-weight: 800; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(255,255,255,.28);
+  margin-bottom: 1rem;
+}
+.sch-eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--saffron);
+  animation: wbPing 2s ease-in-out infinite;
+}
+.sch-title {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 900; color: var(--white);
+  letter-spacing: -.04em; line-height: 1.1;
+  margin-bottom: .85rem;
+}
+.sch-title em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--saffron), #f4a94e 60%, rgba(255,255,255,.9));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sch-desc {
+  font-size: .95rem; color: rgba(255,255,255,.45);
+  line-height: 1.8; max-width: 50ch; margin: 0 auto;
+}
+
+/* ── PILLS (shared) ── */
+.sch-pill {
+  display: inline-flex; align-items: center;
+  font-size: .6rem; font-weight: 800;
+  letter-spacing: .07em; text-transform: uppercase;
+  border-radius: 5px; padding: 3px 9px; flex-shrink: 0;
+}
+.sch-pill--free {
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.45);
+}
+.sch-pill--live {
+  background: rgba(232,134,42,.15); border: 1px solid rgba(232,134,42,.3);
+  color: #f4a94e;
+}
+.sch-pill--upcoming {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.35);
+}
+.sch-pill--closing {
+  background: rgba(100,160,255,.1); border: 1px solid rgba(100,160,255,.25);
+  color: #84b4ff;
+}
+
+
+/* ══════════════════════════════════════
+   SESSION DETAIL CARDS GRID
+══════════════════════════════════════ */
+.sch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  position: relative; z-index: 2;
+}
+
+.sch-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 1.5rem 1.4rem 1.3rem;
+  display: flex; flex-direction: column; gap: .9rem;
+  position: relative; overflow: hidden;
+  transition: background .22s, border-color .22s, transform .22s, box-shadow .22s;
+}
+.sch-card:hover {
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.14);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+.sch-card--this-month {
+  border-color: rgba(232,134,42,.3);
+  background: rgba(232,134,42,.06);
+}
+.sch-card--this-month::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--saffron), #f4a94e);
+  border-radius: 18px 18px 0 0;
+}
+.sch-card--this-month:hover {
+  background: rgba(232,134,42,.09);
+  border-color: rgba(232,134,42,.45);
+}
+.sch-card--closing {
+  border-color: rgba(100,160,255,.2);
+  background: rgba(100,160,255,.04);
+}
+.sch-card--closing::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #4a8fff, #84b4ff);
+  border-radius: 18px 18px 0 0;
+}
+
+/* card header */
+.sch-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sch-card-num {
+  font-size: 1.6rem; font-weight: 900;
+  color: rgba(255,255,255,.08);
+  letter-spacing: -.04em; line-height: 1;
+}
+.sch-card--this-month .sch-card-num { color: rgba(232,134,42,.2); }
+.sch-card--closing .sch-card-num { color: rgba(100,160,255,.15); }
+.sch-card-badges { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
+
+/* date */
+.sch-card-date {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .7rem; font-weight: 700;
+  color: rgba(255,255,255,.3);
+}
+.sch-card--this-month .sch-card-date { color: #f4a94e; }
+.sch-card-date svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+/* title + hook */
+.sch-card-title {
+  font-size: 1.05rem; font-weight: 900;
+  color: var(--white); line-height: 1.3;
+  margin: 0;
+}
+.sch-card-hook {
+  font-size: .8rem; color: rgba(255,255,255,.4);
+  line-height: 1.65; margin: 0;
+  font-style: italic;
+}
+
+/* bullet points */
+.sch-card-points {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: .45rem;
+  flex: 1;
+}
+.sch-card-points li {
+  font-size: .78rem; color: rgba(255,255,255,.55);
+  line-height: 1.55; padding-left: 1.1rem; position: relative;
+}
+.sch-card-points li::before {
+  content: "→";
+  position: absolute; left: 0;
+  color: var(--saffron); font-size: .65rem; top: .15rem;
+}
+.sch-card--closing .sch-card-points li::before { color: #84b4ff; }
+
+/* activity bar */
+.sch-card-activity {
+  display: flex; align-items: flex-start; gap: 7px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 10px;
+  padding: .65rem .85rem;
+  font-size: .75rem; color: rgba(255,255,255,.45);
+  line-height: 1.5;
+}
+.sch-card-activity svg {
+  width: 13px; height: 13px;
+  color: var(--saffron); flex-shrink: 0; margin-top: .1rem;
+}
+.sch-card--closing .sch-card-activity svg { color: #84b4ff; }
+
+/* footer */
+.sch-card-footer {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 8px;
+  padding-top: .5rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+  flex-wrap: wrap;
+}
+.sch-card-tags {
+  display: flex; flex-wrap: wrap; gap: 4px;
+}
+.sch-card-tags span {
+  font-size: .6rem; font-weight: 700;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.35);
+  border-radius: 4px; padding: 2px 7px;
+}
+.sch-card-cta {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: .75rem; font-weight: 800;
+  color: var(--saffron);
+  text-decoration: none; white-space: nowrap;
+  transition: gap .18s ease;
+}
+.sch-card-cta:hover { gap: 9px; }
+.sch-card-cta svg { width: 11px; height: 11px; }
+.sch-card--closing .sch-card-cta { color: #84b4ff; }
+
+
+/* ══════════════════════════════════════
+   ANNUAL MONTHS GRID
+══════════════════════════════════════ */
+.sch-months {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  position: relative; z-index: 2;
+}
+
+.sch-month {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 1.25rem 1.3rem;
+  display: flex; flex-direction: column; gap: .9rem;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.sch-month:hover {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.12);
+  transform: translateY(-3px);
+}
+.sch-month--done {
+  opacity: .6;
+}
+.sch-month--done:hover { opacity: .85; }
+.sch-month--active {
+  border-color: rgba(232,134,42,.3);
+  background: rgba(232,134,42,.05);
+  opacity: 1;
+}
+.sch-month--active:hover {
+  background: rgba(232,134,42,.08);
+  border-color: rgba(232,134,42,.4);
+}
+
+/* month header */
+.sch-month-header {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 8px;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.sch-month-name {
+  display: flex; align-items: center; gap: 7px;
+  font-size: .82rem; font-weight: 800; color: var(--white);
+}
+.sch-month-name svg {
+  width: 12px; height: 12px;
+  color: rgba(255,255,255,.3); flex-shrink: 0;
+}
+.sch-month--active .sch-month-name svg { color: var(--saffron); }
+
+.sch-month-badge {
+  font-size: .58rem; font-weight: 800;
+  letter-spacing: .06em; text-transform: uppercase;
+  border-radius: 5px; padding: 3px 8px;
+}
+.sch-month-badge--done {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.3);
+}
+.sch-month-badge--active {
+  background: rgba(232,134,42,.15);
+  border: 1px solid rgba(232,134,42,.3);
+  color: #f4a94e;
+}
+.sch-month-badge--upcoming {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.25);
+}
+
+/* events inside month */
+.sch-month-events {
+  display: flex; flex-direction: column; gap: .7rem;
+}
+.sch-month-event {
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.sch-event-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  flex-shrink: 0; margin-top: .3rem;
+}
+.sch-event-dot--done { background: rgba(255,255,255,.25); }
+.sch-event-dot--active {
+  background: var(--saffron);
+  box-shadow: 0 0 6px rgba(232,134,42,.5);
+  animation: wbPing 2s ease-in-out infinite;
+}
+.sch-event-title {
+  font-size: .8rem; font-weight: 700;
+  color: rgba(255,255,255,.75); line-height: 1.4;
+  margin-bottom: .18rem;
+}
+.sch-month--done .sch-event-title { text-decoration: line-through; text-decoration-color: rgba(255,255,255,.15); }
+.sch-event-sub {
+  font-size: .7rem; color: rgba(255,255,255,.3);
+  font-style: italic; line-height: 1.4;
+}
+.sch-month-event > div:first-of-type { flex: 1; }
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .sch-grid    { grid-template-columns: repeat(2, 1fr); }
+  .sch-months  { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .sch-grid    { grid-template-columns: 1fr; }
+  .sch-months  { grid-template-columns: 1fr; }
+  .sch-sessions,
+  .sch-annual  { padding: 3.5rem 1.25rem; }
+  .sch-card-footer { flex-direction: column; align-items: flex-start; }
+}
     </style>
 </head>
 <body>
 
 <div id="app-header"></div>
 
-
 <!-- HERO SECTION - Centered & Organized -->
-<section class="hero-section">
+<section class="wb-hero">
+  <div class="wb-hero-glow"></div>
   <div class="container">
-    
-    <!-- Badge -->
-    <div class="page-badge">Free &bull; Open to All &bull; 2 Hours Each</div>
-    
-    <!-- Main content - perfectly centered -->
-    <div class="hero-content">
-<h1 style="color: #e0e0e0;">Free Career <em>Webinars & Workshops</em></h1>
-      <p class="hero-lead">Every month, we host two free sessions on career skills, exam strategy, communication, and personal development &mdash; open to all students, no enrollment required.</p>
-      
-      <div class="hero-cta">
-        <a href="https://wa.me/" class="btn" target="_blank">Register via WhatsApp &rarr;</a>
-        <a href="#schedule" class="btn btn-white">View Schedule Below</a>
+
+    <div class="wb-meta-row">
+      <div class="wb-badge"><span class="wb-badge-dot"></span>Free · Open to All</div>
+      <div class="wb-meta-sep"></div>
+      <div class="wb-meta-chip">
+        <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        2 Hours Each
+      </div>
+      <div class="wb-meta-chip">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7h12" stroke="currentColor" stroke-width="1.5"/></svg>
+        Certificate Included
+      </div>
+      <div class="wb-meta-chip">
+        <svg viewBox="0 0 16 16" fill="none"><polygon points="6,3 13,8 6,13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        Recording Shared
       </div>
     </div>
 
+    <h1 class="wb-h1">
+      Free Webinars &amp;<br><em>Workshops by Experts</em>
+    </h1>
+
+    <p class="wb-sub">
+      Every month, we host two free live sessions on exam strategy, communication,
+      career skills, and study abroad guidance — no enrollment, no fees, just pure learning.
+    </p>
+
+    <div class="wb-pills">
+      <div class="wb-pill">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zM5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Live &amp; Interactive
+      </div>
+      <div class="wb-pill">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M2 12V6l6-3 6 3v6l-6 3-6-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        No Enrollment Required
+      </div>
+      <div class="wb-pill">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.6 3.5L8 10l-3.1 1.5.6-3.5L3 5.5 6.5 5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        Expert-led Sessions
+      </div>
+      <div class="wb-pill">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="11" width="3" height="3" rx=".5" fill="currentColor"/><rect x="6.5" y="8" width="3" height="6" rx=".5" fill="currentColor"/><rect x="11" y="5" width="3" height="9" rx=".5" fill="currentColor"/></svg>
+        4.9★ Avg Rating
+      </div>
+    </div>
+
+    <div class="wb-cta">
+      <a href="https://wa.me/" target="_blank" class="wb-btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L.057 23.59a.75.75 0 00.906.918l5.938-1.554A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.816 9.816 0 01-5.002-1.365l-.36-.214-3.724.976.994-3.63-.234-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        Register via WhatsApp
+      </a>
+      <a href="#schedule" class="wb-btn-ghost">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 2V1M11 2V1M2 6h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        View Full Schedule
+      </a>
+    </div>
+
+    <div class="wb-proof">
+      <div class="wb-avs">
+        <div class="wb-av">R</div>
+        <div class="wb-av s">P</div>
+        <div class="wb-av g">A</div>
+        <div class="wb-av">K</div>
+        <div class="wb-av">N</div>
+      </div>
+      <div class="wb-proof-text"><strong>5,000+ students</strong> have attended<br>our free sessions across India</div>
+    </div>
+
   </div>
+
+  <!-- sessions shelf -->
+  <div class="wb-shelf">
+    <div class="wb-shelf-inner">
+      <div class="wb-shelf-label">Upcoming Sessions</div>
+      <div class="wb-cards">
+
+        <div class="wb-card next">
+          <div class="wb-card-top">
+            <span class="wb-card-date">
+              <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 2V1M11 2V1M2 6h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              26 Apr 2026 · 11 AM IST
+            </span>
+            <span class="wb-card-next-pill">Next Up</span>
+          </div>
+          <div class="wb-card-title">IELTS Writing Task 2 — Masterclass</div>
+          <div class="wb-card-meta">2 hrs · Google Meet · Expert: Arun Sharma</div>
+          <div class="wb-card-tags">
+            <span class="wb-card-tag">IELTS</span>
+            <span class="wb-card-tag">Writing</span>
+            <span class="wb-card-tag">Strategy</span>
+          </div>
+          <a href="https://wa.me/" class="wb-card-reg" target="_blank">
+            Reserve free seat
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="wb-card">
+          <div class="wb-card-top">
+            <span class="wb-card-date">
+              <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 2V1M11 2V1M2 6h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              10 May 2026 · 11 AM IST
+            </span>
+          </div>
+          <div class="wb-card-title">Study Abroad 101 — Country &amp; Course Selection</div>
+          <div class="wb-card-meta">2 hrs · Google Meet · Expert: Priya Nair</div>
+          <div class="wb-card-tags">
+            <span class="wb-card-tag">Study Abroad</span>
+            <span class="wb-card-tag">Guidance</span>
+            <span class="wb-card-tag">Career</span>
+          </div>
+          <a href="https://wa.me/" class="wb-card-reg" target="_blank">
+            Reserve free seat
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="wb-card">
+          <div class="wb-card-top">
+            <span class="wb-card-date">
+              <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 2V1M11 2V1M2 6h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              24 May 2026 · 11 AM IST
+            </span>
+          </div>
+          <div class="wb-card-title">Communication Skills for Campus Interviews</div>
+          <div class="wb-card-meta">2 hrs · Google Meet · Expert: Rahul Dev</div>
+          <div class="wb-card-tags">
+            <span class="wb-card-tag">Communication</span>
+            <span class="wb-card-tag">Interviews</span>
+            <span class="wb-card-tag">Soft Skills</span>
+          </div>
+          <a href="https://wa.me/" class="wb-card-reg" target="_blank">
+            Reserve free seat
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- WHY JOIN OUR WORKSHOPS -->
@@ -1019,7 +1412,7 @@
           <span class="workshop-benefit-badge">Focused</span>
         </div>
         <h3>2-Hour Duration</h3>
-        <p>Every session is designed to be concise, practical, and intensive &mdash; enough to learn without overwhelming your schedule.</p>
+        <p>Every session is designed to be concise, practical, and intensive — enough to learn without overwhelming your schedule.</p>
       </div>
 
       <div class="workshop-benefit-card">
@@ -1055,376 +1448,480 @@
 </section>
 
 <!-- Annual Workshop Schedule -->
-<section class="schedule-section" id="schedule">
-    <div class="container">
-        <h2 class="section-title">2026 Workshop Calendar &mdash; 24 Free Sessions</h2>
+<!-- ══════════════════════════════════════════
+     ANNUAL WORKSHOP SCHEDULE SECTION
+     Continuation of wb-hero theme
+     Navy #0A1A3F | Saffron #E8862A
+══════════════════════════════════════════ -->
 
-        <!-- JANUARY - COMPLETED -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>January 2026</span>
-                <span class="month-status-badge month-status-completed">Completed</span>
-            </div>
-        </div>
-        <div class="event-list completed">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Goal Setting & Life Planning</h4>
-                    <p>Clarity today creates success tomorrow.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Time Management Mastery for Students</h4>
-                    <p>Manage your time, or time will manage your future.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                </div>
-            </div>
-        </div>
+<!-- SESSION PLAN SECTION (April–May 2026 Detailed Cards) -->
+<section class="sch-sessions" id="sessions">
+  <div class="container">
 
-        <!-- FEBRUARY - COMPLETED -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>February 2026</span>
-                <span class="month-status-badge month-status-completed">Completed</span>
-            </div>
-        </div>
-        <div class="event-list completed">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>How to Study Smart (Not Just Hard)</h4>
-                    <p>Smart strategies beat long hours.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Memory Techniques & Retention Skills</h4>
-                    <p>Learn once, remember forever.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- MARCH - COMPLETED -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>March 2026</span>
-                <span class="month-status-badge month-status-completed">Completed</span>
-            </div>
-        </div>
-        <div class="event-list completed">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Examination Strategy & Planning</h4>
-                    <p>Plan your exam before your exam plans you.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>How to Score High Marks in Exams</h4>
-                    <p>Top ranks are built, not born.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- APRIL - THIS MONTH -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>April 2026</span>
-                <span class="month-status-badge month-status-this-month">This Month</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Building Focus & Avoiding Distractions</h4>
-                    <p>Where focus goes, success grows.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-this-month">This Month</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Consistency & Daily Discipline Habits</h4>
-                    <p>Small daily wins create big results.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-this-month">This Month</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- MAY - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>May 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>How to Crack Competitive Exams (KAS, UPSC, SSC, Banking)</h4>
-                    <p>Strategy + Consistency = Selection.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Current Affairs & General Knowledge Mastery</h4>
-                    <p>Stay aware, stay ahead.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- JUNE - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>June 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Career Guidance & Goal Mapping</h4>
-                    <p>Choose your path before others choose for you.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Government vs Private Jobs &ndash; What to Choose?</h4>
-                    <p>Right decision today, secure tomorrow.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- JULY - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>July 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Personality Development & Confidence Building</h4>
-                    <p>Confidence is your greatest qualification.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Body Language & First Impression Skills</h4>
-                    <p>First impressions open first opportunities.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- AUGUST - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>August 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Spoken English & Communication Skills</h4>
-                    <p>Speak confidently, lead confidently.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Public Speaking & Presentation Skills</h4>
-                    <p>Your voice is your power.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- SEPTEMBER - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>September 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Stress Management During Exams</h4>
-                    <p>Calm mind, powerful performance.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Overcoming Fear of Failure</h4>
-                    <p>Failure is feedback, not the end.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- OCTOBER - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>October 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Resume Building & Personal Branding</h4>
-                    <p>Your resume is your first interview.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>How to Clear Job Interviews</h4>
-                    <p>Confidence answers what knowledge starts.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- NOVEMBER - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>November 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Critical Thinking & Problem Solving Skills</h4>
-                    <p>Think better, perform better.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Decision Making & Leadership Skills</h4>
-                    <p>Leaders are decision-makers.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- DECEMBER - UPCOMING -->
-        <div class="event-month">
-            <div class="month-label">
-                <span>December 2026</span>
-                <span class="month-status-badge month-status-upcoming">Upcoming</span>
-            </div>
-        </div>
-        <div class="event-list">
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Emotional Intelligence & Relationship Management</h4>
-                    <p>Understand emotions, master relationships.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-            <div class="event-item">
-                <div class="event-info">
-                    <h4>Motivation, Goal Review & Success Mindset</h4>
-                    <p>Finish strong, start stronger.</p>
-                </div>
-                <div class="event-badges">
-                    <span class="event-badge-free">FREE</span>
-                    <span class="event-badge-upcoming">UPCOMING</span>
-                </div>
-            </div>
-        </div>
+    <div class="sch-section-head">
+      <div class="sch-eyebrow">
+        <span class="sch-eyebrow-dot"></span>
+        Upcoming Sessions
+      </div>
+      <h2 class="sch-title">Your Next <em>10 Sessions</em></h2>
+      <p class="sch-desc">Live workshops designed to transform how you communicate, plan, and lead — every session is free and packed with actionable takeaways.</p>
     </div>
+
+    <div class="sch-grid">
+
+      <!-- SESSION 1 -->
+      <div class="sch-card sch-card--this-month">
+        <div class="sch-card-header">
+          <div class="sch-card-num">01</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--live">● This Month</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          April 25, 2026 · Saturday
+        </div>
+        <h3 class="sch-card-title">Communication Mastery</h3>
+        <p class="sch-card-hook">Expression is the key — facial expression, body language, voice modulation, language proficiency.</p>
+        <ul class="sch-card-points">
+          <li>Why most students freeze in the first 10 seconds — and the 3-step fix</li>
+          <li>Clarity vs fluency: you don't need perfect English to sound confident</li>
+          <li>The PPF model for a strong self-introduction (Past · Present · Future)</li>
+          <li>Voice, pace, pause — the 3 levers of perceived confidence</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Live 60-sec self-intro in breakout pairs with peer feedback rubric
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Communication</span><span>Confidence</span><span>PPF Model</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 2 -->
+      <div class="sch-card sch-card--this-month">
+        <div class="sch-card-header">
+          <div class="sch-card-num">02</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--live">● This Month</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          April 28, 2026 · Tuesday
+        </div>
+        <h3 class="sch-card-title">Spoken English for Real Life</h3>
+        <p class="sch-card-hook">From sentence making to proficient English — a journey on how to think directly in English.</p>
+        <ul class="sch-card-points">
+          <li>Why translation slows you down — think directly in English</li>
+          <li>The 50-phrase toolkit covering 80% of daily conversations</li>
+          <li>Common mistakes Indian speakers make (and 3 that don't actually matter)</li>
+          <li>Shadowing technique: 15 mins/day changes your fluency in 30 days</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Role-play in pairs: ordering food, directions, networking introductions
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Spoken English</span><span>Fluency</span><span>Shadowing</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 3 -->
+      <div class="sch-card sch-card--upcoming">
+        <div class="sch-card-header">
+          <div class="sch-card-num">03</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--upcoming">Upcoming</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 2, 2026 · Saturday
+        </div>
+        <h3 class="sch-card-title">Personality Development</h3>
+        <p class="sch-card-hook">Perspective, appearance, and whole personality presentation — the complete picture.</p>
+        <ul class="sch-card-points">
+          <li>First-impression science: the 7-second rule and what signals matter</li>
+          <li>Body language basics: posture, eye contact, hand gestures</li>
+          <li>Budget-friendly professional grooming for campus and office</li>
+          <li>Confidence vs arrogance — where exactly the line is</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Mirror practice + 30-sec phone video pitch reviewed with checklist
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Personality</span><span>Body Language</span><span>Grooming</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 4 -->
+      <div class="sch-card sch-card--upcoming">
+        <div class="sch-card-header">
+          <div class="sch-card-num">04</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--upcoming">Upcoming</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 5, 2026 · Tuesday
+        </div>
+        <h3 class="sch-card-title">Goal Setting & Life Planning</h3>
+        <p class="sch-card-hook">Life is never planned — it can be designed. Turn "I want a good job" into a real 90-day plan.</p>
+        <ul class="sch-card-points">
+          <li>Why most New Year resolutions fail by February — the core mistake</li>
+          <li>SMART goals vs OKRs vs the 90-day plan — which one when</li>
+          <li>Reverse-engineer a goal: from "I want Infosys" to "this week I will…"</li>
+          <li>The 15-minute weekly review that keeps you on track</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Fill your 1-page 90-day plan live + share one goal for peer accountability
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Goal Setting</span><span>90-Day Plan</span><span>OKRs</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 5 -->
+      <div class="sch-card sch-card--upcoming">
+        <div class="sch-card-header">
+          <div class="sch-card-num">05</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--upcoming">Upcoming</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 9, 2026 · Saturday
+        </div>
+        <h3 class="sch-card-title">Time Management & Productivity</h3>
+        <p class="sch-card-hook">Caution: time is not money — time earns money. Productivity, focus, and time management as a personality trait.</p>
+        <ul class="sch-card-points">
+          <li>The urgent-important matrix (and why students misuse it)</li>
+          <li>Time blocking vs to-do lists — what works for your personality</li>
+          <li>Beat procrastination: 2-minute rule, implementation intentions, environment design</li>
+          <li>Phone & social media: the realistic plan (not "delete Instagram")</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Design your ideal weekday schedule for next 7 days on a live grid
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Productivity</span><span>Time Blocking</span><span>Focus</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 6 -->
+      <div class="sch-card sch-card--upcoming">
+        <div class="sch-card-header">
+          <div class="sch-card-num">06</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--upcoming">Upcoming</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 12, 2026 · Tuesday
+        </div>
+        <h3 class="sch-card-title">Exam Skills & Smart Learning</h3>
+        <p class="sch-card-hook">Toppers don't study more — they study differently. 4 techniques based on learning-science research.</p>
+        <ul class="sch-card-points">
+          <li>Active recall vs passive re-reading — why highlighting wastes time</li>
+          <li>Spaced repetition: the technique that makes memory stick for months</li>
+          <li>Feynman technique: explain it to a 10-year-old (and find your gaps)</li>
+          <li>Revise 3 months of material in 1 week — the compression method</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Apply Feynman technique on one live topic in 5 minutes
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Active Recall</span><span>Spaced Repetition</span><span>Feynman</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 7 -->
+      <div class="sch-card sch-card--upcoming">
+        <div class="sch-card-header">
+          <div class="sch-card-num">07</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--upcoming">Upcoming</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 16, 2026 · Saturday
+        </div>
+        <h3 class="sch-card-title">Emotional Intelligence & Mind Control</h3>
+        <p class="sch-card-hook">Emotions cause both imbalance and balance — how to control and manage them is the key to resilience.</p>
+        <ul class="sch-card-points">
+          <li>What EQ actually means (not what LinkedIn posts say)</li>
+          <li>How to notice stress early — before it becomes burnout</li>
+          <li>Reframing: the thinking habit that separates resilient people</li>
+          <li>Managing social comparison: Instagram, placement season, family pressure</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Guided 5-min reflection: write one stressor, apply reframe technique live
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>EQ</span><span>Stress Management</span><span>Reframing</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 8 -->
+      <div class="sch-card sch-card--upcoming">
+        <div class="sch-card-header">
+          <div class="sch-card-num">08</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--upcoming">Upcoming</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 19, 2026 · Tuesday
+        </div>
+        <h3 class="sch-card-title">Career Awareness & Direction</h3>
+        <p class="sch-card-hook">There are 200+ career paths for your degree. Most students only know 5. Here's how to find the one that fits you.</p>
+        <ul class="sch-card-points">
+          <li>The 4-lens career framework: skills · interests · market demand · lifestyle fit</li>
+          <li>Traditional vs non-traditional paths available in 2026</li>
+          <li>How to test a career in 4 weeks without committing: shadowing, projects, internships</li>
+          <li>Decision-making when you have too many (or too few) options</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Fill the 4-lens career map live, identify top 2 options for next 30 days
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Career Map</span><span>4-Lens Framework</span><span>Exploration</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 9 -->
+      <div class="sch-card sch-card--upcoming">
+        <div class="sch-card-header">
+          <div class="sch-card-num">09</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--upcoming">Upcoming</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 23, 2026 · Saturday
+        </div>
+        <h3 class="sch-card-title">Leadership & Team Building</h3>
+        <p class="sch-card-hook">Be a follower first — then make others follow. Leadership is earned through daily behavior, not titles.</p>
+        <ul class="sch-card-points">
+          <li>Leadership is not a title — the 3 daily behaviors that earn respect</li>
+          <li>Run a group project without being a dictator or a doormat</li>
+          <li>Giving and receiving feedback without drama</li>
+          <li>Volunteering for visibility: which opportunities matter vs time-traps</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Case discussion: "Your group partner isn't contributing — what do you do?"
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>Leadership</span><span>Teamwork</span><span>Feedback</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SESSION 10 — CLOSING -->
+      <div class="sch-card sch-card--upcoming sch-card--closing">
+        <div class="sch-card-header">
+          <div class="sch-card-num">10</div>
+          <div class="sch-card-badges">
+            <span class="sch-pill sch-pill--closing">Closing Session</span>
+            <span class="sch-pill sch-pill--free">FREE</span>
+          </div>
+        </div>
+        <div class="sch-card-date">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          May 25, 2026 · Monday
+        </div>
+        <h3 class="sch-card-title">Digital Skills & Personal Branding</h3>
+        <p class="sch-card-hook">In 2026, AI reads your resume before any human does. Here's the LinkedIn and resume that actually gets through.</p>
+        <ul class="sch-card-points">
+          <li>What AI recruiters look for: keywords, structure, signal density</li>
+          <li>LinkedIn profile anatomy: headline, about, experience — what to fix first</li>
+          <li>Personal branding without cringe: how to post and stay credible</li>
+          <li>The 1-hour weekly routine that compounds your online presence</li>
+        </ul>
+        <div class="sch-card-activity">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          Live profile audit — 3 volunteers, 2-min review each + full AMA with past guests
+        </div>
+        <div class="sch-card-footer">
+          <div class="sch-card-tags">
+            <span>LinkedIn</span><span>AI Resume</span><span>Personal Brand</span>
+          </div>
+          <a href="#register" class="sch-card-cta">
+            Register Free
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /.sch-grid -->
+  </div>
 </section>
 
-<!-- For Colleges Section -->
-<section class="for-colleges">
-    <div class="container">
-        <div class="for-colleges-content">
-            <h2>Want us to run these workshops on your campus?</h2>
-            <p>We offer free Career Discovery Workshops for college partners. Help your students grow with expert-led sessions on career skills, exam strategies, and personal development.</p>
-            <a href="colleges.html" class="btn">Explore College Partnerships</a>
-        </div>
+
+<!-- ANNUAL SCHEDULE SECTION -->
+
+
+
+
+<section class="wb-why">
+  <div class="container">
+
+    <!-- header -->
+    <div class="wb-why-header">
+      <div class="wb-why-header-left">
+        <div class="wb-why-eyebrow">Quick Overview</div>
+        <h2 class="wb-why-h2">Why Join Our<br><em>Free Workshops?</em></h2>
+        <p class="wb-why-sub">Short, practical, and accessible sessions designed to help every student build real, career-ready skills — no strings attached.</p>
+      </div>
+      <div class="wb-why-count">
+        <div class="wb-why-count-num">2<span>×</span></div>
+        <div class="wb-why-count-lbl">Sessions every<br>month, free</div>
+      </div>
     </div>
+
+    <!-- grid -->
+    <div class="wb-why-grid">
+
+      <!-- 01 -->
+      <div class="wb-why-card">
+        <div class="wb-why-num">01</div>
+        <div class="wb-why-icon">⏱️</div>
+        <div class="wb-why-badge">Focused</div>
+        <div class="wb-why-title">2-Hour Duration</div>
+        <p class="wb-why-desc">Concise, intensive, and practical — enough to learn something meaningful without disrupting your day.</p>
+      </div>
+
+      <!-- 02 -->
+      <div class="wb-why-card">
+        <div class="wb-why-num">02</div>
+        <div class="wb-why-icon">💰</div>
+        <div class="wb-why-badge">No Cost</div>
+        <div class="wb-why-title">100% Free Forever</div>
+        <p class="wb-why-desc">No hidden fees, no course purchase, no enrollment. Register once via WhatsApp and you're in.</p>
+      </div>
+
+      <!-- 03 -->
+      <div class="wb-why-card">
+        <div class="wb-why-num">03</div>
+        <div class="wb-why-icon">🌐</div>
+        <div class="wb-why-badge">Flexible</div>
+        <div class="wb-why-title">Online or On-Campus</div>
+        <p class="wb-why-desc">Attend via Google Meet from anywhere, or join selected on-campus workshops at your location.</p>
+      </div>
+
+      <!-- 04 -->
+      <div class="wb-why-card">
+        <div class="wb-why-num">04</div>
+        <div class="wb-why-icon">👥</div>
+        <div class="wb-why-badge">Inclusive</div>
+        <div class="wb-why-title">Open to All Students</div>
+        <p class="wb-why-desc">UG, PG, any stream, any college. No background requirements — every student is genuinely welcome.</p>
+      </div>
+
+    </div>
+
+    <!-- trust strip -->
+    <div class="wb-why-strip">
+      <div class="wb-strip-item">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" transform="scale(.65) translate(0,1)" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 2l6 2.5v5C14 13 11 15 8 16 5 15 2 13 2 9.5v-5L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        No registration fee
+      </div>
+      <div class="wb-strip-sep"></div>
+      <div class="wb-strip-item">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2 7h12" stroke="currentColor" stroke-width="1.4"/></svg>
+        Certificate of participation
+      </div>
+      <div class="wb-strip-sep"></div>
+      <div class="wb-strip-item">
+        <svg viewBox="0 0 16 16" fill="none"><polygon points="6,3 13,8 6,13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        Full recording shared after
+      </div>
+      <div class="wb-strip-sep"></div>
+      <div class="wb-strip-item">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.6 3.5L8 10l-3.1 1.5.6-3.5L3 5.5 6.5 5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        4.9★ average rating
+      </div>
+    </div>
+
+  </div>
 </section>
+
 
 <section class="testimonials-section">
   <div class="container">
@@ -1504,7 +2001,7 @@
   <div class="container">
     <div class="cta-banner-card">
       <h2>Register for the Next Free Workshop</h2>
-      <p class="cta-banner-subtitle">Free &bull; No enrollment needed &bull; Open to all students</p>
+      <p class="cta-banner-subtitle">Free • No enrollment needed • Open to all students</p>
       <a href="https://wa.me/" class="btn">Join via WhatsApp</a>
     </div>
   </div>
@@ -1513,7 +2010,7 @@
 
 <div id="app-footer"></div>
 
-<script src="./js/layout.js" defer></script>
+<script src="/assets/prepme/js/layout.js"></script>
 
 </body>
 </html>
