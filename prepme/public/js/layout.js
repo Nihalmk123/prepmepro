@@ -6,24 +6,23 @@ function injectLayout(currentPage = "home") {
  <!-- Logo -->
 <a href="index.html" class="logo-link" aria-label="PrepMe.Pro Home">
   <img
-    src="/files/logo.png"
-    alt="PrepMe.Pro"
-    class="nav-logo"
-    height="40"
-    loading="eager"
-  />
+  src="/assets/prepme/assets/images/logo.png"
+  alt="PrepMe.Pro"
+  class="nav-logo"
+  height="40"
+  loading="eager"
+/>
 </a>
-
 
     <!-- Desktop Links -->
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="nav-item">Home</a></li>
+      <li><a href="free-webinars.html" class="nav-item">Webinars</a></li>
+      <li><a href="student-success-core.html" class="nav-item">Success Core</a></li>
       <li><a href="competitive-exams.html" class="nav-item">Competitive Exams</a></li>
       <li><a href="study-abroad.html" class="nav-item">Study Abroad</a></li>
-      <li><a href="student-success-core.html" class="nav-item">Success Core</a></li>
       <li><a href="colleges.html" class="nav-item">For Colleges</a></li>
-      <li><a href="free-webinars.html" class="nav-item">Webinars</a></li>
-      <li><a href="blog.html" class="nav-item">Blog</a></li>
+      <li><a href="blog.html" class="nav-item">Blogs</a></li>
       <li><a href="news-media.html" class="nav-item">News</a></li>
       <li><a href="about.html" class="nav-item">About</a></li>
       <li><a href="contact.html" class="nav-item">Contact</a></li>
@@ -68,7 +67,13 @@ function injectLayout(currentPage = "home") {
         <!-- Brand Column -->
         <div class="footer-brand-col">
           <a href="index.html" class="footer-logo-link" aria-label="PrepMe.Pro Home">
-            <img src="./footer.png" alt="PrepMe.Pro" class="footer-logo" height="38" loading="lazy" />
+            <img
+  src="/assets/prepme/assets/images/footer.png"
+  alt="PrepMe.Pro"
+  class="footer-logo"
+  height="38"
+  loading="lazy"
+/>
           </a>
           <p class="footer-tagline">
             Your complete student success platform. Built in Karnataka,
