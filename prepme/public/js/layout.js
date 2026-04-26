@@ -60,23 +60,22 @@ function injectLayout(currentPage = "home") {
 </nav>`;
 
 function setActiveNavLink() {
-  let currentPage = window.location.pathname.split("/").pop();
-
-  if (!currentPage || currentPage === "/") {
-    currentPage = "index.html";
-  }
+  // Works for: /index, /index.html, /, /about, /about.html
+  let current = window.location.pathname.split("/").pop();
+  current = current.replace(".html", "") || "index"; // "" = root = index
 
   document.querySelectorAll(".nav-item, .mobile-link").forEach(link => {
-    const href = link.getAttribute("href");
-    const isActive = href === currentPage;
+    let href = (link.getAttribute("href") || "")
+      .split("/").pop()
+      .split("?")[0]
+      .split("#")[0]
+      .replace(".html", "") || "index";
 
+    const isActive = current === href;
     link.classList.toggle("active", isActive);
-
-    if (isActive) {
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.removeAttribute("aria-current");
-    }
+    isActive
+      ? link.setAttribute("aria-current", "page")
+      : link.removeAttribute("aria-current");
   });
 }
  
