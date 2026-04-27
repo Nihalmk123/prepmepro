@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - PrepMe.Pro</title>
-        <link rel="stylesheet" href="/assets/prepme/css/styles.css">
-
+<link rel="stylesheet" href="/assets/prepme/css/styles.css?v=1.1.7">
     <style>
         /* Page-specific styles */
         .hero-badge {
@@ -96,7 +95,6 @@
             font-size: 15px;
         }
 
-  <div id="app-modal-root"></div>
         .stat-card {
             background: white;
             padding: 30px;
@@ -225,7 +223,8 @@
         .cta-button:hover {
             background-color: #d66f1f;
         }
-        /* ===== OUR JOURNEY ===== */
+
+/* ===== OUR JOURNEY ===== */
 
 .journey-section {
   padding: 6rem 1.5rem;
@@ -573,7 +572,7 @@
 /* ===== TEAM SECTION ===== */
 
 .team-section {
-  padding: 6rem 1.5rem;
+  padding: 0rem 1.5rem;
   background: var(--white);
 }
 
@@ -727,7 +726,7 @@
 }
 /* ===== PARTNERS SECTION ===== */
 .partners-section {
-  padding: 5rem 1.5rem;
+  padding: 3.5rem 1.5rem;
   background: var(--white);
 }
 
@@ -799,14 +798,14 @@
 
 /* ── Logo Grid ── */
 .partners-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
   margin-bottom: 2.5rem;
 }
 
-/* Logo Card */
 .partner-logo-card {
+  max-width: 300px;
+  width: 100%;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -988,7 +987,7 @@
 /* Stats Strip Container */
 .numbers-strip {
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  grid-template-columns: 1fr auto 1fr auto 1fr;  /* 3 items + 2 dividers */
   align-items: center;
   gap: 0;
   background: var(--white);
@@ -997,6 +996,7 @@
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
+
 
 /* Each Stat Item */
 .number-item {
@@ -1084,10 +1084,10 @@
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .numbers-strip {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;  /* 2 columns */
   }
 
   .numbers-divider {
@@ -1099,13 +1099,20 @@
     border-right: 1px solid var(--border);
   }
 
-  /* Remove right border from 2nd and 4th items */
+  /* Remove right border from even items */
   .number-item:nth-child(even) {
     border-right: none;
   }
 
-  /* Remove bottom border from last 2 items */
-  .number-item:nth-last-child(-n+2) {
+  /* Last item — 3 items means last one spans full width */
+  .number-item:last-child {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  /* Remove bottom from second-to-last */
+  .number-item:nth-last-child(2) {
     border-bottom: none;
   }
 }
@@ -1125,6 +1132,7 @@
   }
 
   .number-item:last-child {
+    grid-column: auto;
     border-bottom: none;
   }
 
@@ -1481,18 +1489,12 @@
       <p>Trusted academic and technology partnerships built to expand student opportunities.</p>
     </div>
 
-    <!-- Filter Tabs -->
-    <div class="partners-tabs">
-      <button class="partners-tab active" data-filter="all">All</button>
-      <button class="partners-tab" data-filter="university">University</button>
-      <button class="partners-tab" data-filter="technology">Technology</button>
-    </div>
 
     <!-- Partners Grid -->
     <div class="partners-logo-grid">
 
       <!-- Partner 1 -->
-      <a href="https://uws.ac.uk"
+      <!-- <a href="https://uws.ac.uk"
          target="_blank"
          rel="noopener noreferrer"
          class="partner-logo-card"
@@ -1502,10 +1504,10 @@
           <div class="partner-logo-name">University of the<br>West of Scotland</div>
         </div>
         <span class="partner-logo-type">University Partner</span>
-      </a>
+      </a> -->
 
       <!-- Partner 2 -->
-      <a href="https://presidencyuniversity.in"
+      <!-- <a href="https://presidencyuniversity.in"
          target="_blank"
          rel="noopener noreferrer"
          class="partner-logo-card"
@@ -1515,7 +1517,7 @@
           <div class="partner-logo-name">Presidency University,<br>Bangalore</div>
         </div>
         <span class="partner-logo-type">University Partner</span>
-      </a>
+      </a> -->
 
       <!-- Partner 3 -->
       <a href="https://walue.ai"
@@ -1590,7 +1592,7 @@
 
       <div class="numbers-divider"></div>
 
-      <div class="number-item">
+      <!-- <div class="number-item">
         <div class="number-icon">🤝</div>
         <div class="number-body">
           <div class="number-value">2</div>
@@ -1599,7 +1601,7 @@
         </div>
       </div>
 
-      <div class="numbers-divider"></div>
+      <div class="numbers-divider"></div> -->
 
       <div class="number-item">
         <div class="number-icon">🏫</div>
@@ -1671,7 +1673,7 @@
    
 <div id="app-footer"></div>
 
-<script src="/assets/prepme/js/layout.js?v=1.0.8" defer></script>
+<script src="/assets/prepme/js/layout.js?v=1.1.7" defer></script>
 <div id="app-modal-root"></div>
 </body>
 </html>

@@ -5,7 +5,7 @@
 function injectLayout(currentPage = "home") {
  
   /* ── HEADER ── */
- const headerHTML = `<!-- NAVIGATION -->
+const headerHTML = `<!-- NAVIGATION -->
 <nav id="mainNav">
   <div class="nav-inner">
 
@@ -26,8 +26,6 @@ function injectLayout(currentPage = "home") {
       <li><a href="competitive-exams.html" class="nav-item">Competitive Exams</a></li>
       <li><a href="study-abroad.html" class="nav-item">Study Abroad</a></li>
       <li><a href="colleges.html" class="nav-item">For Colleges</a></li>
-      <li><a href="blog.html" class="nav-item">Blogs</a></li>
-      <li><a href="news-media.html" class="nav-item">News</a></li>
       <li><a href="about.html" class="nav-item">About</a></li>
       <li><a href="contact.html" class="nav-item">Contact</a></li>
     </ul>
@@ -78,6 +76,7 @@ function setActiveNavLink() {
       : link.removeAttribute("aria-current");
   });
 }
+
  
   /* ── FOOTER ── */
   const footerHTML = `<!-- FOOTER -->
@@ -158,15 +157,24 @@ function setActiveNavLink() {
           <ul class="footer-contact-list">
             <li>
               <span class="footer-contact-icon">📍</span>
-              <span>Bangalore, Karnataka, India</span>
+              <span>No. 7, 1st floor, APMC Yard
+Sirsi, Karnataka 581401 - IN</span>
             </li>
             <li>
               <span class="footer-contact-icon">📧</span>
               <a href="mailto:info@prepme.pro">info@prepme.pro</a>
             </li>
             <li>
+              <span class="footer-contact-icon">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+</span>
+              <a href="mailto:info@prepme.pro">+919606821633</a>
+            </li>
+            <li>
               <span class="footer-contact-icon">💬</span>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/+919606821633" target="_blank" rel="noopener noreferrer">
                 WhatsApp Us
               </a>
             </li>
@@ -263,12 +271,11 @@ function setActiveNavLink() {
 
   <!-- Logo at top of form panel -->
   <div class="wm-logo-area">
-     <img
-        src="/assets/prepme/assets/images/logo.png"
-        alt="PrepMe.Pro"
-        height="40"
-        loading="eager"
-      />
+    <img
+      src="logo.jpg"
+      alt="PrepMe.Pro"
+      loading="eager"
+    />
     <span class="wm-reg-badge">Free Registration</span>
   </div>
 

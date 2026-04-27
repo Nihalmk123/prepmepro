@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Competitive Exam Prep | PrepMe.Pro</title>
-    <link rel="stylesheet" href="/assets/prepme/css/styles.css">
+    <link rel="stylesheet" href="/assets/prepme/css/styles.css?v=1.1.7">
     <style>
  /* ===========================
    CSS VARIABLES (ensure these exist in your :root)
@@ -471,7 +471,7 @@
   color: var(--gray);
   font-size: 0.86rem;
   line-height: 1.65;
-  margin: 0;
+  margin: 50;
 }
 
 /* ── Stat cards ── */
@@ -1986,11 +1986,14 @@
 /* ── Grid ── */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);  /* 2 cards */
   gap: 1.25rem;
   align-items: start;
   margin-bottom: 1.5rem;
+  max-width: 860px;        /* prevent stretching too wide */
+  margin-inline: auto;
 }
+
 
 /* ── Base card ── */
 .pricing-card {
@@ -2846,41 +2849,6 @@
 
     <div class="pricing-grid">
 
-      <!-- Monthly -->
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <span class="pricing-plan">Monthly</span>
-          <p class="pricing-tagline">Try it out, no commitment</p>
-        </div>
-        <div class="pricing-price">
-          <span class="pricing-amount">₹1,499</span>
-          <span class="pricing-period">/month</span>
-        </div>
-        <a href="#" class="btn-pricing btn-pricing-outline">Get Started</a>
-        <ul class="pricing-features">
-          <li>
-            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            LMS Access
-          </li>
-          <li>
-            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Recorded Lectures
-          </li>
-          <li>
-            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Mock Tests
-          </li>
-          <li class="pf-muted">
-            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 10.5l5-5M10.5 10.5l-5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Daily Drills
-          </li>
-          <li class="pf-muted">
-            <svg class="pf-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 10.5l5-5M10.5 10.5l-5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Mentorship Calls
-          </li>
-        </ul>
-      </div>
-
       <!-- 6-Month — Featured -->
       <div class="pricing-card pricing-card-featured">
         <div class="pricing-featured-badge">Most Popular · Save 11%</div>
@@ -3103,7 +3071,7 @@
 
    <div id="app-footer"></div>
 
-       <script src="/assets/prepme/js/layout.js"></script>
+       <script src="/assets/prepme/js/layout.js?v=1.1.7" defer></script>
 <script>
   /* Tab switching — add this script */
 document.querySelectorAll('.exams-tab').forEach(tab => {
@@ -3119,7 +3087,7 @@ document.querySelectorAll('.exams-tab').forEach(tab => {
   });
 });
 </script>
-<script src="./layout.js" defer></script>
 <div id="app-modal-root"></div>
+
 </body>
 </html>
