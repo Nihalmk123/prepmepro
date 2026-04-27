@@ -923,7 +923,7 @@ html, body {
 
 .wm-logo-area {
   display: flex; flex-direction: column; align-items: center;
-  padding: 1.5rem 2rem 1rem;
+  padding: 0rem 2rem 1rem;
   background: #fff;
   border-bottom: 1px solid #e8eaf0;
   gap: 0.6rem;
@@ -1113,24 +1113,16 @@ html, body {
   position: relative;
   display: inline-block;
   text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.70);
+  font-weight: 400;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-.nav-item::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-width: 120%;
-height: 5px;
-  background: #ffffff;
-  border-radius: 999px;
-  transform: translateX(-50%) scaleX(0);
-  transform-origin: center;
-  transition: transform 0.25s ease;
-}
-
-.nav-item:hover::after,
-.nav-item.active::after,
-.nav-item[aria-current="page"]::after {
-  transform: translateX(-50%) scaleX(1);
+.nav-item:hover,
+.nav-item.active,
+.nav-item[aria-current="page"] {
+  color: var(--saffron-light);
+  background: rgba(255, 255, 255, 0.12);
 }
