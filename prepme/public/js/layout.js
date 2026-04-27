@@ -263,11 +263,12 @@ function setActiveNavLink() {
 
   <!-- Logo at top of form panel -->
   <div class="wm-logo-area">
-    <img
-      src="logo.jpg"
-      alt="PrepMe.Pro"
-      loading="eager"
-    />
+     <img
+        src="/assets/prepme/assets/images/logo.png"
+        alt="PrepMe.Pro"
+        height="40"
+        loading="eager"
+      />
     <span class="wm-reg-badge">Free Registration</span>
   </div>
 
