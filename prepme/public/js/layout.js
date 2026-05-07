@@ -254,13 +254,13 @@ function injectLayout(currentPage = "home") {
           </div>
           <div class="wm-iframe-wrap">
             <iframe
-              id="wm-frappe-iframe"
-              src="https://prepme.fsn.frappe.cloud/w3"
-              title="PrepMe Registration Form"
-              loading="lazy"
-              scrolling="no"
-              style="border:none;width:100%;display:block;height:560px;"
-            ></iframe>
+  id="wm-frappe-iframe"
+  src="https://prepme.fsn.frappe.cloud/w3"
+  title="PrepMe Registration Form"
+  loading="lazy"
+  scrolling="no"
+  style="border:none;width:100%;display:block;height:800px;min-height:800px;"
+></iframe>
           </div>
           <p class="wm-disclaimer">&#10003; Free forever &nbsp;&#10003; No spam &nbsp;&#10003; Instant confirmation</p>
           <p class="wm-share-nudge">📢 Share with a friend preparing for exams — one forward could save them a year.</p>
