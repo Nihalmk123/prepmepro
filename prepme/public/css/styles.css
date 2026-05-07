@@ -280,7 +280,7 @@ html, body {
   transition: opacity 0.2s ease;
 }
 .logo-link:hover { opacity: 0.82; }
-.nav-logo { height: 36px; width: auto; display: block; }
+.nav-logo { height: 55px; width: auto; display: block; }
 
 /* ── Desktop nav links ── */
 .nav-links {
@@ -1255,4 +1255,146 @@ body.sidebar-open {
   .wm-iframe-wrap iframe {
     min-height: 700px;
   }
+}
+/* ── Modal new content blocks ── */
+.wm-scroll-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+}
+
+.wm-section-block {
+  margin-bottom: 18px;
+}
+
+.wm-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #F97316;
+  margin-bottom: 7px;
+}
+
+.wm-body-text {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.wm-highlight-text {
+  font-size: 13.5px;
+  color: #1a2e5a;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Learn grid — 2 col */
+.wm-learn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.wm-learn-card {
+  background: #f8fafc;
+  border: 1px solid #e9eef5;
+  border-radius: 10px;
+  padding: 10px 11px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.wm-learn-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: #F97316;
+  min-width: 20px;
+  padding-top: 1px;
+}
+
+/* For list */
+.wm-for-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wm-for-list li {
+  font-size: 12.5px;
+  color: #475569;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.wm-for-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #F97316;
+  font-weight: 700;
+}
+
+/* Testimonial */
+.wm-testimonial {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fef3ec 100%);
+  border-left: 3px solid #F97316;
+  border-radius: 0 10px 10px 0;
+  padding: 12px 14px;
+  margin-bottom: 4px;
+}
+
+.wm-testimonial-quote {
+  font-size: 13px;
+  font-style: italic;
+  color: #1a2e5a;
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.wm-testimonial-name {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+/* Share nudge */
+.wm-share-nudge {
+  font-size: 11.5px;
+  color: #64748b;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* iframe wrapper */
+.wm-iframe-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.wm-iframe-wrap iframe {
+  width: 100%;
+  height: 560px;
+  border: none;
+  display: block;
+  transition: height 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .wm-learn-grid { grid-template-columns: 1fr; }
+  .wm-iframe-wrap iframe { height: 640px; }
 }
