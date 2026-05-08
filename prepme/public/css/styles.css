@@ -238,17 +238,19 @@ html, body {
 /* ===== NAV ===== */
 
 /* ═══════════════════════════════════════════
-   NAVIGATION — White, clean, logo clear
+   NAVIGATION
    ═══════════════════════════════════════════ */
 
 #mainNav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid #e8edf3;
+  border-bottom: 1px solid var(--border);
   transition: box-shadow 0.25s ease;
 }
 
@@ -266,6 +268,11 @@ html, body {
   position: relative;
 }
 
+/* Push ALL page content below fixed nav */
+body {
+  padding-top: 72px;
+}
+
 /* ── Logo ── */
 .logo-link {
   display: flex;
@@ -276,12 +283,12 @@ html, body {
 }
 
 .nav-logo {
-  height: 54px;
+  height: 52px;
   width: auto;
   display: block;
   object-fit: contain;
-  /* If logo has white background — remove box bleed on white nav */
-  /* No filter needed since nav is white — logo shows naturally */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* ── Nav links — centered absolutely ── */
@@ -298,14 +305,14 @@ html, body {
   z-index: 1;
 }
 
-/* ── Each nav link ── */
+/* ── Each nav item ── */
 .nav-item {
   position: relative;
-  color: #4b5563;
+  color: var(--gray);
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.84rem;
-  padding: 0.42rem 0.7rem;
+  font-size: 0.83rem;
+  padding: 0.42rem 0.65rem;
   border-radius: 7px;
   white-space: nowrap;
   transition: color 0.18s ease, background 0.18s ease;
@@ -314,15 +321,15 @@ html, body {
 }
 
 .nav-item:hover {
-  color: #0A1A3F;
-  background: #f1f5fb;
+  color: var(--navy);
+  background: var(--light);
 }
 
 .nav-item.active,
 .nav-item[aria-current="page"] {
-  color: #F97316;
+  color: var(--saffron);
   font-weight: 700;
-  background: #fff5ed;
+  background: var(--cream);
 }
 
 .nav-item.active::after,
@@ -333,12 +340,12 @@ html, body {
   left: 50%;
   transform: translateX(-50%);
   width: 18px;
-  height: 2.5px;
-  background: #F97316;
+  height: 2px;
+  background: var(--saffron);
   border-radius: 2px;
 }
 
-/* ── CTA area ── */
+/* ── CTA — pinned right ── */
 .nav-cta {
   margin-left: auto;
   display: flex;
@@ -357,7 +364,7 @@ html, body {
   border-radius: 9px;
   background: #F97316;
   color: #fff !important;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -365,13 +372,13 @@ html, body {
   cursor: pointer;
   letter-spacing: 0.01em;
   transition: background 200ms ease, transform 120ms ease, box-shadow 200ms ease;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.30);
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.28);
 }
 
 .btn-nav-cta:hover {
   background: #ea6a0a;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.38);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.36);
 }
 
 .btn-nav-cta:active {
@@ -382,18 +389,22 @@ html, body {
   flex-shrink: 0;
 }
 
-/* ── body offset so nav doesn't overlap content ── */
-body {
-  padding-top: 0; /* sticky handles this automatically */
+/* ── Legacy btn inside nav-cta ── */
+.nav-cta .btn.btn-sm {
+  font-size: 0.83rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 /* ═══════════════════════════════════════════
-   MOBILE NAV
+   MOBILE
    ═══════════════════════════════════════════ */
 
 @media (max-width: 1024px) {
   .nav-links {
-    display: none; /* hide links on mobile — use sidebar/hamburger if needed */
+    display: none;
   }
 
   .nav-inner {
@@ -401,29 +412,37 @@ body {
     height: 64px;
   }
 
+  body {
+    padding-top: 64px;
+  }
+
   .nav-logo {
-    height: 46px;
+    height: 44px;
   }
 
   .btn-nav-cta {
-    padding: 9px 16px;
-    font-size: 13px;
+    padding: 9px 15px;
+    font-size: 12.5px;
   }
 }
 
 @media (max-width: 480px) {
   .nav-logo {
-    height: 40px;
-  }
-
-  .btn-nav-cta {
-    padding: 8px 14px;
-    font-size: 12.5px;
-    gap: 5px;
+    height: 38px;
   }
 
   .nav-inner {
     padding: 0 1rem;
+    height: 60px;
+  }
+
+  body {
+    padding-top: 60px;
+  }
+
+  .btn-nav-cta {
+    padding: 8px 12px;
+    font-size: 12px;
   }
 }
 /* ── Hamburger ── */
