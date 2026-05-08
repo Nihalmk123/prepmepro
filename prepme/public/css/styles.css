@@ -237,139 +237,54 @@ html, body {
 /* ... keep your full CSS from your current file, just don’t duplicate footer HTML */
 /* ===== NAV ===== */
 
-#mainNav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: #0A1A3F;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: box-shadow 250ms ease, background 250ms ease;
-}
+/* ═══════════════════════════════════════════
+   NAVIGATION — White, clean, logo clear
+   ═══════════════════════════════════════════ */
 
+#mainNav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e8edf3;
+  transition: box-shadow 0.25s ease;
+}
 
 #mainNav.scrolled {
-  background: #0A1A3F;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 24px rgba(10, 26, 63, 0.09);
 }
 
-/* ── Inner: flex with relative for absolute centering ── */
 .nav-inner {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 68px;
+  height: 72px;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  position: relative;
 }
 
 /* ── Logo ── */
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   text-decoration: none;
   flex-shrink: 0;
   z-index: 2;
 }
-.logo {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--navy);
-  letter-spacing: -0.5px;
-  line-height: 1;
-}
-.logo span {
-  color: var(--saffron);
-}
-.logo-tag {
-  font-size: 0.6rem;
-  color: var(--gray);
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  padding: 2px 8px;
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  white-space: nowrap;
-}
-/* ── Logo ── */
+
 .nav-logo {
-  height: 48px;
+  height: 54px;
   width: auto;
   display: block;
   object-fit: contain;
-  flex-shrink: 0;
+  /* If logo has white background — remove box bleed on white nav */
+  /* No filter needed since nav is white — logo shows naturally */
 }
 
-/* ── Nav links ── */
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex: 1;
-}
-
-.nav-item {
-  display: inline-block;
-  text-decoration: none;
-  padding: 6px 11px;
-  border-radius: 7px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 13.5px;
-  font-weight: 500;
-  white-space: nowrap;
-  transition: background 200ms ease, color 200ms ease;
-}
-.nav-item:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.09);
-}
-.nav-item.active,
-.nav-item[aria-current="page"] {
-  color: #F97316;
-  background: rgba(249,115,22,0.1);
-}
-
-/* ── CTA area ── */
-.nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
-}
-
-/* ── Free Workshop button ── */
-.btn-nav-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 18px;
-  border-radius: 8px;
-  background: #F97316;
-  color: #fff !important;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  border: none;
-  cursor: pointer;
-  transition: background 200ms ease, transform 120ms ease;
-  box-shadow: 0 4px 14px rgba(249,115,22,0.35);
-}
-.btn-nav-cta:hover {
-  background: #ea6a0a;
-  transform: translateY(-1px);
-}
-.btn-nav-cta svg {
-  flex-shrink: 0;
-}
-/* ── Nav links — truly centered via absolute ── */
+/* ── Nav links — centered absolutely ── */
 .nav-links {
   position: absolute;
   left: 50%;
@@ -386,39 +301,44 @@ html, body {
 /* ── Each nav link ── */
 .nav-item {
   position: relative;
-  color: var(--gray);
+  color: #4b5563;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.83rem;
-  padding: 0.42rem 0.65rem;
+  font-size: 0.84rem;
+  padding: 0.42rem 0.7rem;
   border-radius: 7px;
   white-space: nowrap;
-  transition: color 0.18s, background 0.18s;
+  transition: color 0.18s ease, background 0.18s ease;
   letter-spacing: 0.01em;
   display: block;
 }
+
 .nav-item:hover {
-  color: var(--navy);
-  background: var(--light);
+  color: #0A1A3F;
+  background: #f1f5fb;
 }
-.nav-item.active {
-  color: var(--saffron);
+
+.nav-item.active,
+.nav-item[aria-current="page"] {
+  color: #F97316;
   font-weight: 700;
-  background: var(--cream);
+  background: #fff5ed;
 }
-.nav-item.active::after {
+
+.nav-item.active::after,
+.nav-item[aria-current="page"]::after {
   content: "";
   position: absolute;
   bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
   width: 18px;
-  height: 2px;
-  background: var(--saffron);
+  height: 2.5px;
+  background: #F97316;
   border-radius: 2px;
 }
 
-/* ── CTA — pinned right ── */
+/* ── CTA area ── */
 .nav-cta {
   margin-left: auto;
   display: flex;
@@ -427,14 +347,85 @@ html, body {
   flex-shrink: 0;
   z-index: 2;
 }
-.nav-cta .btn.btn-sm {
-  font-size: 0.83rem;
-  padding: 0.5rem 1.15rem;
-  border-radius: 8px;
+
+/* ── Free Workshop button ── */
+.btn-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border-radius: 9px;
+  background: #F97316;
+  color: #fff !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
   white-space: nowrap;
+  border: none;
+  cursor: pointer;
   letter-spacing: 0.01em;
+  transition: background 200ms ease, transform 120ms ease, box-shadow 200ms ease;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.30);
 }
 
+.btn-nav-cta:hover {
+  background: #ea6a0a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.38);
+}
+
+.btn-nav-cta:active {
+  transform: scale(0.97);
+}
+
+.btn-nav-cta svg {
+  flex-shrink: 0;
+}
+
+/* ── body offset so nav doesn't overlap content ── */
+body {
+  padding-top: 0; /* sticky handles this automatically */
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE NAV
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none; /* hide links on mobile — use sidebar/hamburger if needed */
+  }
+
+  .nav-inner {
+    padding: 0 1.25rem;
+    height: 64px;
+  }
+
+  .nav-logo {
+    height: 46px;
+  }
+
+  .btn-nav-cta {
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo {
+    height: 40px;
+  }
+
+  .btn-nav-cta {
+    padding: 8px 14px;
+    font-size: 12.5px;
+    gap: 5px;
+  }
+
+  .nav-inner {
+    padding: 0 1rem;
+  }
+}
 /* ── Hamburger ── */
 .hamburger {
   display: none;
