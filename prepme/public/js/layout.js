@@ -5,8 +5,8 @@
 
 function injectLayout(currentPage = "home") {
 
-  /* ── HEADER ── */
-  const headerHTML = `<!-- NAVIGATION -->
+    /* ── HEADER ── */
+    const headerHTML = `<!-- NAVIGATION -->
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="index.html" class="logo-link" aria-label="PrepMe.Pro Home">
@@ -66,8 +66,8 @@ function injectLayout(currentPage = "home") {
   </div>
 </aside>`;
 
-  /* ── FOOTER ── */
-  const footerHTML = `<footer class="site-footer">
+    /* ── FOOTER ── */
+    const footerHTML = `<footer class="site-footer">
   <div class="footer-brand-bar">
     <div class="container">
       <div class="footer-brand-inner">
@@ -138,10 +138,10 @@ function injectLayout(currentPage = "home") {
   </div>
 </footer>`;
 
-  /* ══════════════════════════════════════════
-     MODAL — Full webinar info + iframe form
-     ══════════════════════════════════════════ */
-  const modalHTML = `
+    /* ══════════════════════════════════════════
+       MODAL — Full webinar info + iframe form
+       ══════════════════════════════════════════ */
+    const modalHTML = `
 <div id="webinarModal" class="wm-overlay" aria-hidden="true">
   <div class="wm-dialog">
     <button class="wm-close js-close-webinar-modal" aria-label="Close">&times;</button>
@@ -254,13 +254,13 @@ function injectLayout(currentPage = "home") {
           </div>
           <div class="wm-iframe-wrap">
             <iframe
-  id="wm-frappe-iframe"
-  src="https://prepme.fsn.frappe.cloud/w3"
-  title="PrepMe Registration Form"
-  loading="lazy"
-  scrolling="no"
-  style="border:none;width:100%;display:block;height:800px;min-height:800px;"
-></iframe>
+              id="wm-frappe-iframe"
+              src="https://prepme.fsn.frappe.cloud/w3"
+              title="PrepMe Registration Form"
+              loading="lazy"
+              scrolling="no"
+              style="border:none;width:100%;display:block;height: 640px;"
+            ></iframe>
           </div>
           <p class="wm-disclaimer">&#10003; Free forever &nbsp;&#10003; No spam &nbsp;&#10003; Instant confirmation</p>
           <p class="wm-share-nudge">📢 Share with a friend preparing for exams — one forward could save them a year.</p>
@@ -294,19 +294,19 @@ function injectLayout(currentPage = "home") {
   </div>
 </div>`;
 
-  /* ── INJECT ── */
-  const header    = document.getElementById("app-header");
-  const footer    = document.getElementById("app-footer");
-  const modalRoot = document.getElementById("app-modal-root");
+    /* ── INJECT ── */
+    const header = document.getElementById("app-header");
+    const footer = document.getElementById("app-footer");
+    const modalRoot = document.getElementById("app-modal-root");
 
-  if (header) header.innerHTML = headerHTML;
-  if (footer) footer.innerHTML = footerHTML;
-  if (modalRoot && !document.getElementById("webinarModal")) {
-    modalRoot.innerHTML = modalHTML;
-  }
+    if (header) header.innerHTML = headerHTML;
+    if (footer) footer.innerHTML = footerHTML;
+    if (modalRoot && !document.getElementById("webinarModal")) {
+        modalRoot.innerHTML = modalHTML;
+    }
 
-  _setActiveNavLink();
-  _bindSidebar();
+    _setActiveNavLink();
+    _bindSidebar();
 }
 
 /* ══════════════════════════════════════════
@@ -314,45 +314,45 @@ function injectLayout(currentPage = "home") {
    ══════════════════════════════════════════ */
 
 function _setActiveNavLink() {
-  let current = window.location.pathname.split("/").pop();
-  current = current.replace(".html", "") || "index";
-  document.querySelectorAll(".nav-item, .sidebar-link").forEach(link => {
-    let href = (link.getAttribute("href") || "").split("/").pop().split("?")[0].split("#")[0].replace(".html", "") || "index";
-    const isActive = current === href;
-    link.classList.toggle("active", isActive);
-    isActive ? link.setAttribute("aria-current", "page") : link.removeAttribute("aria-current");
-  });
+    let current = window.location.pathname.split("/").pop();
+    current = current.replace(".html", "") || "index";
+    document.querySelectorAll(".nav-item, .sidebar-link").forEach(link => {
+        let href = (link.getAttribute("href") || "").split("/").pop().split("?")[0].split("#")[0].replace(".html", "") || "index";
+        const isActive = current === href;
+        link.classList.toggle("active", isActive);
+        isActive ? link.setAttribute("aria-current", "page") : link.removeAttribute("aria-current");
+    });
 }
 
 function _bindSidebar() {
-  const nav       = document.getElementById("mainNav");
-  const hamburger = document.getElementById("hamburger");
-  const sidebar   = document.getElementById("sidebar");
-  const overlay   = document.getElementById("sidebarOverlay");
-  const closeBtn  = document.getElementById("sidebarClose");
-  if (!nav || !hamburger || !sidebar || !overlay || !closeBtn) return;
+    const nav = document.getElementById("mainNav");
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("sidebarOverlay");
+    const closeBtn = document.getElementById("sidebarClose");
+    if (!nav || !hamburger || !sidebar || !overlay || !closeBtn) return;
 
-  function openSidebar() {
-    sidebar.classList.add("open"); overlay.classList.add("open"); hamburger.classList.add("open");
-    document.body.classList.add("sidebar-open");
-    hamburger.setAttribute("aria-expanded", "true");
-    sidebar.setAttribute("aria-hidden", "false"); overlay.setAttribute("aria-hidden", "false");
-    closeBtn.focus();
-  }
-  function closeSidebar() {
-    sidebar.classList.remove("open"); overlay.classList.remove("open"); hamburger.classList.remove("open");
-    document.body.classList.remove("sidebar-open");
-    hamburger.setAttribute("aria-expanded", "false");
-    sidebar.setAttribute("aria-hidden", "true"); overlay.setAttribute("aria-hidden", "true");
-    hamburger.focus();
-  }
+    function openSidebar() {
+        sidebar.classList.add("open"); overlay.classList.add("open"); hamburger.classList.add("open");
+        document.body.classList.add("sidebar-open");
+        hamburger.setAttribute("aria-expanded", "true");
+        sidebar.setAttribute("aria-hidden", "false"); overlay.setAttribute("aria-hidden", "false");
+        closeBtn.focus();
+    }
+    function closeSidebar() {
+        sidebar.classList.remove("open"); overlay.classList.remove("open"); hamburger.classList.remove("open");
+        document.body.classList.remove("sidebar-open");
+        hamburger.setAttribute("aria-expanded", "false");
+        sidebar.setAttribute("aria-hidden", "true"); overlay.setAttribute("aria-hidden", "true");
+        hamburger.focus();
+    }
 
-  hamburger.addEventListener("click", openSidebar);
-  closeBtn.addEventListener("click", closeSidebar);
-  overlay.addEventListener("click", closeSidebar);
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && sidebar.classList.contains("open")) closeSidebar(); });
-  window.addEventListener("resize", () => { if (window.innerWidth > 1024) closeSidebar(); }, { passive: true });
-  window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
+    hamburger.addEventListener("click", openSidebar);
+    closeBtn.addEventListener("click", closeSidebar);
+    overlay.addEventListener("click", closeSidebar);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && sidebar.classList.contains("open")) closeSidebar(); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) closeSidebar(); }, { passive: true });
+    window.addEventListener("scroll", () => { nav.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
 }
 
 /* ══════════════════════════════════════════
@@ -360,54 +360,54 @@ function _bindSidebar() {
    ══════════════════════════════════════════ */
 
 function _bindIframe() {
-  const iframe = document.getElementById("wm-frappe-iframe");
-  if (!iframe) return;
+    const iframe = document.getElementById("wm-frappe-iframe");
+    if (!iframe) return;
 
-  // Auto-resize iframe height from postMessage
-  window.addEventListener("message", (e) => {
-    if (e.origin !== "https://prepme.fsn.frappe.cloud") return;
+    // Auto-resize iframe height from postMessage
+    window.addEventListener("message", (e) => {
+        if (e.origin !== "https://prepme.fsn.frappe.cloud") return;
 
-    // Height resize
-    if (e.data?.type === "iframe_height" && e.data.height) {
-      iframe.style.height = (e.data.height + 20) + "px";
-    }
+        // Height resize
+        if (e.data?.type === "iframe_height" && e.data.height) {
+            iframe.style.height = (e.data.height + 20) + "px";
+        }
 
-    // Success detection
-    if (
-      e.data === "form_submitted" ||
-      e.data?.type === "form_submitted" ||
-      e.data?.status === "success"
-    ) {
-      showSuccessPage();
-    }
-  });
+        // Success detection
+        if (
+            e.data === "form_submitted" ||
+            e.data?.type === "form_submitted" ||
+            e.data?.status === "success"
+        ) {
+            showSuccessPage();
+        }
+    });
 
-  // Inject W2_Webinar source on load
-  iframe.addEventListener("load", () => {
-    try {
-      iframe.contentWindow.postMessage(
-        { type: "set_field", fieldname: "source", value: "W2_Webinar" },
-        "https://prepme.fsn.frappe.cloud"
-      );
-    } catch (e) {}
+    // Inject W2_Webinar source on load
+    iframe.addEventListener("load", () => {
+        try {
+            iframe.contentWindow.postMessage(
+                { type: "set_field", fieldname: "source", value: "W2_Webinar" },
+                "https://prepme.fsn.frappe.cloud"
+            );
+        } catch (e) { }
 
-    try {
-      const iDoc = iframe.contentDocument || iframe.contentWindow.document;
-      const src = iDoc.querySelector('[data-fieldname="source"] select, [name="source"]');
-      if (src) { src.value = "W2_Webinar"; src.dispatchEvent(new Event("change", { bubbles: true })); }
-    } catch (e) {}
-  });
+        try {
+            const iDoc = iframe.contentDocument || iframe.contentWindow.document;
+            const src = iDoc.querySelector('[data-fieldname="source"] select, [name="source"]');
+            if (src) { src.value = "W2_Webinar"; src.dispatchEvent(new Event("change", { bubbles: true })); }
+        } catch (e) { }
+    });
 
-  // Poll for success URL redirect
-  const poller = setInterval(() => {
-    try {
-      const url = iframe.contentWindow.location.href;
-      if (url.includes("thank-you") || url.includes("success")) {
-        clearInterval(poller);
-        showSuccessPage();
-      }
-    } catch (e) {}
-  }, 800);
+    // Poll for success URL redirect
+    const poller = setInterval(() => {
+        try {
+            const url = iframe.contentWindow.location.href;
+            if (url.includes("thank-you") || url.includes("success")) {
+                clearInterval(poller);
+                showSuccessPage();
+            }
+        } catch (e) { }
+    }, 800);
 }
 
 /* ══════════════════════════════════════════
@@ -415,31 +415,31 @@ function _bindIframe() {
    ══════════════════════════════════════════ */
 
 function openWebinarModal() {
-  const modal       = document.getElementById("webinarModal");
-  const formView    = document.getElementById("modalFormView");
-  const successView = document.getElementById("modalSuccessView");
-  if (!modal) return;
-  if (formView)    formView.style.display    = "";
-  if (successView) successView.style.display = "none";
-  modal.classList.add("active");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-  _bindIframe();
+    const modal = document.getElementById("webinarModal");
+    const formView = document.getElementById("modalFormView");
+    const successView = document.getElementById("modalSuccessView");
+    if (!modal) return;
+    if (formView) formView.style.display = "";
+    if (successView) successView.style.display = "none";
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    _bindIframe();
 }
 
 function closeWebinarModal() {
-  const modal = document.getElementById("webinarModal");
-  if (!modal) return;
-  modal.classList.remove("active");
-  modal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+    const modal = document.getElementById("webinarModal");
+    if (!modal) return;
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
 }
 
 function showSuccessPage() {
-  const formView    = document.getElementById("modalFormView");
-  const successView = document.getElementById("modalSuccessView");
-  if (formView)    formView.style.display    = "none";
-  if (successView) successView.style.display = "flex";
+    const formView = document.getElementById("modalFormView");
+    const successView = document.getElementById("modalSuccessView");
+    if (formView) formView.style.display = "none";
+    if (successView) successView.style.display = "flex";
 }
 
 /* ══════════════════════════════════════════
@@ -447,17 +447,17 @@ function showSuccessPage() {
    ══════════════════════════════════════════ */
 
 function bindGlobalEvents() {
-  if (window.__prepmeEventsBound) return;
-  window.__prepmeEventsBound = true;
+    if (window.__prepmeEventsBound) return;
+    window.__prepmeEventsBound = true;
 
-  document.addEventListener("click", function (e) {
-    if (e.target.closest(".js-open-webinar-modal")) { e.preventDefault(); openWebinarModal(); return; }
-    if (e.target.closest(".js-close-webinar-modal")) { e.preventDefault(); closeWebinarModal(); return; }
-    const modal = document.getElementById("webinarModal");
-    if (modal && e.target === modal) closeWebinarModal();
-  });
+    document.addEventListener("click", function (e) {
+        if (e.target.closest(".js-open-webinar-modal")) { e.preventDefault(); openWebinarModal(); return; }
+        if (e.target.closest(".js-close-webinar-modal")) { e.preventDefault(); closeWebinarModal(); return; }
+        const modal = document.getElementById("webinarModal");
+        if (modal && e.target === modal) closeWebinarModal();
+    });
 
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeWebinarModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeWebinarModal(); });
 }
 
 /* ══════════════════════════════════════════
@@ -465,16 +465,16 @@ function bindGlobalEvents() {
    ══════════════════════════════════════════ */
 
 function initLayout(currentPage) {
-  injectLayout(currentPage);
-  bindGlobalEvents();
+    injectLayout(currentPage);
+    bindGlobalEvents();
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", () => initLayout());
+    document.addEventListener("DOMContentLoaded", () => initLayout());
 } else {
-  initLayout();
+    initLayout();
 }
 
-window.openWebinarModal  = openWebinarModal;
+window.openWebinarModal = openWebinarModal;
 window.closeWebinarModal = closeWebinarModal;
-window.showSuccessPage   = showSuccessPage;
+window.showSuccessPage = showSuccessPage;
