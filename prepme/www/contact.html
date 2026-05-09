@@ -1107,14 +1107,13 @@
         <p>Fill in the form below and we'll get back to you within 24 hours.</p>
 
         <div class="ct-iframe-wrap">
-          <iframe
-            <iframe
+        <iframe
   src="https://prepme.fsn.frappe.cloud/contactus"
+  id="contact-iframe"
   title="Contact Form"
   loading="lazy"
   scrolling="no"
-  id="contact-iframe"
-  style="border:none; width:100%; display:block; height:600px;"
+  style="border:none; width:100%; display:block; height:680px;"
 ></iframe>
         </div>
 
@@ -1293,37 +1292,20 @@
 
 
   <!-- FAQ Toggle Script -->
-  <script>
+   <script>
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', function () {
         const faqItem = this.parentElement;
         faqItem.classList.toggle('open');
       });
     });
-
-   // Auto resize iframe to fit full content
-window.addEventListener("message", function (e) {
+    
+   window.addEventListener("message", function (e) {
   if (e.origin !== "https://prepme.fsn.frappe.cloud") return;
   if (e.data?.type === "iframe_height" && e.data.height) {
-    var iframe = document.getElementById("contact-iframe");
-    if (iframe) iframe.style.height = (e.data.height + 40) + "px";
+    document.getElementById("contact-iframe").style.height = e.data.height + "px";
   }
 });
-
-// Fallback — poll iframe content height every second
-var iframe = document.getElementById("contact-iframe");
-if (iframe) {
-  iframe.addEventListener("load", function () {
-    try {
-      var checkHeight = setInterval(function () {
-        try {
-          var h = iframe.contentDocument.body.scrollHeight;
-          if (h > 100) iframe.style.height = (h + 40) + "px";
-        } catch(e) { clearInterval(checkHeight); }
-      }, 500);
-    } catch(e) {}
-  });
-}
   </script>
 <script src="/assets/prepme/js/layout.js?v=1.1.17"></script>
   <div id="app-modal-root"></div>
