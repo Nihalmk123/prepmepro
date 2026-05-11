@@ -1301,3 +1301,10 @@ body {
 @media (max-width: 480px) {
   .nav-logo { height: 34px; max-width: 130px; }
 }
+.logo-link {
+  display: flex !important;
+  align-items: center !important;
+  height: 52px !important;
+  overflow: visible !important;
+  flex-shrink: 0;
+}
