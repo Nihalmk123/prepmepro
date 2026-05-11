@@ -9,12 +9,15 @@ function injectLayout(currentPage = "home") {
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="index.html" class="logo-link" aria-label="PrepMe.Pro Home">
+
 <img 
   src="/assets/prepme/assets/images/logo.png" 
   alt="PrepMe.Pro" 
   class="nav-logo" 
   loading="eager"
+  style="height:48px !important; width:auto !important; max-width:220px !important; display:block; object-fit:contain;"
 >
+
     </a>
     <ul class="nav-links" id="navLinks" role="list">
       <li><a href="index.html" class="nav-item">Home</a></li>
