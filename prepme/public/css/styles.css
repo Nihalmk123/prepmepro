@@ -1282,3 +1282,19 @@ body {
   .wm-iframe-wrap iframe { min-height: 680px; height: 680px; }
   .wm-success { grid-column: unset; }
 }
+.nav-logo {
+  height: clamp(32px, 5vw, 44px); /* fluid: 32px mobile → 44px desktop */
+  width: auto;
+  max-width: 180px;               /* prevents stretching on wide screens */
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;                 /* stops logo from squishing in flex navbar */
+}
+
+/* Mobile override — lock to smaller size */
+@media (max-width: 640px) {
+  .nav-logo {
+    height: 32px;
+    max-width: 140px;
+  }
+}
