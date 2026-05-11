@@ -219,8 +219,8 @@ body { padding-top: 72px; }
 
 /* ── NAV LOGO — SINGLE RULE, no duplicates ── */
 .nav-logo {
-  height: 48px;
-  width: 48px;
+  height: 56px;
+  width: 56px;
   display: block;
   object-fit: contain;
   flex-shrink: 0;
