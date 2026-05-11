@@ -26,7 +26,6 @@ function injectLayout(currentPage = "home") {
       <li><a href="competitive-exams.html" class="nav-item">Competitive Exams</a></li>
       <li><a href="study-abroad.html" class="nav-item">Study Abroad</a></li>
       <li><a href="colleges.html" class="nav-item">For Colleges</a></li>
-      <li><a href="blog.html" class="nav-item">Blog</a></li>
       <li><a href="about.html" class="nav-item">About</a></li>
       <li><a href="contact.html" class="nav-item">Contact</a></li>
     </ul>
