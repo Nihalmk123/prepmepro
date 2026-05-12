@@ -15,6 +15,7 @@ function injectLayout(currentPage = "home") {
     alt="PrepMe.Pro"
     class="nav-logo"
     loading="eager"
+    style="height:64px;width:64px;max-width:none;max-height:none;object-fit:contain;display:block;"
   >
 </a>
 
